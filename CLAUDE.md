@@ -1,5 +1,7 @@
 # Working agreement for Claude Code
 
+The step-by-step plan is `PLAN.md`. Work from it, and tick items off as they finish.
+
 ## Workflow (same as the Block Concepts website)
 
 1. **Spec** (`spec/`) is the source of truth. Change the spec first, then the build. Each spec section is a Main Prompt plus nested Additional Prompts; keep that format.

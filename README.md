@@ -7,6 +7,8 @@ Block Concepts' internal-organization and external document-sharing app, built a
 
 The Apply/publish step (Git-based) joins the two.
 
+**Start with [`PLAN.md`](PLAN.md).** It lists the decisions, phases and build slices to follow.
+
 ## Where things live
 
 | Path | What it is |
