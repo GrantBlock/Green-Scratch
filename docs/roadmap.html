@@ -1,0 +1,293 @@
+<title>Vault and Hub Roadmap</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;500;600;800&family=Overpass+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a sequential build chart (one bar per milestone, width = working sessions) with a detail panel under it. Dark-first, Block Concepts tokens. Pick "Do this next" to reorder; prerequisites are pulled in ahead of it. */
+:root {
+  --bg: #0b0c0e;
+  --raised: #16191d;
+  --hair: #282a2d;
+  --ink: #f2f3f4;
+  --muted: #a3a9b0;
+  --blue: #4682b4;
+  --blue-text: #7faad0;
+  --tint: #16283a;
+  --on-blue: #ffffff;
+  --font-sans: "Overpass", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: "Overpass Mono", ui-monospace, Consolas, "Courier New", monospace;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #ffffff; --raised: #f4f6f8; --hair: #d9dee3; --ink: #1b2229; --muted: #5a636c;
+    --blue: #4682b4; --blue-text: #2f5f8a; --tint: #e6eff7; --on-blue: #ffffff;
+    color-scheme: light;
+  }
+}
+:root[data-theme="light"] {
+  --bg: #ffffff; --raised: #f4f6f8; --hair: #d9dee3; --ink: #1b2229; --muted: #5a636c;
+  --blue: #4682b4; --blue-text: #2f5f8a; --tint: #e6eff7; --on-blue: #ffffff;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink); font-family: var(--font-sans); font-size: 16px; line-height: 1.55;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 32px 64px;
+}
+main { max-width: 1120px; margin: 0 auto; display: flex; flex-direction: column; gap: 36px; }
+h1, h2, h3, p { margin: 0; }
+h1 { font-size: clamp(30px, 6vw, 48px); font-weight: 800; text-transform: uppercase; letter-spacing: -0.01em; line-height: 1; text-wrap: balance; }
+h2 { font-size: 20px; font-weight: 600; text-wrap: balance; }
+h3 { font-size: 16px; font-weight: 600; }
+.eyebrow { font-family: var(--font-mono); font-weight: 500; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue-text); }
+header { display: flex; flex-direction: column; gap: 14px; }
+header p { color: var(--muted); max-width: 66ch; font-size: 17px; }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 13px; color: var(--muted); align-items: center; }
+.legend span { display: inline-flex; align-items: center; gap: 8px; }
+.k-bar { width: 26px; height: 12px; background: var(--tint); border: 2px solid var(--blue); }
+.k-done { width: 26px; height: 12px; background: var(--blue); border: 2px solid var(--blue); }
+.k-ring { width: 16px; height: 16px; border: 2px solid var(--blue-text); border-radius: 50%; }
+.k-dia { width: 10px; height: 10px; background: var(--ink); transform: rotate(45deg); }
+section { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+
+.next { border: 1px solid var(--hair); background: var(--raised); padding: 18px 20px; display: grid; gap: 10px; }
+.next ul { margin: 0; padding-left: 20px; display: grid; gap: 4px; }
+.next .muted { color: var(--muted); font-size: 14px; }
+
+.toolbar { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; justify-content: space-between; }
+button { font: inherit; cursor: pointer; }
+.btn { min-height: 44px; padding: 8px 18px; border-radius: 2px; border: 1.5px solid var(--blue); background: transparent; color: var(--ink); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; font-size: 14px; }
+.btn.primary { background: var(--blue); color: var(--on-blue); font-weight: 600; }
+.btn:disabled { opacity: 0.45; cursor: default; }
+:focus-visible { outline: 2px solid var(--blue-text); outline-offset: 2px; }
+
+.scroll { overflow-x: auto; border: 1px solid var(--hair); background: var(--bg); }
+.rows { min-width: max-content; }
+.row { display: flex; border-bottom: 1px solid var(--hair); }
+.row:last-child { border-bottom: 0; }
+.lab { position: sticky; left: 0; z-index: 3; flex: 0 0 210px; width: 210px; background: var(--bg); border-right: 1px solid var(--hair); padding: 8px 12px; text-align: left; color: inherit; border-top: 0; border-left: 0; border-bottom: 0; display: flex; flex-direction: column; justify-content: center; gap: 2px; min-height: 52px; }
+.lab .nm { font-size: 14px; font-weight: 600; line-height: 1.25; }
+.lab .sz { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; color: var(--muted); text-transform: uppercase; }
+.row.sel .lab { background: var(--tint); }
+.row.dep .lab { box-shadow: inset 3px 0 0 var(--blue-text); }
+.row.done .nm { text-decoration: line-through; text-decoration-color: var(--muted); }
+.track { position: relative; height: 52px; flex: 0 0 auto; }
+.tick { position: absolute; top: 0; bottom: 0; width: 1px; background: var(--hair); }
+.axis .track { height: 30px; }
+.axis .lab { min-height: 30px; padding-block: 4px; }
+.axis .tl { position: absolute; top: 6px; font-family: var(--font-mono); font-size: 11px; color: var(--muted); transform: translateX(-50%); }
+.phase .lab { min-height: 30px; padding-block: 4px; background: var(--raised); }
+.phase .track { height: 30px; background: var(--raised); }
+.phase .nm { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; color: var(--blue-text); }
+.bar { position: absolute; top: 13px; height: 26px; background: var(--tint); border: 2px solid var(--blue); display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 12px; color: var(--ink); }
+.row.done .bar { background: var(--blue); color: var(--on-blue); }
+.row.sel .bar { outline: 2px solid var(--blue-text); outline-offset: 2px; }
+.ring { position: absolute; top: 18px; width: 16px; height: 16px; border: 2px solid var(--blue-text); border-radius: 50%; background: var(--bg); font-family: var(--font-mono); font-size: 9px; line-height: 12px; text-align: center; color: var(--ink); }
+.rev { position: absolute; top: 21px; width: 10px; height: 10px; background: var(--ink); transform: rotate(45deg); }
+.dec { position: absolute; top: 17px; width: 18px; height: 18px; background: var(--blue); transform: rotate(45deg); }
+.row.done .dec { background: var(--ink); }
+.hit { position: absolute; inset: 0; z-index: 4; background: none; border: 0; }
+.row { position: relative; }
+.row .hit { left: 0; right: 0; }
+
+.panel { border: 1px solid var(--hair); background: var(--raised); padding: 20px; display: grid; gap: 18px; }
+.panel .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+.panel ul { margin: 6px 0 0; padding-left: 20px; display: grid; gap: 4px; }
+.lbl { font-family: var(--font-mono); font-weight: 500; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue-text); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+.chip { min-height: 36px; padding: 4px 12px; border: 1px solid var(--hair); background: var(--bg); color: var(--ink); font-size: 14px; border-radius: 2px; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.note { color: var(--muted); font-size: 14px; }
+
+.design { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+.design > div { border: 1px solid var(--hair); background: var(--raised); padding: 16px; display: grid; gap: 6px; align-content: start; }
+.design p { font-size: 14px; color: var(--muted); }
+footer p { color: var(--muted); font-size: 14px; max-width: 70ch; }
+@media (max-width: 600px) { .lab { flex-basis: 150px; width: 150px; } }
+@media (prefers-reduced-motion: no-preference) { .bar, .row .lab { transition: background-color 0.2s; } }
+</style>
+
+<main>
+  <header>
+    <span class="eyebrow">Concepts Vault and Concepts Hub</span>
+    <h1>Build roadmap</h1>
+    <p>Each bar is one milestone. Its width is the number of working sessions, not calendar time. Pick a milestone to see what you provide before it starts and what you check when it ends. Choose "Do this next" to jump ahead; anything it depends on is pulled in first.</p>
+    <div class="legend" aria-label="Legend">
+      <span><i class="k-bar"></i> Planned</span>
+      <span><i class="k-done"></i> Done</span>
+      <span><i class="k-ring"></i> Number of things you provide first</span>
+      <span><i class="k-dia"></i> You review by using it on real data</span>
+    </div>
+  </header>
+
+  <section aria-labelledby="h-next">
+    <span class="eyebrow">Now</span>
+    <div class="next" id="next" aria-live="polite"></div>
+  </section>
+
+  <section aria-labelledby="h-chart">
+    <div class="toolbar">
+      <h2 id="h-chart">Build order</h2>
+      <button class="btn" id="reset" type="button">Reset order</button>
+    </div>
+    <div class="scroll"><div class="rows" id="rows"></div></div>
+    <div class="panel" id="panel" aria-live="polite"></div>
+  </section>
+
+  <section aria-labelledby="h-design">
+    <h2 id="h-design">Your work in Claude Design, alongside the build</h2>
+    <div class="design">
+      <div><span class="lbl">Before Foundation</span><h3>Add the missing components</h3><p>Paste <code>design/GAPS-PROMPT.md</code> into the design-system session and re-export to <code>design/system/</code>. Helps every screen; Foundation can start with the basics first.</p></div>
+      <div><span class="lbl">Before Accounts and Pipeline</span><h3>Vault mockups</h3><p>Run <code>design/BRIEF.md</code> for the Vault screens and export them to <code>design/</code>. Review phone and iPad first.</p></div>
+      <div><span class="lbl">Before Customer pages</span><h3>Hub mockups</h3><p>Same brief, Hub section: Contact, Builder, Library, Assistant and the customer project page.</p></div>
+    </div>
+  </section>
+
+  <footer><p>A session is one working session with Claude Code on one milestone. How long it takes on the calendar depends on how fast you review and answer. The tick and done marks are saved in this browser only.</p></footer>
+</main>
+
+<script>
+(function () {
+  var UNIT = 30, PAD = 30, TOTAL = 38;
+  var M = [
+    { id: 'foundation', phase: 'Core', name: 'Foundation', len: 3, deps: [],
+      does: 'Sign-in, the phone and iPad layout, the database, Registry numbering and the audit log, wired to the design system.',
+      you: ['Create the Cloudflare database, file storage and the vault. and hub. subdomains', 'Re-export the design system with the missing components (or start with the basics)'],
+      review: 'Sign in on your iPad. New numbers are issued and never repeat.' },
+    { id: 'pipeline', phase: 'Core', name: 'Accounts and Pipeline', len: 2, deps: ['foundation'],
+      does: 'Customers, suppliers, prospects. Leads, opportunities, next actions, won and lost with a reason.',
+      you: ['Your list of about 30 opportunities (a monday.com export is fine)', 'The fields you track on each, and your lost reasons'],
+      review: 'All 30 entered; filter and search them on your phone.' },
+    { id: 'calendar', phase: 'Core', name: 'Calendar and Today', len: 1, deps: ['pipeline'],
+      does: 'Customer and supplier visits, site measurements, installations, events and trips. The Today screen.',
+      you: ['Your visit types and how you plan a week', 'Whether you want the calendar to appear in Outlook'],
+      review: 'Plan next week\'s visits from your phone.' },
+    { id: 'projects', phase: 'Core', name: 'Projects and documents', len: 3, deps: ['pipeline'],
+      does: 'Customer and project folders from your structure, Won activates a project, a checklist per folder, uploads with revisions, Onshape and OneDrive links.',
+      you: ['The required documents for each folder', 'Confirm the folder assumptions in docs/FOLDER-STRUCTURE.md', 'Approve a Microsoft app registration so the Vault can link OneDrive'],
+      review: 'Your 6 projects entered with their documents; the completeness bar makes sense.' },
+    { id: 'schedule', phase: 'Core', name: 'Schedule (Gantt)', len: 3, deps: ['projects'],
+      does: 'Schedule items with category, dependencies, percent complete, baselines, reasons for date changes and updates per line.',
+      you: ['One real monday.com project board as an example', 'Your category list'],
+      review: 'One real project\'s schedule replaces its monday.com board, and works by touch on iPad.' },
+    { id: 'money', phase: 'Core', name: 'Money tracking', len: 2, deps: ['projects'],
+      does: 'Milestones, invoices to review and send, receivables and days overdue, payment reminders, expenses and project cost.',
+      you: ['A sample invoice and your numbering and payment terms', 'Your expense categories'],
+      review: 'You can see who has not paid and what a project cost.' },
+    { id: 'leave-monday', phase: 'Core', name: 'Leave monday.com', len: 0, deps: ['pipeline', 'calendar', 'projects', 'schedule', 'money'], decision: true,
+      does: 'A decision, not a build. Move any remaining items over and cancel the plan.',
+      you: ['Decide the cutover date after using the core on real work'],
+      review: 'You work a full week without opening monday.com.' },
+    { id: 'books', phase: 'Money and Books', name: 'Books', len: 6, deps: ['money'],
+      does: 'Chart of accounts, ledger, bills and payments, manual statement upload and monthly reconciliation, income statement, balance sheet, cash flows, equity statement, all exportable to Excel.',
+      you: ['A CPA', 'Review of the chart of accounts and your revenue recognition policy', 'QuickBooks trial balances for three years', 'Sample CSV statements for the checking account and the credit card', 'Sales tax and tax-basis answers'],
+      review: 'A month reconciles to zero, closes, and the statements match QuickBooks.' },
+    { id: 'qb', phase: 'Money and Books', name: 'Cancel QuickBooks', len: 0, deps: ['books'], decision: true,
+      does: 'A decision after a comparison period (a full year is best, a quarter is the minimum) and CPA sign-off, at a year boundary.',
+      you: ['CPA sign-off'], review: 'Comparisons agree line by line.' },
+    { id: 'customer', phase: 'Connect', name: 'Customer project pages', len: 2, deps: ['projects'],
+      does: 'Expiring links on hub.blockconceptsllc.com: released PDFs to download and upload slots for files you request.',
+      you: ['The hub. subdomain live in Cloudflare', 'One friendly customer to test with', 'The wording on the page'],
+      review: 'A customer downloads a PDF and uploads a file with no account.' },
+    { id: 'email', phase: 'Connect', name: 'Agent email', len: 2, deps: ['foundation'],
+      does: 'A separate address that files newsletters as knowledge, proposes invoices and POs for the right project, and attaches customer replies.',
+      you: ['The agent address and mailbox type', 'DNS changes for the mail subdomain', 'Set up forwarding for newsletters'],
+      review: 'A forwarded newsletter becomes a knowledge item; an invoice is proposed for the right project.' },
+    { id: 'sourcing', phase: 'Connect', name: 'Sourcing and Knowledge', len: 2, deps: ['projects'],
+      does: 'Per-project supplier list with quotes, and a knowledge base for research, articles and trip plans linked to accounts and events.',
+      you: ['A few real research notes, articles or trip plans to start with'],
+      review: 'A trip plan with its visits, and a supplier quote filed to a project.' },
+    { id: 'assistant', phase: 'Assistant', name: 'Vault Assistant', len: 3, deps: ['foundation'],
+      does: 'Search and answers across your records with citations, drafts that you confirm, a spend meter, and the Claude section: configurations, glossaries and standard works.',
+      you: ['An Anthropic API key and the $20 monthly cap', 'Drafts of your standard works and a starter glossary'],
+      review: 'Ask across opportunities, projects and documents and get cited answers. Works best after Projects and Knowledge.' },
+    { id: 'contact', phase: 'Public tools', name: 'Contact form', len: 1, deps: ['pipeline'],
+      does: 'A contact form that creates a lead in your inbox. The only change to the live website.',
+      you: ['Approve where the form lives (Hub or the main site)', 'Updated privacy text (counsel review)'],
+      review: 'A test inquiry arrives as a new lead.' },
+    { id: 'builder', phase: 'Public tools', name: 'Builder', len: 3, deps: ['pipeline'],
+      does: 'Stations in, a PDF drawing set and a Word process document out. Used from an opportunity first, public later.',
+      you: ['The station type catalog', 'The 7332 example as test data', 'Decision: free preview only at first, or paid tiers and a payment provider'],
+      review: 'A process document for a real opportunity, as PDF sheets and Word.' },
+    { id: 'library', phase: 'Public tools', name: 'Library and pages', len: 2, deps: ['projects', 'customer'],
+      does: 'Customer-ready PDFs published to the Hub, plus the Process page.',
+      you: ['Which documents to publish', 'The content for the Process page'],
+      review: 'A public visitor downloads a published PDF.' },
+    { id: 'pubassistant', phase: 'Public tools', name: 'Public Assistant and Hub link', len: 1, deps: ['assistant', 'contact'],
+      does: 'A limited public chat that sees only published content, and the Hub link in the website navigation.',
+      you: ['Approve the public prompt and spend cap', 'Approve the website navigation change'],
+      review: 'Adversarial questions get no private data.' },
+    { id: 'cgmp', phase: 'Public tools', name: 'cGMP package', len: 1, deps: ['projects'],
+      does: 'An optional template that adds a cGMP Package folder and its checklist to a project.',
+      you: ['The list of documents you supply for cGMP customers'],
+      review: 'A flagged project shows the package and its checklist.' }
+  ];
+  var BY = {}; M.forEach(function (m) { BY[m.id] = m; });
+  var DEFAULT = ['foundation','pipeline','calendar','projects','schedule','money','leave-monday','books','qb','customer','email','sourcing','assistant','contact','builder','library','pubassistant','cgmp'];
+  var state = { order: DEFAULT.slice(), done: {}, sel: 'foundation' };
+  var KEY = 'bc-roadmap-v1';
+  try { var s = JSON.parse(localStorage.getItem(KEY) || 'null'); if (s && s.order && s.order.length === DEFAULT.length) { state.order = s.order; state.done = s.done || {}; } } catch (e) {}
+  function save() { try { localStorage.setItem(KEY, JSON.stringify({ order: state.order, done: state.done })); } catch (e) {} }
+
+  function unlocks(id) { return M.filter(function (m) { return m.deps.indexOf(id) > -1; }); }
+  function need(id, acc) { BY[id].deps.forEach(function (d) { if (!state.done[d] && !acc[d]) { acc[d] = true; need(d, acc); } }); return acc; }
+  function doNext(id) {
+    var n = need(id, {}); n[id] = true;
+    var doneFirst = state.order.filter(function (x) { return state.done[x] && !n[x]; });
+    var pulled = state.order.filter(function (x) { return n[x] && x !== id; }).concat([id]);
+    var rest = state.order.filter(function (x) { return !state.done[x] && !n[x]; });
+    state.order = doneFirst.concat(pulled, rest);
+    var count = pulled.length - 1;
+    state.note = count > 0 ? ('Pulled ' + count + ' prerequisite' + (count > 1 ? 's' : '') + ' in ahead of ' + BY[id].name + '.') : (BY[id].name + ' has no unfinished prerequisites and moves to the front.');
+    save(); render();
+  }
+  function el(id) { return document.getElementById(id); }
+  function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function list(a) { return '<ul>' + a.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>'; }
+
+  function render() {
+    var pos = {}, run = 0;
+    state.order.forEach(function (id) { pos[id] = run; run += BY[id].len; });
+    var width = PAD + TOTAL * UNIT + 20;
+    var html = '<div class="row axis"><div class="lab"><span class="sz">Working sessions</span></div><div class="track" style="width:' + width + 'px">';
+    for (var t = 0; t <= TOTAL; t += 5) html += '<span class="tick" style="left:' + (PAD + t * UNIT) + 'px"></span><span class="tl" style="left:' + (PAD + t * UNIT) + 'px">' + t + '</span>';
+    html += '</div></div>';
+    var lastPhase = null, deps = state.sel ? BY[state.sel].deps : [];
+    state.order.forEach(function (id) {
+      var m = BY[id];
+      if (m.phase !== lastPhase) { lastPhase = m.phase; html += '<div class="row phase"><div class="lab"><span class="nm">' + esc(m.phase) + '</span></div><div class="track" style="width:' + width + 'px"></div></div>'; }
+      var cls = 'row' + (state.done[id] ? ' done' : '') + (state.sel === id ? ' sel' : '') + (deps.indexOf(id) > -1 ? ' dep' : '');
+      var left = PAD + pos[id] * UNIT;
+      html += '<div class="' + cls + '"><div class="lab"><span class="nm">' + esc(m.name) + '</span><span class="sz">' + (m.decision ? 'Decision' : m.len + (m.len === 1 ? ' session' : ' sessions')) + '</span></div><div class="track" style="width:' + width + 'px">';
+      for (var k = 0; k <= TOTAL; k += 5) html += '<span class="tick" style="left:' + (PAD + k * UNIT) + 'px"></span>';
+      if (m.decision) { html += '<span class="dec" style="left:' + (left - 9) + 'px"></span>'; }
+      else {
+        html += '<span class="ring" style="left:' + (left - 22) + 'px" title="' + m.you.length + ' to provide first">' + m.you.length + '</span>';
+        html += '<span class="bar" style="left:' + left + 'px;width:' + (m.len * UNIT) + 'px">' + (state.done[id] ? '&#10003;' : m.len) + '</span>';
+        html += '<span class="rev" style="left:' + (left + m.len * UNIT + 8) + 'px"></span>';
+      }
+      html += '</div><button type="button" class="hit" data-id="' + id + '" aria-pressed="' + (state.sel === id) + '" aria-label="' + esc(m.name) + ', ' + (m.decision ? 'decision' : m.len + ' sessions') + (state.done[id] ? ', done' : '') + '"></button></div>';
+    });
+    el('rows').innerHTML = html;
+    var next = state.order.filter(function (id) { return !state.done[id] && !BY[id].decision; })[0];
+    el('next').innerHTML = next ? ('<h2 id="h-next">Next up: ' + esc(BY[next].name) + '</h2><p class="muted">' + esc(BY[next].does) + '</p><div class="lbl">Needed from you first</div>' + list(BY[next].you)) : '<h2 id="h-next">Every milestone is done</h2>';
+    panel();
+  }
+  function panel() {
+    var id = state.sel; if (!id) { el('panel').innerHTML = ''; return; }
+    var m = BY[id], u = unlocks(id);
+    var chip = function (x) { return '<button type="button" class="chip" data-id="' + x + '">' + esc(BY[x].name) + (state.done[x] ? ' (done)' : '') + '</button>'; };
+    var h = '<div><span class="lbl">' + esc(m.phase) + '</span><h2>' + esc(m.name) + '</h2><p class="note">' + esc(m.does) + '</p></div><div class="cols"><div><span class="lbl">You provide first</span>' + list(m.you) + '</div><div><span class="lbl">You review by</span><p style="margin-top:6px">' + esc(m.review) + '</p></div></div><div class="cols"><div><span class="lbl">Depends on</span><div class="chips">' + (m.deps.length ? m.deps.map(chip).join('') : '<span class="note">Nothing</span>') + '</div></div><div><span class="lbl">Unlocks</span><div class="chips">' + (u.length ? u.map(function (x) { return chip(x.id); }).join('') : '<span class="note">Nothing</span>') + '</div></div></div><div class="actions"><button class="btn primary" type="button" id="go">Do this next</button><button class="btn" type="button" id="dn">' + (state.done[id] ? 'Mark not done' : 'Mark done') + '</button></div>' + (state.note ? '<p class="note">' + esc(state.note) + '</p>' : '');
+    el('panel').innerHTML = h;
+    el('go').onclick = function () { doNext(id); };
+    el('dn').onclick = function () { state.done[id] = !state.done[id]; state.note = ''; save(); render(); };
+  }
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest ? e.target.closest('[data-id]') : null;
+    if (b) { state.sel = b.getAttribute('data-id'); state.note = ''; render(); }
+  });
+  el('reset').onclick = function () { state.order = DEFAULT.slice(); state.note = 'Order reset to the default.'; save(); render(); };
+  render();
+})();
+</script>

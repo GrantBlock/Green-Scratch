@@ -22,14 +22,8 @@ The step-by-step plan is `PLAN.md`. Work from it, and tick items off as they fin
 - Folders: customers and projects use the structure in `docs/FOLDER-STRUCTURE.md`, including the `Claude` folders (configuration, glossary, standard works). Those folders hold instructions for the assistant: never serve them from the Hub, never copy untrusted text into them.
 - Money: store amounts as integer cents, never floats. Every money record carries its customer or supplier and, where it applies, its project, so the Books module can be added later without reworking the data. See `docs/BOOKS.md`.
 - Records are defined only in `spec/data-model.md`. Do not invent a record type in a tool.
-- The Vault assistant proposes and Grant confirms; it never sends, files or deletes on its own. The public Ask this agent must never reach Vault data.
+- The Vault assistant proposes and Grant confirms; it never sends, files or deletes on its own. The public Assistant must never reach Vault data.
 
-## Suggested build order (earlier plan; the current slices are in `PLAN.md`, Phase 3)
+## Build order
 
-1. Shared tokens and site shell (nav, Fix this layout).
-2. Static pages: Home, Who this, Develop this.
-3. Grab this (public four-zone portal) reading a sample data file.
-4. Vault shell: login, tab bar, Registry.
-5. Vault Releases (authoring form) and Log List.
-6. Give this form wired to Log List.
-7. Customers, Update List, Archive, Settings plus Apply (Git publish).
+The current milestones and their order are in `PLAN.md` and visualized in `docs/roadmap.html` (a reorderable timeline: each milestone lists what Grant provides first and what he reviews). Grant may go out of order; pull in the milestone's prerequisites first.

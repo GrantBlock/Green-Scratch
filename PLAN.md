@@ -2,6 +2,8 @@
 
 Built workflow-first from `docs/WORKFLOW.md`, outward from the live website (`docs/RESET.md`). Records: `spec/data-model.md`. Concept and reasons: `docs/PLATFORM-CONCEPT.md`. Branding: `design/system/`.
 
+**Timeline:** `docs/roadmap.html` shows the milestones as a reorderable chart, with what you provide before each and what you review after.
+
 **Legend:** 🧑 Grant · 🎨 Claude Design · 💻 Claude Code
 
 ---
