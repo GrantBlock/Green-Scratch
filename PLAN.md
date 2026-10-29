@@ -61,8 +61,8 @@ Starts as soon as slices 1, 2, 4 and 6 exist (target January 2027). Details and 
 |---|---|---|
 | B1 | Chart of accounts, ledger, journal entries, period locking, trial balance | Unbalanced entries are rejected; closed months are locked |
 | B2 | Invoices, bills, expenses, payments post to the ledger; A/R and A/P aging | An invoice and its payment appear correctly in the ledger |
-| B3 | Bank and card import, matching, monthly reconciliation | A month reconciles to the statement |
-| B4 | Categorized P&L (income statement), balance sheet, cash flow, P&L by project, accountant and tax exports | Reports match known test cases |
+| B3 | Manual statement upload (CSV, OFX, QFX), matching, monthly reconciliation to zero | A month reconciles to the statement and closes |
+| B4 | Income statement, balance sheet, cash flows, equity statement, P&L by project, aging, ledger; every report exports to Excel | Reports match known test cases and open cleanly in Excel |
 | B5 | The 2027 parallel year beside QuickBooks, monthly and quarterly comparison, CPA review, then cutover on Jan 1, 2028 | Reports agree line by line; you cancel QuickBooks |
 
 ## Phase 3. Connect (💻)

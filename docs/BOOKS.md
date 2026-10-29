@@ -14,15 +14,21 @@ Build the part Grant uses, not all of QuickBooks.
 - **Bills and expenses** from suppliers and receipts (including those forwarded to the agent email), with A/P aging.
 - **Payments** applied to invoices and bills.
 - **Bank and credit-card transactions** imported from statement files, matched and reconciled.
-- **Reports:** categorized P&L (income statement), by month, quarter, year and **by project**; balance sheet; cash flow; A/R and A/P aging; general ledger and trial balance.
+- **Full financial statements** (Grant's requirement: everything in GAAP):
+  - **Income statement (P&L)**, categorized, by month, quarter and year, and **by project**
+  - **Balance sheet**
+  - **Statement of cash flows** (indirect method)
+  - **Statement of members' or owner's equity** (contributions, distributions, net income)
+  - **Notes:** a text area per period for the notes and policies the accountant supplies; the app does not write accounting disclosures
+- **Supporting reports:** A/R and A/P aging, general ledger, trial balance, reconciliation report.
 - **Period close and locking,** so past months cannot change by accident.
-- **Exports** for the accountant and the tax return: ledger, trial balance, and category totals mapped to tax lines.
+- **Excel exports for every report** (Grant's accountant wants everything in Excel). Each is a formatted `.xlsx` file with a header (company, report, period, basis, date generated), and the underlying rows so the accountant can re-total them. The general ledger and trial balance also export as CSV. Category totals are mapped to tax lines for the tax return.
 
 **Out of scope for now**
 
 - Payroll (use a payroll provider and post its summary).
 - Tax filing (keep TurboTax or the accountant; the app supplies tax-ready category totals).
-- Automatic bank feeds (a paid third-party service; file import comes first).
+- Automatic bank feeds (decided: not needed; Grant uploads statement files by hand and reconciles every month).
 - Inventory, multi-currency, multi-entity, and the rest of QuickBooks.
 
 ## 2. Why this fits the app better than QuickBooks
@@ -82,19 +88,31 @@ Savings from QuickBooks start in 2028. In the meantime, check whether a cheaper 
 |---|---|
 | B1 | Chart of accounts, ledger, journal entries, period locking, trial balance |
 | B2 | Invoices, bills, expenses and payments post to the ledger; A/R and A/P aging |
-| B3 | Bank and card import, matching, monthly reconciliation |
-| B4 | Reports: categorized P&L (income statement), balance sheet, cash flow, P&L by project; accountant and tax exports |
+| B3 | Manual statement upload (CSV, OFX or QFX) with a saved column mapping per account, duplicate detection, matching, and a monthly reconciliation that must reach a zero difference before the month can close |
+| B4 | Income statement, balance sheet, statement of cash flows, statement of equity, P&L by project, aging, ledger and trial balance, all exportable to Excel; tax-line mapping |
 | B5 | The 2027 parallel year: monthly and quarterly comparison, CPA review, then the January 2028 cutover |
 
 B1, B2 and B4 come first because they produce the P&L; B3 follows in the first quarter.
 
-## 7. Questions that decide the details
+## 7. Decisions made
+
+- Full GAAP statement set (income statement, balance sheet, cash flows, equity), plus aging and profit by project.
+- Every report exports to Excel for the accountant.
+- Bank and card data come from statement files uploaded by hand, reconciled every month. No bank feeds.
+- A month closes only after it is reconciled to a zero difference.
+
+Notes on these:
+
+- **Cash flow statement** needs each ledger account tagged Operating, Investing, Financing or Cash. That tagging is set up once with the accountant.
+- **Statement files:** most banks offer CSV or OFX/QFX downloads. If a bank offers only PDF statements, tell me, because PDFs cannot be imported reliably.
+- **Disclosures** (notes) and the revenue recognition policy come from the accountant.
+
+## 8. Questions that decide the details
 
 1. **Who needs GAAP?** A lender, a customer, an investor, an auditor, or is it good practice? This sets how strict the policy must be.
 2. **Accrual or cash** for the books, and which for tax?
 3. **Entity and tax return:** single-member LLC (Schedule C), partnership, or S-corp? This sets the tax mapping of categories.
 4. **Employees or payroll?** Sales tax to collect and file?
-5. **Reports wanted:** income statement (P&L) is the same document as the profit and loss statement. Do you also want the balance sheet, cash flow, aging and profit by project?
-6. **Bank and card accounts:** how many, and how do customers pay (check, ACH, card)?
-7. **A CPA or bookkeeper** who will review the setup and the first closed period?
-8. **QuickBooks history:** how many years to bring over, and what cutover date?
+5. **Bank and card accounts:** how many, and how do customers pay (check, ACH, card)?
+6. **A CPA or bookkeeper** who will review the setup and the first closed period?
+7. **QuickBooks history:** how many years to bring over, and what cutover date?

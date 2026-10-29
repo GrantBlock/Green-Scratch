@@ -99,13 +99,14 @@ An opportunity that was won. Number: the same `YYNNN` digits as its Q.
 
 Defined in `docs/BOOKS.md`. Name note: the customer-side record is an **Account**; the accounting record is a **Ledger account**.
 
-- **Ledger account:** code, name, type (Asset, Liability, Equity, Revenue, Expense), category, tax-line mapping, active flag.
+- **Ledger account:** code, name, type (Asset, Liability, Equity, Revenue, Expense), category, **cash-flow class** (Operating, Investing, Financing, Cash), tax-line mapping, active flag.
 - **Journal entry:** date, memo, source record (Invoice, Bill, Payment, Expense, Bank transaction, manual), status (Posted, Reversed), period. Has **lines**: ledger account, debit or credit amount, optional Project and Account (customer or supplier). Debits must equal credits.
 - **Bill:** supplier (an Account), number, lines, amount, dates, status (Open, Paid), Document, optional Project. Posts to the ledger.
 - **Payment:** direction (received or paid), amount, date, method, applied to Invoices or Bills.
-- **Bank account and Bank transaction:** imported from statement files; matched to Payments, Expenses or manual entries; reconciled per month.
+- **Bank account and Bank transaction:** imported by manual upload of statement files (CSV, OFX, QFX) with a saved column mapping per account; duplicates detected; matched to Payments, Expenses or manual entries.
+- **Reconciliation:** per bank account and month: statement ending balance, cleared items, difference. A month can close only at a zero difference. Exportable to Excel.
 - **Period:** month, status (Open, Closed). Closed periods reject posting until reopened with a logged reason.
-- **Reports** are computed from posted entries only: categorized P&L (income statement), balance sheet, cash flow, A/R and A/P aging, general ledger, trial balance, and P&L by project.
+- **Reports** are computed from posted entries only: income statement (P&L), balance sheet, statement of cash flows, statement of members' or owner's equity, A/R and A/P aging, general ledger, trial balance, reconciliation report, and P&L by project. Every report exports to Excel (`.xlsx`). A period can hold accountant-supplied **notes** text.
 - Entries are never edited or deleted; a reversing entry corrects a mistake.
 
 #### Additional Prompt: Document (`BC-D`)
