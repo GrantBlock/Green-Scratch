@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BC Quoting Process Map</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', sans-serif; background: #f4f6f9; padding: 32px; color: #1a2332; }
+  h1 { font-size: 18px; font-weight: 700; color: #1a2332; margin-bottom: 4px; }
+  .subtitle { font-size: 13px; color: #5a6a7e; margin-bottom: 28px; }
+
+  .legend { display: flex; gap: 20px; margin-bottom: 28px; flex-wrap: wrap; }
+  .legend-item { display: flex; align-items: center; gap: 7px; font-size: 12px; color: #444; }
+  .legend-dot { width: 14px; height: 14px; border-radius: 3px; flex-shrink: 0; }
+  .dot-manual { background: #dbe4f0; border: 2px solid #7a9cc0; }
+  .dot-mcp { background: #d4edda; border: 2px solid #28a745; }
+  .dot-auto { background: #fff3cd; border: 2px solid #f0a500; }
+  .dot-tool { background: #e8d5f5; border: 2px solid #8b5cf6; }
+
+  .flow { display: flex; flex-direction: column; gap: 0; }
+
+  .stage { display: flex; align-items: stretch; gap: 0; margin-bottom: 0; }
+
+  .stage-left {
+    width: 180px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 14px 16px;
+    border-radius: 8px 0 0 8px;
+    border: 1.5px solid transparent;
+    border-right: none;
+  }
+  .stage-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.6; margin-bottom: 3px; }
+  .stage-name { font-size: 13px; font-weight: 700; line-height: 1.3; }
+
+  .stage-body {
+    flex: 1;
+    padding: 14px 18px;
+    border-radius: 0 8px 8px 0;
+    border: 1.5px solid transparent;
+    border-left: none;
+    display: flex;
+    gap: 24px;
+  }
+
+  .stage-col { flex: 1; }
+  .col-title { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #5a6a7e; margin-bottom: 6px; }
+  .step { font-size: 12px; color: #2c3e50; padding: 4px 0; display: flex; align-items: flex-start; gap: 6px; line-height: 1.4; }
+  .step::before { content: '•'; color: #7a9cc0; flex-shrink: 0; margin-top: 1px; }
+  .step.mcp::before { content: '⚡'; color: #28a745; }
+  .step.auto::before { content: '🔁'; color: #f0a500; }
+
+  .mcp-tag {
+    display: inline-block;
+    background: #d4edda;
+    color: #155724;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 3px;
+    margin-left: 4px;
+    vertical-align: middle;
+  }
+  .auto-tag {
+    display: inline-block;
+    background: #fff3cd;
+    color: #856404;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 3px;
+    margin-left: 4px;
+    vertical-align: middle;
+  }
+
+  /* Stage colors */
+  .s-intake .stage-left  { background: #dbe4f0; border-color: #7a9cc0; }
+  .s-intake .stage-body  { background: #eef2f8; border-color: #7a9cc0; }
+
+  .s-number .stage-left  { background: #fde8d8; border-color: #e07830; }
+  .s-number .stage-body  { background: #fef4ee; border-color: #e07830; }
+
+  .s-scope .stage-left   { background: #dff0d8; border-color: #5cb85c; }
+  .s-scope .stage-body   { background: #eef8ee; border-color: #5cb85c; }
+
+  .s-price .stage-left   { background: #d9edf7; border-color: #31b0d5; }
+  .s-price .stage-body   { background: #edf7fc; border-color: #31b0d5; }
+
+  .s-doc .stage-left     { background: #e8d5f5; border-color: #8b5cf6; }
+  .s-doc .stage-body     { background: #f3ebfc; border-color: #8b5cf6; }
+
+  .s-review .stage-left  { background: #fff3cd; border-color: #f0a500; }
+  .s-review .stage-body  { background: #fffaec; border-color: #f0a500; }
+
+  .s-send .stage-left    { background: #d4edda; border-color: #28a745; }
+  .s-send .stage-body    { background: #edf8f0; border-color: #28a745; }
+
+  .s-track .stage-left   { background: #f5d5d5; border-color: #c0392b; }
+  .s-track .stage-body   { background: #fdf0f0; border-color: #c0392b; }
+
+  /* Connector arrow between stages */
+  .arrow {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 90px;
+    height: 20px;
+    color: #aab4c0;
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  .time-save {
+    margin-top: 28px;
+    background: #1a2332;
+    color: #fff;
+    border-radius: 10px;
+    padding: 18px 22px;
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .ts-item { flex: 1; min-width: 160px; }
+  .ts-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: #8899aa; margin-bottom: 4px; }
+  .ts-value { font-size: 22px; font-weight: 700; color: #4db86a; }
+  .ts-desc { font-size: 12px; color: #aab4c0; margin-top: 2px; }
+
+  .divider { border: none; border-top: 1.5px dashed #c8d4e0; margin: 2px 0; }
+</style>
+</head>
+<body>
+
+<h1>Block Concepts — Quote Generation Process Map</h1>
+<p class="subtitle">Current state vs. MCP-assisted state · BC-Q-YYNNN workflow</p>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot dot-manual"></div> Manual today</div>
+  <div class="legend-item"><div class="legend-dot dot-mcp"></div> ⚡ MCP can assist</div>
+  <div class="legend-item"><div class="legend-dot dot-auto"></div> 🔁 Already automated / Python</div>
+  <div class="legend-item"><div class="legend-dot dot-tool"></div> Document output</div>
+</div>
+
+<div class="flow">
+
+  <!-- Stage 1 -->
+  <div class="stage s-intake">
+    <div class="stage-left">
+      <div class="stage-label">Stage 1</div>
+      <div class="stage-name">Lead &amp; Job Intake</div>
+    </div>
+    <div class="stage-body">
+      <div class="stage-col">
+        <div class="col-title">Today (manual)</div>
+        <div class="step">Customer contacts you via email or phone</div>
+        <div class="step">You manually create a monday.com item in Sales board</div>
+        <div class="step">Enter customer name, contact, job description by hand</div>
+      </div>
+      <div class="stage-col">
+        <div class="col-title">With MCP</div>
+        <div class="step mcp">Tell Claude the job details in chat <span class="mcp-tag">MCP</span></div>
+        <div class="step mcp">Claude creates the monday.com item, populates fields <span class="mcp-tag">monday MCP</span></div>
+        <div class="step mcp">Existing customer pulled from Drive/monday — no re-entry <span class="mcp-tag">Drive MCP</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="arrow">↓</div>
+
+  <!-- Stage 2 -->
+  <div class="stage s-number">
+    <div class="stage-left">
+      <div class="stage-label">Stage 2</div>
+      <div class="stage-name">Document Numbering</div>
+    </div>
+    <div class="stage-body">
+      <div class="stage-col">
+        <div class="col-title">Today (manual)</div>
+        <div class="step">Look up last BC-Q number used in folder or log</div>
+        <div class="step">Manually increment: BC-Q-26014 → BC-Q-26015</div>
+        <div class="step">Risk of duplicates across concurrent quotes</div>
+      </div>
+      <div class="stage-col">
+        <div class="col-title">With MCP</div>
+        <div class="step mcp">Claude scans Drive quote folder, finds highest BC-Q number <span class="mcp-tag">Drive MCP</span></div>
+        <div class="step mcp">Auto-assigns next number, confirms with you before proceeding <span class="mcp-tag">MCP</span></div>
+        <div class="step mcp">Number logged to monday item simultaneously <span class="mcp-tag">monday MCP</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="arrow">↓</div>
+
+  <!-- Stage 3 -->
+  <div class="stage s-scope">
+    <div class="stage-left">
+      <div class="stage-label">Stage 3</div>
+      <div class="stage-name">Scope Definition</div>
+    </div>
+    <div class="stage-body">
+      <div class="stage-col">
+        <div class="col-title">Today (manual)</div>
+        <div class="step">Define equipment list, conveyor type, length, sections</div>
+        <div class="step">Pull similar past quote for reference manually</div>
+        <div class="step">Build scope narrative from scratch or copy-edit old one</div>
+      </div>
+      <div class="stage-col">
+        <div class="col-title">With MCP</div>
+        <div class="step mcp">Claude pulls most similar past quote from Drive as reference <span class="mcp-tag">Drive MCP</span></div>
+        <div class="step mcp">You describe scope in chat; Claude drafts scope narrative from your description</div>
+        <div class="step mcp">Equipment list structured for JSON hand-off to generate_quote.py <span class="mcp-tag">MCP</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="arrow">↓</div>
+
+  <!-- Stage 4 -->
+  <div class="stage s-price">
+    <div class="stage-left">
+      <div class="stage-label">Stage 4</div>
+      <div class="stage-name">Pricing &amp; Line Items</div>
+    </div>
+    <div class="stage-body">
+      <div class="stage-col">
+        <div class="col-title">Today (manual)</div>
+        <div class="step">Build pricing in Excel or manually in Word template</div>
+        <div class="step">Check vendor pricing, apply margins manually</div>
+        <div class="step">60/30/10 milestone split calculated by hand</div>
+      </div>
+      <div class="stage-col">
+        <div class="col-title">With MCP</div>
+        <div class="step mcp">Claude assembles JSON pricing input from your line items in chat</div>
+        <div class="step auto">generate_quote.py ingests JSON → fills Word template SDT fields <span class="auto-tag">Python</span></div>
+        <div class="step auto">60/30/10 split auto-calculated and inserted <span class="auto-tag">Python</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="arrow">↓</div>
+
+  <!-- Stage 5 -->
+  <div class="stage s-doc">
+    <div class="stage-left">
+      <div class="stage-label">Stage 5</div>
+      <div class="stage-name">Document Generation</div>
+    </div>
+    <div class="stage-body">
+      <div class="stage-col">
+        <div class="col-title">Today (manual/semi-auto)</div>
+        <div class="step auto">Run generate_quote.py with JSON → Word doc output <span class="auto-tag">Python</span></div>
+        <div class="step">Manually rename file to BC-Q-YYNNN format</div>
+        <div class="step">Save to correct Drive folder manually</div>
+      </div>
+      <div class="stage-col">
+        <div class="col-title">With MCP</div>
+        <div class="step auto">Python script runs same as today <span class="auto-tag">Python</span></div>
+        <div class="step mcp">Claude saves output to correct Drive folder with proper BC-Q filename <span class="mcp-tag">Drive MCP</span></div>
+        <div class="step mcp">monday item updated: "Quote Draft" status + Drive link attached <span class="mcp-tag">monday MCP</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="arrow">↓</div>
+
+  <!-- Stage 6 -->
+  <div class="stage s-review">
+    <div class="stage-left">
+      <div class="stage-label">Stage 6</div>
+      <div class="stage-name">Review &amp; Approval</div>
+    </div>
+    <div class="stage-body">
+      <div class="stage-col">
+        <div class="col-title">Today (manual)</div>
+        <div class="step">Open Word doc, proofread manually</div>
+        <div class="step">Make edits directly in Word</div>
+        <div class="step">No formal checklist — relies on memory</div>
+      </div>
+      <div class="stage-col">
+        <div class="col-title">With MCP</div>
+        <div class="step mcp">Claude reads back the quote from Drive, runs a checklist review <span class="mcp-tag">Drive MCP</span></div>
+        <div class="step">You approve or request edits in chat</div>
+        <div class="step mcp">Edits regenerated via Python → Drive updated <span class="mcp-tag">MCP + Python</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="arrow">↓</div>
+
+  <!-- Stage 7 -->
+  <div class="stage s-send">
+    <div class="stage-left">
+      <div class="stage-label">Stage 7</div>
+      <div class="stage-name">Send to Customer</div>
+    </div>
+    <div class="stage-body">
+      <div class="stage-col">
+        <div class="col-title">Today (manual)</div>
+        <div class="step">Export Word → PDF manually</div>
+        <div class="step">Write email from scratch, attach PDF</div>
+        <div class="step">Send from Gmail</div>
+      </div>
+      <div class="stage-col">
+        <div class="col-title">With MCP</div>
+        <div class="step mcp">Claude drafts cover email with quote summary in chat</div>
+        <div class="step mcp">You review, then Claude sends via Gmail MCP <span class="mcp-tag">Gmail MCP</span></div>
+        <div class="step mcp">monday item moved to "Quote Sent" + sent date logged <span class="mcp-tag">monday MCP</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="arrow">↓</div>
+
+  <!-- Stage 8 -->
+  <div class="stage s-track">
+    <div class="stage-left">
+      <div class="stage-label">Stage 8</div>
+      <div class="stage-name">Follow-up &amp; Tracking</div>
+    </div>
+    <div class="stage-body">
+      <div class="stage-col">
+        <div class="col-title">Today (manual)</div>
+        <div class="step">Mental reminder or calendar note to follow up</div>
+        <div class="step">Check email thread manually for customer response</div>
+        <div class="step">Update monday item manually when status changes</div>
+      </div>
+      <div class="stage-col">
+        <div class="col-title">With MCP</div>
+        <div class="step mcp">monday automation triggers follow-up reminder at day 5/10 <span class="mcp-tag">monday MCP</span></div>
+        <div class="step mcp">Claude checks Gmail thread for response on demand <span class="mcp-tag">Gmail MCP</span></div>
+        <div class="step mcp">Status updates (Won/Lost/Pending) updated in monday via chat <span class="mcp-tag">monday MCP</span></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="time-save">
+  <div class="ts-item">
+    <div class="ts-label">Biggest win</div>
+    <div class="ts-value">Stages 1–2</div>
+    <div class="ts-desc">Intake + numbering — pure repetitive overhead today</div>
+  </div>
+  <div class="ts-item">
+    <div class="ts-label">Already automated</div>
+    <div class="ts-value">Stage 4–5</div>
+    <div class="ts-desc">generate_quote.py already handles JSON → Word</div>
+  </div>
+  <div class="ts-item">
+    <div class="ts-label">Easiest to start</div>
+    <div class="ts-value">Stage 7–8</div>
+    <div class="ts-desc">Gmail + monday already connected — zero new setup</div>
+  </div>
+  <div class="ts-item">
+    <div class="ts-label">MCPs needed</div>
+    <div class="ts-value">3</div>
+    <div class="ts-desc">Google Drive · monday.com · Gmail</div>
+  </div>
+</div>
+
+</body>
+</html>

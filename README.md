@@ -13,6 +13,7 @@ The Apply/publish step (Git-based) joins the two.
 |---|---|
 | `spec/` | Source of truth for what to build. Start with `spec/system-architecture.md`. |
 | `design/` | Claude Design output (design system export, mockups) and the design brief. |
+| `reference/` | Business plan, quoting process map and the existing numbering system and registers. Inputs to the spec; see `reference/README.md` for open conflicts. |
 | `CLAUDE.md` | The working agreement for Claude Code in this repo. |
 
 Build, deploy and stack choice are still open (see `CLAUDE.md`).
