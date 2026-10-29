@@ -1,0 +1,24 @@
+{
+  "name": "@bc/core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Business logic for the Vault and the Hub, written once against a Store. The mock server and the real Cloudflare server both run it.",
+  "exports": {
+    ".": "./src/index.ts",
+    "./testing": "./src/testing/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "node --test \"test/*.test.ts\"",
+    "mock": "node mock/server.ts"
+  },
+  "dependencies": {
+    "@bc/contract": "*",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.9.0"
+  }
+}

@@ -2,7 +2,7 @@
 
 How the Concepts Vault, the Concepts Hub, the Assistant and the tests talk to each other. The records are defined in `data-model.md`; this file is the rules and the routes. The code lives in `packages/contract` and is the source of truth: if this page and the code disagree, the code wins and this page is regenerated.
 
-Status: **C0, first version.** The mock server in `packages/contract/mock` implements every route here.
+Status: **C0, first version.** The mock server in `packages/core` (`npm run mock`) implements every route here, running the same business logic as the real server.
 
 ---
 
@@ -43,6 +43,7 @@ Status code, then `{ "error": { "code", "message", "fields"? } }`. Messages are 
 | `conflict` | 409 | Stale version, a number already used, or a duplicate action |
 | `locked` | 409 | A Released document was edited directly |
 | `invalid_transition` | 409 | That state change is not allowed (see `states.ts`) |
+| `unauthorized` | 401 | Not signed in to the Vault |
 | `forbidden` | 403 / 405 | The link or method does not allow that |
 | `expired`, `revoked` | 410 | A customer link has expired or been revoked |
 

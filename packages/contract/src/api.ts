@@ -11,7 +11,7 @@ import { ContactReceipt, ContactSubmission, LibraryIndex, PublicLibraryEntry, Sh
 export const API_BASE = '/api/v1';
 
 export const ErrorCode = z.enum([
-  'validation_failed', 'not_found', 'conflict', 'locked', 'invalid_transition', 'forbidden', 'rate_limited', 'expired', 'revoked',
+  'validation_failed', 'not_found', 'conflict', 'locked', 'invalid_transition', 'forbidden', 'unauthorized', 'rate_limited', 'expired', 'revoked',
 ]);
 export const ApiError = z.object({
   error: z.object({ code: ErrorCode, message: z.string(), fields: z.record(z.string(), z.string()).optional() }),
@@ -58,10 +58,11 @@ export type ResourceKey = keyof typeof resources;
 const SERVER_FIELDS = { id: true, version: true, createdAt: true, updatedAt: true, number: true, type: true } as const;
 
 /** Body for creating a record: the record without server fields; `archived` and `tags` optional. */
+const EXTRA_SERVER_FIELDS: Partial<Record<ResourceKey, string[]>> = { activity: ['actor', 'at'] };
 export function createInputSchema(key: ResourceKey): z.ZodType {
   const base = schemas[key] as unknown as z.ZodObject<z.ZodRawShape>;
   const mask: Record<string, true> = {};
-  for (const k of Object.keys(SERVER_FIELDS)) if (k in base.shape) mask[k] = true;
+  for (const k of [...Object.keys(SERVER_FIELDS), ...(EXTRA_SERVER_FIELDS[key] ?? [])]) if (k in base.shape) mask[k] = true;
   return base.omit(mask).partial({ archived: true, tags: true } as never);
 }
 /** Body for updating: any editable field, plus the `version` the client last saw (optimistic concurrency). */

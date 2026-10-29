@@ -11,7 +11,6 @@
   "scripts": {
     "typecheck": "tsc --noEmit",
     "test": "node --test \"test/*.test.ts\"",
-    "mock": "node mock/server.ts",
     "docs": "node scripts/gen-docs.ts",
     "fixtures:json": "node scripts/emit-fixtures.ts"
   },

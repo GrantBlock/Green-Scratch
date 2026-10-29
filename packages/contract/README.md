@@ -1,15 +1,14 @@
 # @bc/contract
 
-Records, states, rules, API routes, fixtures and a mock server for the Concepts Vault and Concepts Hub. Every other package builds on this one. The prose version of the data is `spec/data-model.md`; the prose version of the routes is `spec/api-contract.md`.
+Records, states, rules, API routes and fixtures for the Concepts Vault and Concepts Hub. Every other package builds on this one. The prose version of the data is `spec/data-model.md`; the prose version of the routes is `spec/api-contract.md`.
 
 ## Use it
 
 ```
 cd packages/contract
 npm install
-npm test            # schemas, rules, links, and the whole proof-of-concept story over HTTP
+npm test            # schemas, rules, links and fixtures
 npm run typecheck
-npm run mock        # mock API on http://localhost:8787
 npm run docs        # regenerate the routes table in spec/api-contract.md
 npm run fixtures:json
 ```
@@ -27,8 +26,9 @@ Node 22.18 or later runs the TypeScript files directly; there is no build step.
 | `src/dataset.ts`, `src/refs.ts` | Check a whole dataset: links resolve, numbers unique, share links safe |
 | `src/api.ts`, `src/hub.ts` | Routes, request and response shapes, and the narrow Hub-to-Vault interface |
 | `fixtures/data.ts` | Fictional example data, type-checked; "today" is 2026-10-29 |
-| `mock/server.ts` | The API over in-memory fixtures, including the Hub routes |
-| `test/` | Contract tests and the end-to-end story |
+| `test/` | Contract tests |
+
+The mock server and the end-to-end story tests live in `packages/core` (`npm run mock` there), because they run the real business logic.
 
 ## Rules for changing it
 
