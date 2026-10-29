@@ -17,8 +17,11 @@ import type { Store } from './store.ts';
 import { addDays, dateIn, MAX_UPLOAD_BYTES, newId, newToken, readAll, sha256Hex } from './util.ts';
 import type { Rec } from './util.ts';
 
+/** What the Assistant is given for one question: the store (read access by convention), and the request's clock and signed-in person. */
+export interface AssistantEnv { store: Store; now: string; today: string; email?: string }
+
 export interface Assistant {
-  ask(input: z.infer<typeof AssistantAskInput>, store: Store): Promise<z.infer<typeof AssistantAnswerSchema>>;
+  ask(input: z.infer<typeof AssistantAskInput>, env: AssistantEnv): Promise<z.infer<typeof AssistantAnswerSchema>>;
 }
 
 export interface AppDeps {
@@ -504,9 +507,9 @@ export function createApp(deps: AppDeps) {
       return { hits: hits.slice(0, 25) };
     },
     today: async (c) => computeToday(await loadDataset(['lead', 'opportunity', 'invoice', 'event', 'project', 'checklistItem']), c.today),
-    'assistant.ask': async (_c, _p, body) => {
+    'assistant.ask': async (c, _p, body) => {
       const input = parse(AssistantAskInput, body);
-      return (deps.assistant ?? keywordAssistant).ask(input, store);
+      return (deps.assistant ?? keywordAssistant).ask(input, { store, now: c.now, today: c.today, email: c.email });
     },
   };
 
@@ -679,7 +682,7 @@ export function createApp(deps: AppDeps) {
 
 /** A stand-in for the Claude-backed assistant (track C4): matches words and cites the records it found. */
 export const keywordAssistant: Assistant = {
-  async ask(input, store) {
+  async ask(input, { store }) {
     const words = input.question.toLowerCase().split(/\W+/).filter((w) => w.length > 3);
     const scored: { r: Rec; key: string; score: number }[] = [];
     for (const key of ['opportunity', 'project', 'account', 'document', 'knowledgeItem', 'invoice']) {
@@ -693,7 +696,7 @@ export const keywordAssistant: Assistant = {
     const top = scored.slice(0, 3);
     const citations = top.map(({ r, key }) => ({ recordType: key as never, recordId: r.id as string, title: String(r.title ?? r.name ?? r.invoiceNumber), snippet: String(r.scopeSummary ?? r.body ?? r.message ?? r.title ?? '').slice(0, 120) }));
     return {
-      answer: top.length ? `Mock answer. The closest records are ${citations.map((c) => c.title).join('; ')}.` : 'Mock answer. No records matched that question.',
+      answer: top.length ? `The Assistant is not set up yet, so this is a word match only. The closest records are ${citations.map((c) => c.title).join('; ')}.` : 'The Assistant is not set up yet, so this is a word match only, and no records matched.',
       citations,
       usage: { inputTokens: 0, outputTokens: 0, costCents: 0, monthToDateCents: 0, monthlyCapCents: 2000 },
     };

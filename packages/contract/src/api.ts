@@ -11,7 +11,7 @@ import { ContactReceipt, ContactSubmission, LibraryIndex, PublicLibraryEntry, Sh
 export const API_BASE = '/api/v1';
 
 export const ErrorCode = z.enum([
-  'validation_failed', 'not_found', 'conflict', 'locked', 'invalid_transition', 'forbidden', 'unauthorized', 'rate_limited', 'expired', 'revoked',
+  'validation_failed', 'not_found', 'conflict', 'locked', 'invalid_transition', 'forbidden', 'unauthorized', 'rate_limited', 'unavailable', 'expired', 'revoked',
 ]);
 export const ApiError = z.object({
   error: z.object({ code: ErrorCode, message: z.string(), fields: z.record(z.string(), z.string()).optional() }),

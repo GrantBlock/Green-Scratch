@@ -45,6 +45,8 @@ Status code, then `{ "error": { "code", "message", "fields"? } }`. Messages are 
 | `invalid_transition` | 409 | That state change is not allowed (see `states.ts`) |
 | `unauthorized` | 401 | Not signed in to the Vault |
 | `forbidden` | 403 / 405 | The link or method does not allow that |
+| `rate_limited` | 429 | Too many requests, or the Assistant's monthly budget is used up |
+| `unavailable` | 503 | A service the request needs (such as the Assistant's model) cannot be reached right now |
 | `expired`, `revoked` | 410 | A customer link has expired or been revoked |
 
 #### Additional Prompt: Access
