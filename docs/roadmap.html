@@ -112,7 +112,7 @@ footer p { color: var(--muted); font-size: 14px; max-width: 70ch; }
   <header>
     <span class="eyebrow">Concepts Vault and Concepts Hub</span>
     <h1>Build roadmap</h1>
-    <p>Each bar is one milestone. Its width is the number of working sessions, not calendar time. Pick a milestone to see what you provide before it starts and what you check when it ends. Choose "Do this next" to jump ahead; anything it depends on is pulled in first.</p>
+    <p>Each bar is one milestone. Its width is the number of working sessions, not calendar time. Pick a milestone to see what you provide before it starts and what you check when it ends. Choose "Do this next" to jump ahead; anything it depends on is pulled in first. The chart shows one stream of work. Milestones that share the same prerequisites can run side by side in separate sessions, as set out in <code>docs/POC.md</code>.</p>
     <div class="legend" aria-label="Legend">
       <span><i class="k-bar"></i> Planned</span>
       <span><i class="k-done"></i> Done</span>
@@ -136,15 +136,17 @@ footer p { color: var(--muted); font-size: 14px; max-width: 70ch; }
   </section>
 
   <section aria-labelledby="h-design">
-    <h2 id="h-design">Your work in Claude Design, alongside the build</h2>
+    <h2 id="h-design">Design sessions, all open at once</h2>
     <div class="design">
-      <div><span class="lbl">Before Foundation</span><h3>Design system round 2</h3><p>Round 1 is in the repo. Paste <code>design/GAPS-PROMPT-2.md</code> into the design-system session: nine-tab navigation, new states, Gantt, calendar, pipeline and the rest. Foundation can start on the round 1 components first.</p></div>
-      <div><span class="lbl">Before Accounts and Pipeline</span><h3>Vault mockups</h3><p>Run <code>design/BRIEF.md</code> for the Vault screens and export them to <code>design/</code>. Review phone and iPad first.</p></div>
-      <div><span class="lbl">Before Customer pages</span><h3>Hub mockups</h3><p>Same brief, Hub section: Contact, Builder, Library, Assistant and the customer project page.</p></div>
+      <div><span class="lbl">Now</span><h3>DS: design system round 2</h3><p>Paste <code>design/GAPS-PROMPT-2.md</code>. Owns every component. Re-export to <code>design/system/</code> when done.</p></div>
+      <div><span class="lbl">Now</span><h3>H1: Hub</h3><p><code>design/sessions/H1-hub.md</code>. Hub home, Contact, Library, Builder, public Assistant, customer project page. Round 1 components cover most of it.</p></div>
+      <div><span class="lbl">Now</span><h3>V1: Shell, Pipeline, Accounts</h3><p><code>design/sessions/V1-pipeline.md</code>. Starts with placeholders marked NEEDS-DS where round 2 is missing.</p></div>
+      <div><span class="lbl">Now</span><h3>V2: Projects and schedule</h3><p><code>design/sessions/V2-projects.md</code>. Documents checklist, Gantt, sourcing, sharing. The Gantt by touch is the riskiest screen.</p></div>
+      <div><span class="lbl">Now</span><h3>V3: Calendar, Money, Assistant</h3><p><code>design/sessions/V3-operations.md</code>. Also Knowledge, the Claude section and Settings. Paste <code>design/sessions/00-shared.md</code> into every session first.</p></div>
     </div>
   </section>
 
-  <footer><p>A session is one working session with Claude Code on one milestone. How long it takes on the calendar depends on how fast you review and answer. The tick and done marks are saved in this browser only.</p></footer>
+  <footer><p>A session is one working session with Claude Code on one milestone. How long it takes on the calendar depends on how fast you review and answer. The tick and done marks are saved in this browser only. Books stays behind the proof-of-concept gate.</p></footer>
 </main>
 
 <script>
@@ -179,14 +181,18 @@ footer p { color: var(--muted); font-size: 14px; max-width: 70ch; }
       does: 'A decision, not a build. Move any remaining items over and cancel the plan.',
       you: ['Decide the cutover date after using the core on real work'],
       review: 'You work a full week without opening monday.com.' },
-    { id: 'books', phase: 'Money and Books', name: 'Books', len: 6, deps: ['money'],
+    { id: 'poc', phase: 'Proof of concept', name: 'Proof of concept gate', len: 0, deps: ['pipeline', 'calendar', 'projects', 'schedule', 'money', 'customer', 'contact', 'assistant'], decision: true,
+      does: 'A decision. The whole story works end to end on real Cloudflare resources: inquiry, inbox, won, project, documents, schedule, visit, invoice, customer link, assistant answer.',
+      you: ['Two real opportunities and one real project with documents', 'One friendly test customer', 'Walk the story on an iPad and log failures in docs/POC-LOG.md'],
+      review: 'You complete the story on an iPad without help and with no blocking defects. Then Books starts.' },
+    { id: 'books', phase: 'Money and Books', name: 'Books', len: 6, deps: ['poc'],
       does: 'Chart of accounts, ledger, bills and payments, manual statement upload and monthly reconciliation, income statement, balance sheet, cash flows, equity statement, all exportable to Excel.',
       you: ['A CPA', 'Review of the chart of accounts and your revenue recognition policy', 'QuickBooks trial balances for three years', 'Sample CSV statements for the checking account and the credit card', 'Sales tax and tax-basis answers'],
       review: 'A month reconciles to zero, closes, and the statements match QuickBooks.' },
     { id: 'qb', phase: 'Money and Books', name: 'Cancel QuickBooks', len: 0, deps: ['books'], decision: true,
       does: 'A decision after a comparison period (a full year is best, a quarter is the minimum) and CPA sign-off, at a year boundary.',
       you: ['CPA sign-off'], review: 'Comparisons agree line by line.' },
-    { id: 'customer', phase: 'Connect', name: 'Customer project pages', len: 2, deps: ['projects'],
+    { id: 'customer', phase: 'Proof of concept', name: 'Customer project pages', len: 2, deps: ['projects'],
       does: 'Expiring links on hub.blockconceptsllc.com: released PDFs to download and upload slots for files you request.',
       you: ['The hub. subdomain live in Cloudflare', 'One friendly customer to test with', 'The wording on the page'],
       review: 'A customer downloads a PDF and uploads a file with no account.' },
@@ -198,11 +204,11 @@ footer p { color: var(--muted); font-size: 14px; max-width: 70ch; }
       does: 'Per-project supplier list with quotes, and a knowledge base for research, articles and trip plans linked to accounts and events.',
       you: ['A few real research notes, articles or trip plans to start with'],
       review: 'A trip plan with its visits, and a supplier quote filed to a project.' },
-    { id: 'assistant', phase: 'Assistant', name: 'Vault Assistant', len: 3, deps: ['foundation'],
+    { id: 'assistant', phase: 'Proof of concept', name: 'Vault Assistant (thin)', len: 3, deps: ['foundation'],
       does: 'Search and answers across your records with citations, drafts that you confirm, a spend meter, and the Claude section: configurations, glossaries and standard works.',
       you: ['An Anthropic API key and the $20 monthly cap', 'Drafts of your standard works and a starter glossary'],
-      review: 'Ask across opportunities, projects and documents and get cited answers. Works best after Projects and Knowledge.' },
-    { id: 'contact', phase: 'Public tools', name: 'Contact form', len: 1, deps: ['pipeline'],
+      review: 'Ask across opportunities, projects and documents and get cited answers. The thin version searches and cites; actions come later.' },
+    { id: 'contact', phase: 'Proof of concept', name: 'Contact form', len: 1, deps: ['pipeline'],
       does: 'A contact form that creates a lead in your inbox. The only change to the live website.',
       you: ['Approve where the form lives (Hub or the main site)', 'Updated privacy text (counsel review)'],
       review: 'A test inquiry arrives as a new lead.' },
@@ -224,10 +230,10 @@ footer p { color: var(--muted); font-size: 14px; max-width: 70ch; }
       review: 'A flagged project shows the package and its checklist.' }
   ];
   var BY = {}; M.forEach(function (m) { BY[m.id] = m; });
-  var DEFAULT = ['foundation','pipeline','calendar','projects','schedule','money','leave-monday','books','qb','customer','email','sourcing','assistant','contact','builder','library','pubassistant','cgmp'];
+  var DEFAULT = ['foundation','pipeline','calendar','projects','schedule','money','customer','contact','assistant','poc','leave-monday','books','qb','email','sourcing','builder','library','pubassistant','cgmp'];
   var state = { order: DEFAULT.slice(), done: {}, sel: 'foundation' };
   var KEY = 'bc-roadmap-v1';
-  try { var s = JSON.parse(localStorage.getItem(KEY) || 'null'); if (s && s.order && s.order.length === DEFAULT.length) { state.order = s.order; state.done = s.done || {}; } } catch (e) {}
+  try { var s = JSON.parse(localStorage.getItem(KEY) || 'null'); if (s && s.order && s.order.length === DEFAULT.length && s.order.indexOf('poc') > -1) { state.order = s.order; state.done = s.done || {}; } } catch (e) {}
   function save() { try { localStorage.setItem(KEY, JSON.stringify({ order: state.order, done: state.done })); } catch (e) {} }
 
   function unlocks(id) { return M.filter(function (m) { return m.deps.indexOf(id) > -1; }); }
