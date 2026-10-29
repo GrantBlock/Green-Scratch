@@ -22,5 +22,5 @@ Slice list and order are in `PLAN.md`, Phase 3 (the platform plan). The list bel
 - [x] C1 Core: `packages/core` + `apps/vault` (D1, R2, Registry, audit log, Access sign-in). Verified locally; **not deployed** (needs your Cloudflare setup, `docs/DEPLOY.md`)
 - [ ] C2 Vault UI (against the mock)
 - [x] C3 Hub: `apps/hub` (home, Contact, Library, customer project page). Verified locally; **not deployed** (`docs/DEPLOY.md`)
-- [ ] C4 Assistant
+- [x] C4 Assistant: `packages/assistant`. Read-only, cited, monthly cap. **Not yet run against the live Anthropic API**; run `npm run live` once a key exists (`docs/DEPLOY.md`)
 - [ ] Integration and the gate

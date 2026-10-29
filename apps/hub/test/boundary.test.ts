@@ -2,6 +2,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, readdirSync, statSync } from 'node:fs';
+import { build } from 'esbuild';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -38,4 +39,13 @@ test('the Hub package does not depend on the Vault package', () => {
   const pkg = JSON.parse(readFileSync(join(root, 'package.json'), 'utf8'));
   assert.equal(pkg.dependencies['@bc/vault'], undefined);
   assert.equal(pkg.devDependencies['@bc/vault'], undefined);
+});
+
+test('the Hub bundle contains no Assistant, Anthropic or Vault-logic code', async () => {
+  const out = await build({ entryPoints: [join(root, 'src/index.ts')], bundle: true, write: false, format: 'esm', platform: 'neutral', external: ['cloudflare:workers'], logLevel: 'silent', mainFields: ['module', 'main'], conditions: ['workerd', 'worker', 'browser'] });
+  const code = out.outputFiles.map((f) => f.text).join('\n');
+  for (const forbidden of ['anthropic', 'search_records', 'project_overview', 'assistant.usage', 'ANTHROPIC_API_KEY', 'createApp', 'D1Store', 'MemoryStore', 'sha256Hex(d.id']) {
+    assert.ok(!code.toLowerCase().includes(forbidden.toLowerCase()), `the Hub bundle contains "${forbidden}"`);
+  }
+  assert.ok(code.includes('createHubHandler') || code.includes('/hub/api/contact'), 'sanity: the Hub routes are in the bundle');
 });

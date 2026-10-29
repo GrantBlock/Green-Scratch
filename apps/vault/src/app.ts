@@ -3,6 +3,7 @@ import type { Assistant } from '@bc/core';
 import { accessAuthenticator, devAuthenticator } from './auth.ts';
 import { D1Store } from './d1-store.ts';
 import type { Env } from './env.ts';
+import { assistantFromEnv } from './assistant-config.ts';
 import { R2Files } from './r2-files.ts';
 import { D1Db } from './sql.ts';
 
@@ -18,6 +19,6 @@ export function buildApp(env: Env, assistant?: Assistant) {
     clock: () => new Date().toISOString(),
     timeZone: env.TIME_ZONE ?? 'America/Chicago',
     authenticate,
-    assistant,
+    assistant: assistant ?? assistantFromEnv(env),
   });
 }

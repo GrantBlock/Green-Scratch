@@ -14,7 +14,8 @@
   "dependencies": {
     "@bc/contract": "*",
     "@bc/core": "*",
-    "zod": "^4.0.0"
+    "zod": "^4.0.0",
+    "@bc/assistant": "*"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.0.0",

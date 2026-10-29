@@ -16,6 +16,9 @@
   "r2_buckets": [{ "binding": "FILES", "bucket_name": "bc-vault-files" }],
   "vars": {
     "TIME_ZONE": "America/Chicago",
+    // The Assistant. The key is a secret: npx wrangler secret put ANTHROPIC_API_KEY. See docs/DEPLOY.md for what each model costs.
+    "ASSISTANT_MODEL": "claude-opus-5-5",
+    "ASSISTANT_MONTHLY_CAP_CENTS": "2000",
     // Set these from Cloudflare Zero Trust, Access, Applications. They are not secrets.
     "ACCESS_TEAM_DOMAIN": "REPLACE.cloudflareaccess.com",
     "ACCESS_AUD": "REPLACE_WITH_APPLICATION_AUD_TAG",

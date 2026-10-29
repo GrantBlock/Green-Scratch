@@ -71,8 +71,22 @@ cd ../.. && npx wrangler dev -c apps/hub/wrangler.jsonc -c apps/vault/wrangler.j
 
 The first `-c` file is the Worker you browse (the Hub); the Vault runs beside it and is reachable only through the binding.
 
+## Turning on the Assistant (after the Vault is deployed)
+
+Without a key the Assistant is off: the Vault answers with a plain word match that says "not set up yet", and nothing is spent.
+
+1. Create an API key in the Anthropic Console for this use only, with a spend limit on the key or the workspace if the Console offers one. (A limit there is a second safety net behind the Vault's own cap.)
+2. From `apps/vault`: `npx wrangler secret put ANTHROPIC_API_KEY` and paste the key. It is a secret: never put it in `wrangler.jsonc`.
+3. Choose the model and the cap in `apps/vault/wrangler.jsonc` under `vars`, then `npx wrangler deploy`:
+   - `ASSISTANT_MODEL` defaults to `claude-opus-5-5`. Cheaper models cost less per question but may answer less well; see the table in `spec/assistant-spec.md`. Whether the cheaper ones are good enough for your questions is for you to judge from real answers.
+   - `ASSISTANT_MONTHLY_CAP_CENTS` is `2000` ($20). Raise it to `6000` when you want $60.
+4. **Before relying on it, run the live check once** from `packages/assistant` on your machine: `ANTHROPIC_API_KEY=... CONFIRM_SPEND=yes npm run live`. It asks three real questions over the example data, costs a few cents, and prints the answers and what each cost. Read the answers: the script checks structure, not quality.
+5. After a few days, read what it really spends: `GET /api/v1/audit?action=assistant.usage` (each event has the token counts and `costCents`). Compare with the estimates in the spec and adjust the cap.
+
+Refusal fallback is on by default (a safety-classifier decline is retried on another model). If you do not want that, say so and it is one line to remove.
+
 ## Not set up yet
 
 - **Deploy on push to `main`** (Cloudflare Workers Builds or a GitHub action) comes after the first manual deploys work.
-- **The Anthropic key** for the real Assistant (track C4).
 - **Malware scanning** of customer uploads.
+- **The public Assistant** (a separate limited tool; it will not use the Vault's key, code or data).

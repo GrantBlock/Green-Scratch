@@ -26,7 +26,8 @@ The step-by-step plan is `PLAN.md`. Work from it, and tick items off as they fin
 - Hub and Vault page scripts use the one React on `window` (from the design system's loader), never a bundled copy. Expected refusals must survive the service binding: use `encodeError` and `decodeError` from `@bc/core`.
 - Database changes are new numbered files in `apps/vault/migrations/`; never edit an applied migration.
 - Records are defined only in `spec/data-model.md`. Do not invent a record type in a tool.
-- The Vault assistant proposes and Grant confirms; it never sends, files or deletes on its own. The public Assistant must never reach Vault data.
+- The Vault assistant proposes and Grant confirms; it never sends, files or deletes on its own. In this version it only reads (`spec/assistant-spec.md`): do not add a tool that writes without Grant's go-ahead. The public Assistant must never reach Vault data, and the Hub must never import `@bc/assistant` (a Hub test enforces it).
+- Claude API code: use the official SDK, only in `packages/assistant/src/anthropic.ts`. Do not change the model default, effort, caching, fallback or price table without checking the current Claude API reference, and never downgrade the model to save money without Grant's say-so.
 
 ## Build order
 

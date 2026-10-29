@@ -59,7 +59,7 @@ Rules that keep parallel design consistent are in `design/sessions/00-shared.md`
 | **C1 Core** | `packages/core` (business logic, store, Hub routes, mock), `apps/vault` (Cloudflare Worker, D1, R2, sign-in) | C0 | **Done, not yet deployed.** Runs under Cloudflare's local runtime; 78 tests pass across the three packages. Deploy steps: `docs/DEPLOY.md` |
 | **C2 Vault UI** | `apps/vault/ui` against a **mock API** built from the fixtures | C0 and design mockups | As mockups land |
 | **C3 Hub** | `apps/hub` (home, Contact, Library, customer page) | C0 | **Done, not yet deployed.** Verified in Chromium at phone and iPad sizes and across a real service binding. Restyle when the H1 mockups arrive |
-| **C4 Assistant** | `apps/vault/assistant` (search, citations) | C1 data | After C1 |
+| **C4 Assistant** | `packages/assistant` (Claude, read-only, cited, capped), wired in by `apps/vault` | C1 data | **Built, not run against the live API** (no key was available). Tested offline and under Cloudflare's local runtime against a fake Anthropic. See `spec/assistant-spec.md` |
 | **Integration** | Replaces mocks with the real API; end-to-end test of the story | All | Last |
 
 Contract-first with mocks is what makes this safe: UI sessions build against fixtures that match the contract, and the real backend is swapped in when ready.
@@ -78,7 +78,7 @@ Contract-first with mocks is what makes this safe: UI sessions build against fix
 apps/vault/ui          C2
 apps/vault/src         C1 (wiring only)
 packages/core          C1 (business logic, mock)
-apps/vault/assistant   C4
+packages/assistant      C4
 apps/hub               C3
 packages/contract      C0 (read-only to others; changes go through C0)
 packages/ui            wraps design/system; changes only when DS re-exports
