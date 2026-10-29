@@ -1,5 +1,7 @@
 # System Architecture
 
+> **Being rewritten.** The platform direction (`docs/PLATFORM-CONCEPT.md`, `spec/data-model.md`) adds Opportunities, Projects, Documents, Knowledge and a Vault assistant. Where this file disagrees with `data-model.md`, the data model wins. See `PLAN.md`, Phase 1.
+
 The top-level architecture doc for the whole system. Describes how the pieces fit together; individual specs still own their own detail. Edit directly and re-upload to refine.
 
 ---

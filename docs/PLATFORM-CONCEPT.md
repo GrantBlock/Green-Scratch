@@ -1,6 +1,6 @@
 # Platform concept: one place for the day-to-day
 
-**Status: proposal for Grant's review.** Nothing in `spec/` has been changed to match it yet. If approved, `PLAN.md` and the specs are rewritten around it (the current versions stay in git history).
+**Status: approved direction, with the changes in section 7.** `PLAN.md` is rewritten around it, and `spec/data-model.md` is the new source for records. The older `spec/concepts-vault-spec.md` and `spec/concepts-hub-spec.md` are being brought in line (see `PLAN.md`, Phase 1).
 
 ## 1. What this is
 
@@ -61,7 +61,7 @@ Starter structure (to be replaced by Grant's real folders):
 | 04 Procurement | Vendor quotes, order confirmations, certificates |
 | 05 Build and test | FAT and SAT protocols and results |
 | 06 Handover | Manuals, spec sheets, as-built |
-| 07 Quality (cGMP projects only) | Requirements trace, qualification support, change history |
+| 07 cGMP documentation package (optional) | Supplied equipment information for a cGMP customer: material and component certificates, finish and cleanability data, drawings, parts lists, manuals, test results. Added only when the project has the cGMP option. |
 | 08 Correspondence | Emails, meeting notes |
 
 How documents get in: drag and drop, a picker from OneDrive, an email-in address per project, and an **upload request link** you send to a customer for a specific missing item. The project page shows a completeness bar so you can see what is still missing.
@@ -128,24 +128,26 @@ Archive becomes a filter, not a tab. The assistant and a global search bar are a
 
 Project structures, document checklists, the cGMP document set, the Build this PDFs and Word documents, and reusable work orders are all Templates in Library. Adding a new project type means adding a template, not code.
 
-### 2.11 cGMP support
+### 2.11 cGMP documentation as an option
 
-Treated as a document set and traceability, not an app mode. A project flagged cGMP gets section 07 and extra required documents, tied to controlled revisions, approvals and the audit log.
+Block Concepts' own process is not cGMP. For a customer who operates under cGMP, the project gets an optional **cGMP documentation package**: a template that adds section 07 and its required-document checklist. It supplies equipment information the customer can use in their own quality system.
 
-The app supplies controlled documents and a trail. Customers own their validation. Claims such as "21 CFR Part 11 compliant" should not be made without a real assessment of signatures and access controls, ideally with a QA or regulatory reviewer.
+- No approvals or electronic signatures inside the app. Signed documents are uploaded as Documents.
+- Documents still have revisions and a locked Released state, so the customer can see exactly which version was supplied.
+- No compliance claims. The customer owns their validation.
 
-## 3. Stack change needed
+## 3. Stack (approved)
 
-The current plan stores data as files behind the Vault and later syncs with OneDrive. A knowledge base, search, an audit log and an assistant need a real database.
+Hosting stays on Cloudflare, with more custom-built pieces:
 
-**Proposed:** keep Cloudflare for hosting, and use:
+- **D1** (SQL database) for records, links and the audit log.
+- **R2** (file storage) for released and customer-shared documents, with checksums. Customers get files through expiring links from the app, so they never need OneDrive, SharePoint or Teams.
+- **Vectorize** (or equivalent) for embeddings behind assistant search.
+- **OneDrive** stays the working area for Word and Excel. Records link to OneDrive items through Microsoft Graph. A document that is shared or released is copied into R2.
+- **Onshape** stays the design tool. Records store the Onshape share link, plus exported PDF or STEP snapshots as Documents.
+- **Email:** a dedicated agent address (section 6).
 
-- **D1** (SQL database) for records, links and the audit log
-- **R2** (file storage) for released documents and checksums
-- **Vectorize** (or equivalent) for embeddings behind assistant search
-- **OneDrive** as the working-file store, synced to project folders through Microsoft Graph, including email-in
-
-This replaces decision D3 and the Power Automate backend in `concepts-vault-spec.md`. It needs your approval.
+This replaces decision D3 and the Power Automate backend in `concepts-vault-spec.md`.
 
 ## 4. Build order that pays back early
 
@@ -161,20 +163,48 @@ This replaces decision D3 and the Power Automate backend in `concepts-vault-spec
 
 Steps 1 to 5 are the part that would let you stop paying for separate tools.
 
-## 5. Honest cautions
+## 5. Cautions
 
-- **This is a large build.** A pipeline, project, document and knowledge system is real software. Build in the order above, keep the old tools until each piece is proven, and stop adding modules until the spine works.
-- **Compare against what you pay for.** I don't know which eight apps you use. A line-by-line check of what each does for you will show whether this replaces them or just adds a ninth.
-- **The assistant costs money per use** and needs a spend cap.
-- **Gantt charts** are a real feature, not a free add-on. Start by storing and linking the gantt file, and build a simple timeline view later.
+- **Large build.** Build in order of payback and keep the old tools until each piece is proven.
+- **Money scope.** Replacing QuickBooks and TurboTax is different from replacing a CRM, because the books and the tax return must be right. See section 8.
+- **Assistant cost.** Capped monthly (section 7).
+- **Gantt charts** start as stored and linked files. A simple timeline view comes later.
 
-## 6. Decisions needed
+## 6. Agent email
 
-1. **Which eight apps** are you replacing, and what do you actually use each for?
-2. **Stack:** approve D1 + R2 + Vectorize + OneDrive sync in place of files plus Power Automate?
-3. **Your real project folder structure** and required-document list, to replace the starter structure above.
-4. **Pipeline stages** for an opportunity, from inquiry to won or lost.
-5. **Email:** is Outlook (Microsoft 365) the mailbox the platform should read from and file into projects?
-6. **cGMP:** which customers and regulations first, and signed approvals inside the app or outside it?
-7. **Assistant budget:** a monthly cap.
-8. **Existing data:** what needs importing (monday items, past quotes, research notes)?
+A separate address (for example `agent@...`) that the platform reads, so your own mailbox stays out of it.
+
+- **Newsletters and articles** forwarded to it become Knowledge items, summarized and tagged, with the source kept.
+- **Invoices, POs and payment notices** are matched to a project and proposed as Documents and financial records. You confirm before they are filed.
+- **Customer replies** are attached to the right opportunity or project activity feed.
+- **Past-due and follow-up reminders** appear in Today. The assistant drafts messages; nothing is sent without your confirmation.
+- **Recommendation to verify:** receive mail with Cloudflare Email Routing and an Email Worker on a subdomain, so your Outlook mail on the main domain is untouched. Send from a Microsoft 365 mailbox for the agent (or a transactional email service). Confirm both against your current DNS and mail setup before building.
+
+## 7. Decisions made (round 2)
+
+| Topic | Decision |
+|---|---|
+| Stack | Approved: Cloudflare D1 + R2 + Vectorize, OneDrive for working files. |
+| Document hosting | The app (R2 with expiring links) for customer-facing files; OneDrive for working files. |
+| Opportunity states | Open, Won, Lost. |
+| Project stages | Design, Build, Install (then Closed). This replaces the old Build State list. |
+| cGMP | An optional documentation package, not a process or a mode. No in-app signatures. |
+| Assistant budget | Cap $20 per month now, raised to $60 once it replaces the apps. |
+| Import | Manual entry of about 30 opportunities and 6 projects as the pilot. |
+| Email | A new agent address, separate from yours. |
+| Apps replaced | monday.com (CRM, projects). OneDrive for quoting docs stays for Word and Excel. Onshape stays for design; the platform links and shares. Outlook proposals and follow-ups move to the platform and the agent address. QuickBooks and TurboTax: see section 8. |
+
+## 8. Money: QuickBooks and TurboTax
+
+I recommend three levels, and starting at the first:
+
+1. **Track project financials in the platform (recommended now).** POs, milestone invoices (including the 60/30/10 split), due dates, paid status, overdue alerts, and a monthly export for QuickBooks or your accountant. This covers "admin for project financials".
+2. **Generate customer invoices as PDFs** from the milestones, numbered and stored per project. Possible after the pilot.
+3. **Replace bookkeeping and tax filing (not recommended).** Accurate books and tax returns depend on accounting rules and annual tax-law changes. Keep QuickBooks (or your accountant's tool) as the books of record, and keep TurboTax or an accountant for filing. The platform can produce tax-ready summaries by project and category.
+
+## 9. Still open
+
+1. The 7th and 8th apps (the list had six).
+2. Your real project folder and required-document list, to replace the starter structure.
+3. The agent email address and mailbox type.
+4. Confirmation of the money scope in section 8.

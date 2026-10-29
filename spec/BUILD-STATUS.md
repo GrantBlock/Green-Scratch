@@ -1,5 +1,7 @@
 # Build status
 
+Slice list and order are in `PLAN.md`, Phase 3 (the platform plan). The list below is the earlier plan and is being replaced.
+
 - [x] Design system supplied in Claude Design and exported to `design/system/`
 - [ ] Design system gaps filled (`design/DESIGN-SYSTEM.md`)
 - [ ] Mockups exported to `design/`

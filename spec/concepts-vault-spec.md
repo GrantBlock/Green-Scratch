@@ -1,5 +1,7 @@
 # Concepts Vault — Shared System Spec
 
+> **Being rewritten.** The platform direction (`docs/PLATFORM-CONCEPT.md`, `spec/data-model.md`) changes the Vault's tabs, storage and records. Where this file disagrees with `data-model.md`, the data model wins. See `PLAN.md`, Phase 1.
+
 Spec for the Concepts Vault half of Concepts Hub (see `system-architecture.md`) — the single admin system shared across every tool in this website section (not just Grab this). Grab this and Give this specs live in `concepts-hub-spec.md`, which reference this file for how entries get authored and logged. Registry and Customers are included here as admin tabs. Edit directly and re-upload to refine.
 
 ---

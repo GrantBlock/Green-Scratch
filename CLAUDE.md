@@ -15,9 +15,11 @@ The step-by-step plan is `PLAN.md`. Work from it, and tick items off as they fin
 - Hub and Vault share one data model per tool. The Vault never keeps a shadow copy of what the Hub displays.
 - Serials are issued only by Registry (`BC-[TYPE]-YYNNN`). Never hand-assign them in code.
 - The Vault is single-user (Grant). No multi-user login.
-- Hosting, framework and backend are undecided. Do not pick them silently; propose and confirm with Grant first.
+- Stack: Cloudflare (D1 database, R2 files, Vectorize search), OneDrive for working files, Onshape for design. Do not add other services silently; propose and confirm with Grant first.
+- Records are defined only in `spec/data-model.md`. Do not invent a record type in a tool.
+- The Vault assistant proposes and Grant confirms; it never sends, files or deletes on its own. The public Ask this agent must never reach Vault data.
 
-## Suggested build order
+## Suggested build order (earlier plan; the current slices are in `PLAN.md`, Phase 3)
 
 1. Shared tokens and site shell (nav, Fix this layout).
 2. Static pages: Home, Who this, Develop this.
