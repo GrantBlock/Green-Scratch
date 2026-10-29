@@ -47,7 +47,7 @@ One product with three layers, one brand, one number sequence and one data model
 blockconceptsllc.com         PUBLIC WEBSITE  (live, static)
         |  contact form posts a lead
         v
-app.blockconceptsllc.com     PRIVATE WORKSPACE  (Grant only)
+app.blockconceptsllc.com     CONCEPTS VAULT (private)  (Grant only)
         |   Leads -> Opportunities -> Projects -> Documents
         |   Accounts, Knowledge base, Library of templates
         |   Claude assistant over all of it
@@ -57,13 +57,13 @@ app.blockconceptsllc.com     PRIVATE WORKSPACE  (Grant only)
 agent email (own subdomain)  inbound newsletters, invoices, replies
 ```
 
-- **Layer 1, public website.** Unchanged except for one thing: the contact form goes live and sends a lead to the workspace. Public tools (a document library, a builder) come later, only if the work shows they are worth it.
+- **Layer 1, public website.** Unchanged except for one thing: the contact form goes live and sends a lead to the Vault. Public tools (a document library, a builder) come later, only if the work shows they are worth it.
 - **Layer 2, customer delivery.** A minimal branded page per project, reached by an expiring link: released PDFs to download, and upload slots for requested documents. No customer accounts.
-- **Layer 3, private workspace.** Where the day-to-day lives. It replaces monday.com first, then takes over document collection and follow-ups, then the knowledge base, then the assistant.
+- **Layer 3, Concepts Vault.** Where the day-to-day lives. It replaces monday.com first, then takes over document collection and follow-ups, then the knowledge base, then the assistant.
 
 **Shared across all three:** the design system, `BC` numbering, the data model in `spec/data-model.md`, and an audit log.
 
-**Repo plan.** Keep `calm-swag` as the live website, untouched except for the contact form. Build the workspace in this repo (`Green-Scratch`) as its own Cloudflare project on a subdomain. The design system is the one shared source. This keeps the live site safe while the workspace is built.
+**Repo plan.** Keep `calm-swag` as the live website, untouched except for the contact form. Build the Vault in this repo (`Green-Scratch`) as its own Cloudflare project on a subdomain. The design system is the one shared source. This keeps the live site safe while the Vault is built.
 
 ## 4. How to build it without repeating the problem
 
@@ -85,5 +85,5 @@ The earlier approach was spec-first from other people's documents. This one is w
 1. Walk me through a normal week: what you open first, what you check, and what you do when a lead comes in and when a deal is won.
 2. What in monday.com annoys you most, and what do you rely on most?
 3. Do you want any public tools at all in the first year, or just the website plus customer project pages?
-4. Should the private workspace live at `app.blockconceptsllc.com`, or somewhere else?
+4. Should the Concepts Vault live at `app.blockconceptsllc.com`, or somewhere else?
 5. Are you willing to drop the "___ this" names in favor of plain ones (for example Library, Contact, Builder)?

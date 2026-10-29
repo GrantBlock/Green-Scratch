@@ -1,4 +1,4 @@
-# Plan: Block Concepts Workspace and Tools
+# Plan: Concepts Vault and Concepts Hub
 
 Built workflow-first from `docs/WORKFLOW.md`, outward from the live website (`docs/RESET.md`). Records: `spec/data-model.md`. Concept and reasons: `docs/PLATFORM-CONCEPT.md`. Branding: `design/system/`.
 
@@ -8,8 +8,8 @@ Built workflow-first from `docs/WORKFLOW.md`, outward from the live website (`do
 
 ## Phase 0. Decided
 
-- [x] Direction: one platform. Public website (live), Tools (public pages), customer project pages, private Workspace.
-- [x] Plain names (see `docs/WORKFLOW.md` section 4). All "___ this" names are dropped.
+- [x] Direction: one platform. Public website (live), Concepts Hub (public tools and documents), customer project pages, Concepts Vault (private).
+- [x] Names: Concepts Vault (private) and Concepts Hub (public). Tools inside use plain names (see `docs/WORKFLOW.md` section 4). All "___ this" names are dropped.
 - [x] Stack: Cloudflare D1 + R2 + Vectorize; OneDrive for working Word and Excel files; Onshape for design.
 - [x] Numbering: `BC-[TYPE]-YYNNN` with VOID.
 - [x] States: Opportunity Open / Won / Lost; Project Design / Build / Install / Closed.
@@ -22,7 +22,7 @@ Built workflow-first from `docs/WORKFLOW.md`, outward from the live website (`do
 
 Still open:
 
-- [ ] 🧑 Workspace address (options in `docs/WORKFLOW.md` section 6).
+- [ ] 🧑 Vault address (options in `docs/WORKFLOW.md` section 6).
 - [ ] 🧑 Your project folder and required-document list.
 - [ ] 🧑 Agent email address and mailbox type.
 - [ ] 🧑 Money scope (recommended: track project financials; QuickBooks stays the books).
@@ -32,10 +32,10 @@ Still open:
 ## Phase 1. Design (🎨 + 🧑), can run alongside Phase 2
 
 - [ ] 🧑 Add missing components with `design/GAPS-PROMPT.md`; re-export to `design/system/`.
-- [ ] 💻 Update `design/BRIEF.md` with the Workspace screens: Today, Calendar, Pipeline, Project (checklist, Gantt with baselines, Sourcing), Money (Receivables, Expenses), Accounts, Knowledge, Assistant panel, customer project page. All designed for phone and iPad.
+- [ ] 💻 Update `design/BRIEF.md` with the Vault screens: Today, Calendar, Pipeline, Project (checklist, Gantt with baselines, Sourcing), Money (Receivables, Expenses), Accounts, Knowledge, Assistant panel, customer project page. All designed for phone and iPad.
 - [ ] 🧑 Review mockups; export into `design/`.
 
-## Phase 2. Build the Workspace (💻), one slice per session
+## Phase 2. Build the Vault (💻), one slice per session
 
 Each slice ends with Grant using it on real data. monday.com stays until slice 7.
 
@@ -57,16 +57,16 @@ Each slice ends with Grant using it on real data. monday.com stays until slice 7
 | 9 | Agent email: inbound routing, classification, filing proposals; reminders and drafts |
 | 10 | Sourcing list per project and supplier quote tracking |
 | 11 | Knowledge: research, articles, trip notes, links to accounts and events |
-| 12 | Workspace Assistant: search with citations, drafts, confirm-to-write, spend meter |
+| 12 | Vault Assistant: search with citations, drafts, confirm-to-write, spend meter |
 
-## Phase 4. Tools: internal first, then public (💻)
+## Phase 4. Concepts Hub: internal first, then public (💻)
 
 | Slice | Delivers |
 |---|---|
 | 13 | Contact: the website form creates a Lead in Inbox (the one change to the live site) |
 | 14 | Builder: stations to PDF sheets and a Word process document, used internally from an opportunity |
 | 15 | Library: publish customer-ready PDFs, then the public view |
-| 16 | Tools section on the website, linking Contact, Builder and Library |
+| 16 | Hub section on the website, linking Contact, Builder and Library |
 | 17 | Public Assistant: published content only |
 | 18 | cGMP documentation package template |
 
@@ -75,7 +75,7 @@ Each slice ends with Grant using it on real data. monday.com stays until slice 7
 - [ ] Security pass: login, uploads, share links, email ingestion, assistant (prompt injection from emails and documents).
 - [ ] Backups and a full export of records and files.
 - [ ] Test on iPad and iPhone for every slice.
-- [ ] Public Assistant tested with adversarial prompts; no Workspace data reachable.
+- [ ] Public Assistant tested with adversarial prompts; no Vault data reachable.
 
 ## How to run each session
 

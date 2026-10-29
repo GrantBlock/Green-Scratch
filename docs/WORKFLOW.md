@@ -37,24 +37,24 @@ Fix:
 
 ## 4. Plain names
 
-All "___ this" names are dropped.
+All "___ this" names are dropped. The two sides keep their original names, Concepts Vault and Concepts Hub; the tools inside them use the plain names below.
 
 | Old name | New name | What it is |
 |---|---|---|
-| Concepts Vault | **Workspace** (private) | Where Grant works |
-| Concepts Hub | **Tools** (public section of the website) | Public pages beyond the main site |
-| Fix this | Tools | Landing page for public tools |
+| Concepts Vault | **Concepts Vault** (short form: Vault), private | Where Grant works |
+| Concepts Hub | **Concepts Hub** (short form: Hub), public | The public section of the website for tools and documents |
+| Fix this | Hub home | Landing page for the public tools |
 | Grab this | **Library** | Public documents people can download |
 | Give this | **Contact** | Contact form that creates a lead |
 | Build this | **Builder** | Process document builder, internal first, then public |
-| Ask this | **Assistant** | Chat: public one (limited) and the Workspace one (full) |
+| Ask this | **Assistant** | Chat: a public one (limited) in the Hub and a full one in the Vault |
 | Develop this | **Process** | How a project runs; to be written |
 | Log List | Inbox | New leads |
 | Update List | Updates | Feed on every record |
 | Releases | Documents | Revisions and delivery |
 | Customers | **Accounts** | Customers, suppliers, prospects |
 
-Workspace tabs: **Today, Calendar, Pipeline, Projects, Accounts, Money, Knowledge, Library, Settings.** (Registry numbers show on each record; the full list is in Settings.)
+Vault tabs: **Today, Calendar, Pipeline, Projects, Accounts, Money, Knowledge, Library, Settings.** (Registry numbers show on each record; the full list is in Settings.)
 
 ## 5. Public tools are in scope
 
@@ -65,7 +65,7 @@ Grant wants the public tools fully working, and internal use comes first:
 - **Contact** is the first public piece, since it feeds the Pipeline.
 - **Assistant (public)** comes last. It sees only published content.
 
-## 6. Where the Workspace lives
+## 6. Where the Vault lives
 
 Options, to decide later:
 
@@ -73,4 +73,4 @@ Options, to decide later:
 2. **`work.blockconceptsllc.com`:** same idea, a plainer name.
 3. **A path on the main domain** (for example `/app`): one hostname, but it couples the private app to the public site's deploy.
 
-Customer project pages can sit on the same host, or on a separate one such as `projects.blockconceptsllc.com` so a customer link never exposes the Workspace address.
+Customer project pages can sit on the same host, or on a separate one such as `projects.blockconceptsllc.com` so a customer link never exposes the Vault address.

@@ -4,7 +4,7 @@
 
 ## 1. What this is
 
-A single private workspace (Concepts Vault) for running Block Concepts, with a thin public side (Concepts Hub). It replaces a stack of separate subscriptions with one data model, one search, one assistant.
+A single private Vault (Concepts Vault) for running Block Concepts, with a thin public side (Concepts Hub). It replaces a stack of separate subscriptions with one data model, one search, one assistant.
 
 It serves three jobs:
 
