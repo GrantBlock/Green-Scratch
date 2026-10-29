@@ -7,6 +7,10 @@ Source documents that inform the spec. They are inputs, not the spec: where they
 - `Block_Concepts_Consulting_Business_Plan.docx`: the nine billable consulting stages, the Pato / Hukata / Kosala agent split, the Web Builder self-service tool, and the Pre-Built Solutions tiers (Free / $50 / $3,200). The Web Builder's inquiry log entry is a candidate Hybrid tool for the Hub and Log List.
 - `bc_quoting_process_map.html`: the 8-stage quote workflow (intake, numbering, scope, pricing, document generation, review, send, follow-up), today versus MCP-assisted. Stage 2 (numbering) is what Registry replaces.
 
+## agents/
+
+- `agent-chat-handoff.md`: handoff for the existing local Pato / Hukata / Kosala chat app (Flask, Ollama), covering what it takes to run it on a public site, the risks, and six open decisions. The agents are the ones defined in the business plan. The app code and the `Block Concepts Vault/agents/` prompt docs it reads are not in this repo yet.
+
 ## numbering/
 
 An existing numbering system and its Excel registers. They are branded "Mora Technologies", so they look like a template or earlier company version.
@@ -23,3 +27,4 @@ An existing numbering system and its Excel registers. They are branded "Mora Tec
 3. **Void handling.** The numbering doc requires VOID instead of deletion. The spec's Registry has a manual override but no void state.
 4. **Client codes.** The register has a 3-letter client-code list. The spec's Customers tab has no client code field.
 5. **Quote tool.** The process map relies on monday.com and Drive MCPs. The spec says no monday.com or external CRM integration for the Hub.
+6. **Agent chat on the public site.** The handoff lists six decisions (platform, which agents are public, who pays for model usage, where quote details go, server-side chat storage, prompt sync). Whether the chat is a Hub tool (a new "___ this" button under Fix this) or a widget on the existing website is unresolved. A public chat that takes quote details would also need a Log List row shape.
