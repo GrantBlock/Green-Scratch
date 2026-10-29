@@ -26,8 +26,8 @@ Still open:
 - [x] Folder structure supplied (`docs/FOLDER-STRUCTURE.md`), with a Claude section for configurations, glossaries and standard works.
 - [ ] 🧑 Required documents per folder; confirm the folder assumptions in `docs/FOLDER-STRUCTURE.md` (project subfolders repeat per project, cGMP Package location, `Claude - Company`).
 - [ ] 🧑 Agent email address and mailbox type.
-- [x] Money scope: the Vault replaces QuickBooks for the accounting Grant uses, with GAAP-style reports (`docs/BOOKS.md`).
-- [ ] 🧑 Answer the accounting questions in `docs/BOOKS.md` section 6 (who needs GAAP, accrual or cash, entity type, payroll and sales tax, reports, accounts, CPA, history).
+- [x] Money scope: the Vault replaces QuickBooks for the accounting Grant uses, with GAAP-style reports (`docs/BOOKS.md`). Runs alongside QuickBooks through 2027; cutover target January 1, 2028.
+- [ ] 🧑 Choose the dual-entry method for 2027 (`docs/BOOKS.md` section 5) and answer the accounting questions in `docs/BOOKS.md` section 7 (who needs GAAP, accrual or cash, entity type, payroll and sales tax, reports, accounts, CPA, history).
 - [ ] 🧑 Apps 7 and 8 (you listed six).
 - [ ] 🧑 Process page content (formerly Develop this).
 
@@ -38,6 +38,8 @@ Still open:
 - [ ] 🧑 Review mockups; export into `design/`.
 
 ## Phase 2. Build the Vault (💻), one slice per session
+
+> **Build order for the 2027 parallel year:** slices 1, 2, 4 and 6, then B1, B2, B4 and B3 (Phase 2b), then slices 3, 5 and 7. Books go ahead of the calendar, the Gantt and the monday.com cutover so the shadow books can start in January 2027. See `docs/BOOKS.md` section 5.
 
 Each slice ends with Grant using it on real data. monday.com stays until slice 7.
 
@@ -53,7 +55,7 @@ Each slice ends with Grant using it on real data. monday.com stays until slice 7
 
 ## Phase 2b. Books: replace QuickBooks (💻 + 🧑 + CPA)
 
-Starts after slice 7. Details and controls: `docs/BOOKS.md`.
+Starts as soon as slices 1, 2, 4 and 6 exist (target January 2027). Details and controls: `docs/BOOKS.md`.
 
 | Slice | Delivers | Done when |
 |---|---|---|
@@ -61,7 +63,7 @@ Starts after slice 7. Details and controls: `docs/BOOKS.md`.
 | B2 | Invoices, bills, expenses, payments post to the ledger; A/R and A/P aging | An invoice and its payment appear correctly in the ledger |
 | B3 | Bank and card import, matching, monthly reconciliation | A month reconciles to the statement |
 | B4 | Categorized P&L (income statement), balance sheet, cash flow, P&L by project, accountant and tax exports | Reports match known test cases |
-| B5 | Parallel run beside QuickBooks for a full quarter, CPA review, opening balances, cutover | Reports agree line by line; you cancel QuickBooks |
+| B5 | The 2027 parallel year beside QuickBooks, monthly and quarterly comparison, CPA review, then cutover on Jan 1, 2028 | Reports agree line by line; you cancel QuickBooks |
 
 ## Phase 3. Connect (💻)
 
