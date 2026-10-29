@@ -1,5 +1,7 @@
 # Concepts Hub: Plan to Completion
 
+> **Direction under review:** `docs/PLATFORM-CONCEPT.md` proposes reorganizing the whole app around opportunities, projects, documents and a knowledge base, with a Claude assistant. If approved, this plan and the specs are rewritten to match.
+
 One page to follow from here to a working app. Inputs: `spec/` (what to build), `reference/` (existing numbering, quoting process, business plan, agent chat). Check items off here as you go; `spec/BUILD-STATUS.md` tracks only the build slices.
 
 **Legend:** 🧑 you (Grant) · 🎨 Claude Design · 💻 Claude Code
