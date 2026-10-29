@@ -88,6 +88,9 @@ Status code, then `{ "error": { "code", "message", "fields"? } }`. Messages are 
 | POST | `/api/v1/schedule-items/:id/move` | Change dates. A reason is required and is written to the item's updates. | start, end, reason |
 | POST | `/api/v1/share-links` | Create an expiring customer link. The token is returned once and never again. | projectId, scope, documentIds, expiresAt |
 | POST | `/api/v1/share-links/:id/revoke` | Revoke a link. |  |
+| PUT | `/api/v1/documents/:id/file` | Upload the file bytes for a Draft or In review document. Send the raw body with x-file-name and content-type headers. The server stores it, then records size, type and checksum. A Released document is locked. |  |
+| GET | `/api/v1/documents/:id/file` | Download the document's file. |  |
+| GET | `/api/v1/health` | Liveness check. No sign-in. Returns { ok: true, time }. |  |
 | POST | `/api/v1/registry/:id/void` | Mark a number VOID. Numbers are never reused. | reason |
 | GET | `/api/v1/search` | Search records by text. Query: q, types (comma list). |  |
 | GET | `/api/v1/today` | The Today screen: new leads, follow-ups due, overdue invoices, visits, missing documents. |  |

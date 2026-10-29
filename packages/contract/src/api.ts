@@ -109,7 +109,7 @@ export const AssistantAnswer = z.object({
 export const MoveInput = z.object({ start: IsoDate, end: IsoDate, reason: z.string().min(1, 'A reason is required when a date changes.') });
 export const TokenResult = z.object({ shareLink: ShareLink, token: z.string(), url: z.string() });
 
-export type HttpMethod = 'GET' | 'POST' | 'PATCH';
+export type HttpMethod = 'GET' | 'POST' | 'PATCH' | 'PUT';
 export type Audience = 'vault' | 'hub-public' | 'hub-internal';
 export interface RouteDef {
   name: string;
@@ -143,6 +143,9 @@ export const actionRoutes: RouteDef[] = [
   R({ name: 'scheduleItems.move', method: 'POST', path: '/schedule-items/:id/move', audience: 'vault', summary: 'Change dates. A reason is required and is written to the item\'s updates.', input: MoveInput, output: z.object({ scheduleItem: ScheduleItem, update: Activity }) }),
   R({ name: 'shareLinks.create', method: 'POST', path: '/share-links', audience: 'vault', summary: 'Create an expiring customer link. The token is returned once and never again.', input: z.object({ projectId: Id, scope: ShareScope, documentIds: z.array(Id), expiresAt: IsoDateTime }), output: TokenResult }),
   R({ name: 'shareLinks.revoke', method: 'POST', path: '/share-links/:id/revoke', audience: 'vault', summary: 'Revoke a link.', output: ShareLink }),
+  R({ name: 'documents.upload', method: 'PUT', path: '/documents/:id/file', audience: 'vault', summary: 'Upload the file bytes for a Draft or In review document. Send the raw body with x-file-name and content-type headers. The server stores it, then records size, type and checksum. A Released document is locked.', output: Document }),
+  R({ name: 'documents.download', method: 'GET', path: '/documents/:id/file', audience: 'vault', summary: 'Download the document\'s file.' }),
+  R({ name: 'system.health', method: 'GET', path: '/health', audience: 'vault', summary: 'Liveness check. No sign-in. Returns { ok: true, time }.' }),
   R({ name: 'registry.void', method: 'POST', path: '/registry/:id/void', audience: 'vault', summary: 'Mark a number VOID. Numbers are never reused.', input: z.object({ reason: z.string().min(1) }), output: schemas.registry }),
   R({ name: 'search', method: 'GET', path: '/search', audience: 'vault', summary: 'Search records by text. Query: q, types (comma list).', output: SearchOutput }),
   R({ name: 'today', method: 'GET', path: '/today', audience: 'vault', summary: 'The Today screen: new leads, follow-ups due, overdue invoices, visits, missing documents.' }),
