@@ -11,7 +11,7 @@ The step-by-step plan is `PLAN.md`. Work from it, and tick items off as they fin
 
 ## Rules
 
-- Design tokens are defined once in `spec/system-architecture.md` ("Design Tokens"). Never redefine them in the Hub or Vault code; import from one shared tokens file.
+- Branding has one source: the design system exported to `design/system/` (see `design/DESIGN-SYSTEM.md`). Hub, Vault, every tool and the printed drawing sheets import the same tokens file. Never hard-code a color, font or spacing value, and never copy a prototype's styling. Specs name token roles, not hex values.
 - Hub and Vault share one data model per tool. The Vault never keeps a shadow copy of what the Hub displays.
 - Serials are issued only by Registry (`BC-[TYPE]-YYNNN`). Never hand-assign them in code.
 - The Vault is single-user (Grant). No multi-user login.

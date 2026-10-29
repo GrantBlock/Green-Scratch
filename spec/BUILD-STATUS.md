@@ -1,6 +1,6 @@
 # Build status
 
-- [ ] Design system loaded in Claude Design
+- [ ] Design system supplied in Claude Design and exported to `design/system/`
 - [ ] Mockups exported to `design/`
 - [ ] Stack chosen (hosting, framework, Vault backend)
 - [ ] Shared tokens and site shell

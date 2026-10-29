@@ -1,6 +1,6 @@
 # Claude Design brief: Concepts Hub and Concepts Vault
 
-Use the Block Concepts design system (steel blue #4682B4 highlight, black on white, clean industrial/technical feel, same as the website).
+Use the Block Concepts design system, and nothing else, for all color, type and spacing. Do not invent colors or fonts. If something is missing from the design system (see `design/DESIGN-SYSTEM.md` for the full list it must cover), flag it instead of improvising.
 Source specs: `spec/system-architecture.md`, `spec/concepts-hub-spec.md`, `spec/concepts-vault-spec.md`.
 
 Design these screens, desktop and mobile:
@@ -18,5 +18,7 @@ Design these screens, desktop and mobile:
 8. Releases: authoring form (OneDrive file picker, metadata, serial issued on create), plus the Change Management list.
 9. Registry: counters per type code and the serial list with manual override.
 10. Customers record, Settings with the staged Apply button, Archive list.
+11. Build this (Process Document Builder): welcome, two-column station builder with sticky preview, and the two printed sheets (overhead layout, process description). See `spec/process-document-builder-spec.md`.
+12. Ask this: agent chat window (Pato), with the "AI assistant, not a binding quote" notice.
 
-Constraint: WCAG 2.1 AA contrast; keyboard operable; no new colors beyond the design system.
+Constraint: WCAG 2.1 AA contrast; keyboard operable; the same tokens on Hub, Vault and every tool, with no new colors beyond the design system.

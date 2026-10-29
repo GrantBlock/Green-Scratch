@@ -28,7 +28,7 @@ System map (how everything flows, where you start and end): `docs/system-map.htm
 Do this before any design or code so everything downstream matches.
 
 - [ ] Fold D1 into `spec/concepts-vault-spec.md` Registry section (types, counters, VOID, client codes on Customers).
-- [ ] Review `spec/process-document-builder-spec.md` (new, draft) and answer its **Open** items: tool name, station catalog, payment provider, `BC-W` serial, dark vs light theme.
+- [ ] Review `spec/process-document-builder-spec.md` (new, draft) and answer its **Open** items: tool name, station catalog, payment provider, `BC-W` serial, the theme (now decided by the design system).
 - [ ] Add D4's "Ask this" as a tool in `spec/concepts-hub-spec.md` (Website side) and the Vault spec (Log List row shape, Registry type code).
 - [ ] Add the stack decision (D2, D3) to `spec/concepts-hub-spec.md` "Hosting & Stack".
 - [ ] Update `spec/README.md` to match.
@@ -36,7 +36,8 @@ Do this before any design or code so everything downstream matches.
 
 ## Phase 2. Design (🎨 + 🧑)
 
-- [ ] 🧑 Open Claude Design; load the existing Block Concepts design system.
+- [ ] 🧑 Supply the design system in Claude Design. It must cover everything in `design/DESIGN-SYSTEM.md` (tokens, components, layouts, print/drawing sheets, logo). This is the single branding source for Hub, Vault and every tool.
+- [ ] 🧑 Export it into `design/system/`.
 - [ ] 🧑 Paste `design/BRIEF.md` (update it after Phase 1 to include "Ask this").
 - [ ] 🧑 Review mockups: Hub (Fix this, Grab this, Give this, Develop this, Ask this) and Vault (login, Log List, Releases, Registry, Customers, Settings, Archive), desktop and mobile.
 - [ ] 🧑 Export into `design/` and tell Claude Code to read it.

@@ -70,10 +70,11 @@ From the business plan; each tier has a different output and a different Vault o
 
 #### Additional Prompt: Branding and Look
 
-- The tool inherits the shared Design Tokens in `system-architecture.md`. The prototype's own palette (`#1A6DBF`, `#0E3F6B`) and light theme are replaced by those tokens.
-- **Open, affects the whole site:** the prototype notes that the planned website is dark-themed with a new typeface, but `system-architecture.md` says black text on white with Steel Blue. One must change. Until decided, build to the spec's tokens.
-- The drawing sheets keep their own print styling (double-line borders, Barlow Semi Condensed labels), because they are engineering documents, not site chrome.
+- The tool uses the Block Concepts design system like every other tool (see "Design Tokens" in `system-architecture.md`). The prototype's own palette, light theme and fonts are discarded, not ported.
+- The welcome screen, step rail, station cards, config bar and buttons are built from the design system's components and token roles.
+- **Drawing sheets** (the printed output) are branded from the same system through its drawing roles: line, label, double-line border, title block. The design system must therefore include a **print / drawing** section (sheet sizes, line weights, label type, title-block layout). Sheets print on white regardless of the site's theme.
 - The "Made with Claude Design" badge is removed.
+- Resolved by this rule: the earlier question of a dark site versus black-on-white is decided by the design system, not by this spec.
 
 ---
 

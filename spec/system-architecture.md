@@ -58,12 +58,14 @@ Any new tool added to the system follows one of three shapes:
 
 #### Additional Prompt — Design Tokens
 
-The actual shared visual system, defined once here rather than duplicated per spec:
+Branding has exactly one source: the **Block Concepts design system**, authored in Claude Design and exported into `design/system/` (see `design/DESIGN-SYSTEM.md`). No other spec, prototype or piece of code defines colors, typefaces, spacing or theme.
 
-* Black text on white background, site-wide, both sides.
-* Highlight/accent color: a light shade of Steel Blue (matches existing Block Concepts brand, #4682B4 base).
-* Clean, industrial/technical feel — consistent with the Futura Automation reference site already used for the Block Concepts redesign.
-* Any new tool or Vault tab built for this system inherits these tokens rather than defining its own.
+* **Source of truth:** `design/system/` (tokens file plus component reference). Both the Concepts Hub and the Concepts Vault import the same tokens file.
+* **Uniform scope:** the public Hub, the Vault, every tool (Grab this, Give this, Develop this, Build this, Ask this), the generated drawing sheets and any email or PDF output draw from it. A tool never ships its own palette, font or theme.
+* **Theme:** whichever themes the design system defines (light, dark, or both) apply to Hub and Vault alike.
+* **Roles, not values:** specs refer to token roles (text, surface, accent, accent-on-surface, focus, danger, drawing-line, drawing-label), never to hex values or font names.
+* **Provisional values until the design system is supplied:** black text on white, light Steel Blue accent (`#4682B4` base), clean industrial/technical feel. These are placeholders to build against and are replaced wholesale by the exported tokens.
+* Any new tool or Vault tab inherits the tokens rather than defining its own.
 
 #### Additional Prompt — Prompting for Both Sides
 

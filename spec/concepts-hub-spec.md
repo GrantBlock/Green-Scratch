@@ -51,9 +51,8 @@ Design a document-sharing portal with a four-zone drill-down layout:
 - Selected state is visually distinct in Columns 1 and 2 (active row highlighted).
 
 **Visual style:**
-- Black text on white background.
-- Highlight color: a light shade of Steel Blue.
-- Clean, industrial/technical feel — consistent with Futura Automation reference site already used for the Block Concepts redesign.
+- All color, type and spacing come from the Block Concepts design system (see "Design Tokens" in `system-architecture.md`); this tool defines none of its own.
+- The selected-row highlight uses the design system's accent token role.
 - File preview: a static image of the file's first page (not an interactive/paginated viewer).
 
 #### Additional Prompt — Contents of Entries
@@ -73,7 +72,7 @@ Define accessibility requirements for the drill-down portal:
 - **Keyboard navigation:** Tabs, item list, sub-item list, and the detail pane's revision selector/download button must all be reachable and operable via keyboard alone (Tab/Shift+Tab to move focus, Enter/Space to select).
 - **Focus behavior:** Selecting an item/sub-item populates the next column only — focus does NOT auto-jump into that column. Column 3 (entry detail pane) has an expand button in its top-left corner that the user can activate to make it full-width; this is the mechanism for giving the detail pane full focus/attention, not automatic focus-stealing.
 - **Screen reader behavior:** Tabs, item list, and sub-item list should use appropriate ARIA roles (e.g., `tablist`/`tab`, `listbox`/`option`) so assistive tech announces selection state and list position. The detail pane should announce when its content changes.
-- **Contrast:** Black-on-white body text and the light Steel Blue highlight must meet WCAG 2.1 AA contrast minimums (4.5:1 for text, 3:1 for UI components/focus indicators).
+- **Contrast:** Body text, the accent highlight and focus indicators, in every theme the design system defines, must meet WCAG 2.1 AA contrast minimums (4.5:1 for text, 3:1 for UI components/focus indicators).
 - **File preview:** The first-page preview image needs descriptive alt text (e.g., derived from the entry title) since it's a static image, not readable text.
 - **Search box (Column 2):** Needs a visible or programmatically associated label, not placeholder-only text.
 - **Compliance target:** WCAG 2.1 AA, best-effort (not a formal legal/contractual audit requirement) — appropriate given this is a public-facing sales/lead-gen tool, not a government or contract-mandated deliverable.
