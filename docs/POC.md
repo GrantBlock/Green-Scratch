@@ -56,7 +56,7 @@ Rules that keep parallel design consistent are in `design/sessions/00-shared.md`
 | Track | Owns | Needs | Can start |
 |---|---|---|---|
 | **C0 Contracts** | `packages/contract` (types from `spec/data-model.md`, API routes, fixtures) | Nothing | **Done (first version).** 35 tests pass, including the first nine steps of the story over HTTP |
-| **C1 Core** | `apps/vault/server`, database schema, Registry, auth, audit log, storage | C0 | After C0 |
+| **C1 Core** | `packages/core` (business logic, store, Hub routes, mock), `apps/vault` (Cloudflare Worker, D1, R2, sign-in) | C0 | **Done, not yet deployed.** Runs under Cloudflare's local runtime; 78 tests pass across the three packages. Deploy steps: `docs/DEPLOY.md` |
 | **C2 Vault UI** | `apps/vault/ui` against a **mock API** built from the fixtures | C0 and design mockups | As mockups land |
 | **C3 Hub** | `apps/hub` (home, Contact, customer page) | C0 | After C0 |
 | **C4 Assistant** | `apps/vault/assistant` (search, citations) | C1 data | After C1 |
@@ -76,7 +76,8 @@ Contract-first with mocks is what makes this safe: UI sessions build against fix
 
 ```
 apps/vault/ui          C2
-apps/vault/server      C1
+apps/vault/src         C1 (wiring only)
+packages/core          C1 (business logic, mock)
 apps/vault/assistant   C4
 apps/hub               C3
 packages/contract      C0 (read-only to others; changes go through C0)

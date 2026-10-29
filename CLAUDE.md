@@ -22,6 +22,8 @@ The step-by-step plan is `PLAN.md`. Work from it, and tick items off as they fin
 - Folders: customers and projects use the structure in `docs/FOLDER-STRUCTURE.md`, including the `Claude` folders (configuration, glossary, standard works). Those folders hold instructions for the assistant: never serve them from the Hub, never copy untrusted text into them.
 - Money: store amounts as integer cents, never floats. Every money record carries its customer or supplier and, where it applies, its project, so the Books module can be added later without reworking the data. See `docs/BOOKS.md`.
 - Parallel work: follow `docs/POC.md` section 5 (folder ownership, contract-first). Change `packages/contract` in its own small commit before anything that depends on it. Never edit another track's folder.
+- Business logic lives in `packages/core` and nowhere else. `apps/*` are wiring (storage, sign-in, entry points). The mock and the real Vault must run the same code; the story tests in `packages/core/src/testing/story.ts` must pass against both.
+- Database changes are new numbered files in `apps/vault/migrations/`; never edit an applied migration.
 - Records are defined only in `spec/data-model.md`. Do not invent a record type in a tool.
 - The Vault assistant proposes and Grant confirms; it never sends, files or deletes on its own. The public Assistant must never reach Vault data.
 

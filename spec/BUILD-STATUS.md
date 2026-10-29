@@ -19,7 +19,7 @@ Slice list and order are in `PLAN.md`, Phase 3 (the platform plan). The list bel
 ## Proof of concept tracks (`docs/POC.md`)
 
 - [x] C0 Contracts: records, rules, 110 routes, fixtures, mock server, tests (`packages/contract`)
-- [ ] C1 Core (server, database, Registry, sign-in)
+- [x] C1 Core: `packages/core` + `apps/vault` (D1, R2, Registry, audit log, Access sign-in). Verified locally; **not deployed** (needs your Cloudflare setup, `docs/DEPLOY.md`)
 - [ ] C2 Vault UI (against the mock)
 - [ ] C3 Hub (home, Contact, customer page)
 - [ ] C4 Assistant

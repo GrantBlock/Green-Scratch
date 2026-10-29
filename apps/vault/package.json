@@ -1,0 +1,25 @@
+{
+  "name": "@bc/vault",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Concepts Vault server: a Cloudflare Worker over D1 (records) and R2 (files). Business logic is in @bc/core.",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "node --test \"test/*.test.ts\"",
+    "build:check": "wrangler deploy --dry-run --outdir dist",
+    "seed:sql": "node scripts/seed-sql.ts",
+    "dev": "wrangler dev --local"
+  },
+  "dependencies": {
+    "@bc/contract": "*",
+    "@bc/core": "*",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.0.0",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.9.0",
+    "wrangler": "^4.0.0"
+  }
+}

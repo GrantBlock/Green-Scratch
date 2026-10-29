@@ -1,0 +1,27 @@
+{
+  // Concepts Vault: Worker, D1 (records), R2 (files). See docs/DEPLOY.md for the one-time setup.
+  "name": "bc-vault",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": false,
+  "preview_urls": false,
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "bc-vault",
+      "database_id": "REPLACE_WITH_DATABASE_ID_FROM_wrangler_d1_create",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "r2_buckets": [{ "binding": "FILES", "bucket_name": "bc-vault-files" }],
+  "vars": {
+    "TIME_ZONE": "America/Chicago",
+    // Set these from Cloudflare Zero Trust, Access, Applications. They are not secrets.
+    "ACCESS_TEAM_DOMAIN": "REPLACE.cloudflareaccess.com",
+    "ACCESS_AUD": "REPLACE_WITH_APPLICATION_AUD_TAG",
+    "ALLOWED_EMAIL": "grant@blockconceptsllc.com"
+  },
+  // Turn on when vault.blockconceptsllc.com exists in Cloudflare DNS:
+  // "routes": [{ "pattern": "vault.blockconceptsllc.com", "custom_domain": true }],
+  "observability": { "enabled": true }
+}
