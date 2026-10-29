@@ -19,10 +19,10 @@ Built workflow-first from `docs/WORKFLOW.md`, outward from the live website (`do
 - [x] Pilot: enter about 30 opportunities and 6 projects by hand.
 - [x] All public tools are in scope, internal use first.
 - [x] Customers get files through expiring links, no accounts.
+- [x] Addresses: `vault.blockconceptsllc.com` (private) and `hub.blockconceptsllc.com` (customer-accessible).
 
 Still open:
 
-- [ ] 🧑 Vault address (options in `docs/WORKFLOW.md` section 6).
 - [ ] 🧑 Your project folder and required-document list.
 - [ ] 🧑 Agent email address and mailbox type.
 - [ ] 🧑 Money scope (recommended: track project financials; QuickBooks stays the books).
@@ -53,7 +53,7 @@ Each slice ends with Grant using it on real data. monday.com stays until slice 7
 
 | Slice | Delivers |
 |---|---|
-| 8 | Customer project pages: expiring links, PDF downloads, upload requests |
+| 8 | Customer project pages on the Hub: expiring links, PDF downloads, upload requests. Vault publishes to a separate Hub bucket |
 | 9 | Agent email: inbound routing, classification, filing proposals; reminders and drafts |
 | 10 | Sourcing list per project and supplier quote tracking |
 | 11 | Knowledge: research, articles, trip notes, links to accounts and events |
@@ -66,16 +66,18 @@ Each slice ends with Grant using it on real data. monday.com stays until slice 7
 | 13 | Contact: the website form creates a Lead in Inbox (the one change to the live site) |
 | 14 | Builder: stations to PDF sheets and a Word process document, used internally from an opportunity |
 | 15 | Library: publish customer-ready PDFs, then the public view |
-| 16 | Hub section on the website, linking Contact, Builder and Library |
+| 16 | Hub link in the website navigation, pointing to `hub.blockconceptsllc.com` |
 | 17 | Public Assistant: published content only |
 | 18 | cGMP documentation package template |
 
 ## Phase 5. Before relying on it
 
+- [ ] 🧑 DNS: add `vault` and `hub` subdomains in Cloudflare; put Cloudflare Access (or equivalent) in front of the Vault.
 - [ ] Security pass: login, uploads, share links, email ingestion, assistant (prompt injection from emails and documents).
 - [ ] Backups and a full export of records and files.
 - [ ] Test on iPad and iPhone for every slice.
 - [ ] Public Assistant tested with adversarial prompts; no Vault data reachable.
+- [ ] Hub cannot read the Vault database or private files (check the bindings, not just the code).
 
 ## How to run each session
 

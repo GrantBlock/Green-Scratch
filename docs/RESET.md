@@ -41,6 +41,8 @@ I rated each inherited item by evidence, not by how detailed the file was.
 
 ## 3. The unified approach
 
+> **Update:** the addresses are now decided. The private side is `vault.blockconceptsllc.com` and the customer-accessible side (public tools and customer project pages) is `hub.blockconceptsllc.com`. The diagram below predates this; see `docs/WORKFLOW.md` section 6.
+
 One product with three layers, one brand, one number sequence and one data model. The website stays the front door.
 
 ```

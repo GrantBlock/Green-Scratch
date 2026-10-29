@@ -147,6 +147,8 @@ Hosting stays on Cloudflare, with more custom-built pieces:
 - **Onshape** stays the design tool. Records store the Onshape share link, plus exported PDF or STEP snapshots as Documents.
 - **Email:** a dedicated agent address (section 6).
 
+- **Addresses:** `vault.blockconceptsllc.com` (Concepts Vault, private) and `hub.blockconceptsllc.com` (Concepts Hub, customer-accessible). See `docs/WORKFLOW.md` section 6.
+
 This replaces decision D3 and the Power Automate backend in `concepts-vault-spec.md`.
 
 ## 4. Build order that pays back early

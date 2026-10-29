@@ -18,6 +18,7 @@ The step-by-step plan is `PLAN.md`. Work from it, and tick items off as they fin
 - Stack: Cloudflare (D1 database, R2 files, Vectorize search), OneDrive for working files, Onshape for design. Do not add other services silently; propose and confirm with Grant first.
 - Names: use the plain names in `docs/WORKFLOW.md` section 4. Never use the old "___ this" names in the app or in copy.
 - Phone and iPad are first-class: every screen must work and be tested on both.
+- Two Cloudflare apps on two addresses: Vault (`vault.blockconceptsllc.com`, Grant only) and Hub (`hub.blockconceptsllc.com`, customers and public). The Hub never binds to the Vault database or private files; it receives only published or shared data through a narrow interface.
 - Records are defined only in `spec/data-model.md`. Do not invent a record type in a tool.
 - The Vault assistant proposes and Grant confirms; it never sends, files or deletes on its own. The public Ask this agent must never reach Vault data.
 

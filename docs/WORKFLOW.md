@@ -65,12 +65,21 @@ Grant wants the public tools fully working, and internal use comes first:
 - **Contact** is the first public piece, since it feeds the Pipeline.
 - **Assistant (public)** comes last. It sees only published content.
 
-## 6. Where the Vault lives
+## 6. Addresses (decided)
 
-Options, to decide later:
+| Address | What it is | Who uses it |
+|---|---|---|
+| `blockconceptsllc.com` | The live website (unchanged) | Everyone |
+| `vault.blockconceptsllc.com` | Concepts Vault, the private working app | Grant only |
+| `hub.blockconceptsllc.com` | Concepts Hub, the customer-accessible side: public tools (Contact, Builder, Library, Assistant) and customer project pages | Customers and the public |
 
-1. **`app.blockconceptsllc.com`:** simplest, and separate from the live site.
-2. **`work.blockconceptsllc.com`:** same idea, a plainer name.
-3. **A path on the main domain** (for example `/app`): one hostname, but it couples the private app to the public site's deploy.
+Why separate addresses matter:
 
-Customer project pages can sit on the same host, or on a separate one such as `projects.blockconceptsllc.com` so a customer link never exposes the Vault address.
+- **Isolation.** The Vault and the Hub are different origins, so a customer page can never share cookies, scripts or sessions with the Vault.
+- **Least access.** The Hub does not read the Vault's database. It only reaches what the Vault has published or shared, through a narrow internal interface. The Vault copies files into a separate Hub storage bucket only when they are Released and Customer-shared or Public.
+- **Login.** The Vault sits behind a login on its own address. Cloudflare Access (one-time email code, no password to build) is the likely option; confirm it against the plan and pricing before relying on it.
+- **Website link.** At release the main website adds a Hub link in its navigation pointing to `hub.blockconceptsllc.com`. Until then the website does not mention the Hub.
+- **Contact form.** The form can live on the Hub and be linked from the website, which avoids changing the live site's build. If it must sit on the main site, it posts to the Hub with cross-origin rules.
+- **Agent email** uses its own address on a separate subdomain, so Outlook mail on the main domain is untouched.
+
+Both subdomains need DNS records in Cloudflare and are served by Cloudflare Workers.

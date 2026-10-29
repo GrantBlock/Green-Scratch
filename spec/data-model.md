@@ -123,7 +123,7 @@ An opportunity that was won. Number: the same `YYNNN` digits as its Q.
 #### Additional Prompt: Share link
 
 - Project, scope (view released documents, or upload to one checklist item), expiry, created, revoked flag, last used.
-- A share link exposes only Customer-shared Documents of its project.
+- A share link exposes only Customer-shared Documents of its project. It is served by the Hub (`hub.blockconceptsllc.com`), never by the Vault.
 
 #### Additional Prompt: Audit event
 
