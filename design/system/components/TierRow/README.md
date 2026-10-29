@@ -1,0 +1,1 @@
+One sourcing tier on the Sourcing page: large percentage, a Steel Blue bar filled to that percentage, tier name, what is sourced and a render. Provide `pct`, `name`, `items` and optionally `solution` as `{title, href}` linking to a matching solution. Stack the six tiers (15, 30, 50, 70, 85, 100) vertically; never name suppliers.

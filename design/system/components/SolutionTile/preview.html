@@ -1,0 +1,13 @@
+<!-- @dsCard group="Homepage" height=420 subtitle="Render, industry tag, pillar tags and title" -->
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>html,body{margin:0}body{background:var(--bc-surface);color:var(--bc-ink);font-family:var(--font-sans)}#root{padding:24px;display:flex;flex-direction:column;gap:24px}.row{display:flex;gap:16px;flex-wrap:wrap;align-items:center}</style></head>
+<body><div id="root"></div>
+<script>
+var B = window.BlockConcepts, h = React.createElement;
+function App(){return h('div',{className:'bc-tiles'},
+ h(B.SolutionTile,{title:'SLS print farm automation',industry:'Additive manufacturing',pillars:['Engineering','Sourcing'],render:'CAD RENDER \u00B7 SLS print farm'}),
+ h(B.SolutionTile,{title:'Servo-based cap torque measurement',industry:'Packaging and dispensing',pillars:['Engineering'],render:'CAD RENDER \u00B7 Cap torque cell'}),
+ h(B.SolutionTile,{title:'VFD control enclosure for conveyor',industry:'Material handling',pillars:['Sourcing','Services'],render:'CAD RENDER \u00B7 VFD enclosure'}));}
+ReactDOM.createRoot(document.getElementById('root')).render(h(App));
+</script></body></html>

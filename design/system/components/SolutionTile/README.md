@@ -1,0 +1,1 @@
+Solution tile with a render, a solid industry tag, outlined pillar tags and a title, linking to the solution page. Provide `title`, `industry`, `pillars` (array), `render` (the placeholder caption or render) and `href`. Lay tiles in a `bc-tiles` grid; small and large projects sit side by side. Titles name the solution without customer details.

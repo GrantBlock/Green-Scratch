@@ -1,0 +1,1 @@
+Cookie consent panel for Google Analytics, fixed at the bottom right on first visit. Provide `onAccept`, `onDecline`, `privacyHref` and optionally `children` to replace the copy. Cookie settings in the footer reopens it. Keep the copy short and link the privacy policy.

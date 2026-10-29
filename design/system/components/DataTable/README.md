@@ -1,0 +1,1 @@
+Table with a Steel Blue tint header and hairline row rules, used for comparisons such as the RAD Index. Provide `columns` as `{key, label, mono}` and `rows` keyed by column key; `caption` is optional. Set codes and numbers in a `mono` column. It scrolls sideways inside its own wrapper on narrow screens. In Word, build the same table with the document table specification instead.

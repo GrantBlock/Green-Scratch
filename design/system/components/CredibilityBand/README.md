@@ -1,0 +1,1 @@
+Short company background paragraph with a "Get to know us" link to About. Provide `children` (the paragraph), and optionally `linkLabel` and `href`. State no service area. Until the paragraph is supplied, show a plain placeholder sentence.

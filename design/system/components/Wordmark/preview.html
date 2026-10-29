@@ -1,0 +1,15 @@
+<!-- @dsCard group="Brand" height=300 subtitle="Dark, reversed, light and one-colour versions" -->
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>html,body{margin:0}body{background:var(--bc-surface);color:var(--bc-ink);font-family:var(--font-sans)}#root{padding:24px;display:flex;flex-direction:column;gap:24px}.row{display:flex;gap:16px;flex-wrap:wrap;align-items:center}</style></head>
+<body><div id="root"></div>
+<script>
+var B = window.BlockConcepts, h = React.createElement;
+function App(){return h(React.Fragment,null,
+ h('div',{className:'row'},h(B.Wordmark,{mark:true,size:36}),h(B.Wordmark,{size:15,tagline:'Specialty Automation'})),
+ h('div',{className:'row'},
+  h('div',{style:{background:'var(--bc-steel-blue)',padding:16}},h(B.Wordmark,{variant:'reversed',size:22})),
+  h('div',{style:{background:'#fff',padding:16}},h(B.Wordmark,{variant:'primary',size:22})),
+  h('div',{style:{padding:16,border:'1px solid var(--bc-hairline)'}},h(B.Wordmark,{variant:'one-color',size:22}))));}
+ReactDOM.createRoot(document.getElementById('root')).render(h(App));
+</script></body></html>

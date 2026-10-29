@@ -1,0 +1,1 @@
+Highlighted note on a Steel Blue tint, used to render a Word document's definition or rule on the web. Provide `children` and optionally `title`. Use at most one per section; for ordinary emphasis use bold text.

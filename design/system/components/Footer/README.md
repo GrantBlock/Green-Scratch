@@ -1,0 +1,1 @@
+Site footer. Provide `social` (LinkedIn, YouTube), `links` (the six primary links), `legal` (Privacy, Terms and Cookie settings, the last with `onClick`) and optionally `copyright` (default "©2026 Block Concepts LLC · Specialty Automation"). Rows stack on phones and the wordmark sits right on desktop. Use it unchanged on every page.

@@ -1,0 +1,1 @@
+Position statement: eyebrow, uppercase headline, muted paragraph and an ink caption in two columns that stack on phones. Provide `headline`, and optionally `eyebrow`, `paragraph` and `caption`. Use once, directly after the pillars, with "Small fixes and full production lines. One accountable source."

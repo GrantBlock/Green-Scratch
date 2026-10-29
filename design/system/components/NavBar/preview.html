@@ -1,0 +1,10 @@
+<!-- @dsCard group="Navigation" height=110 subtitle="Inline links on desktop, hamburger below 820px" -->
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>html,body{margin:0}body{background:var(--bc-surface);color:var(--bc-ink);font-family:var(--font-sans)}#root{padding:24px;display:flex;flex-direction:column;gap:24px}.row{display:flex;gap:16px;flex-wrap:wrap;align-items:center}</style></head>
+<body><div id="root"></div>
+<script>
+var B = window.BlockConcepts, h = React.createElement;
+function App(){return h('div',{style:{margin:-24}},h(B.NavBar,{links:[{label:'Engineering',group:'pillars'},{label:'Sourcing',group:'pillars'},{label:'Services',group:'pillars'},{label:'Solutions'},{label:'About'},{label:'Contact'}]}));}
+ReactDOM.createRoot(document.getElementById('root')).render(h(App));
+</script></body></html>

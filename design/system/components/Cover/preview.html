@@ -1,0 +1,32 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+html,body{margin:0}body{background:var(--bc-surface)}
+svg{display:block;width:960px;height:288px}
+.ground{fill:var(--bc-surface)}
+.rule{stroke:var(--bc-wordmark-gray);stroke-opacity:.55;stroke-width:1;fill:none}
+.dash{stroke:var(--bc-wordmark-gray);stroke-opacity:.7;stroke-width:1;stroke-dasharray:6 6;fill:none}
+.blue{fill:var(--bc-steel-blue)}.gray{fill:var(--bc-wordmark-gray)}.light{fill:var(--bc-steel-blue-text)}.ink{fill:var(--bc-ink)}
+.name{font:800 80px/1 var(--font-sans);fill:var(--bc-ink);letter-spacing:-.01em}
+.tag{font:400 14px var(--font-sans);fill:var(--bc-muted)}
+</style></head>
+<body>
+<svg viewBox="0 0 960 288" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Block Concepts">
+<!-- Blocks: bc-steel-blue 240x144, bc-wordmark-gray 192x96, bc-steel-blue-text 96x96, bc-ink 48x48 (48px units = bc-space-12), all bc-radius-none.
+     Arrangement: a stepped cluster right of x=480, flush edges, the gray block bleeding off the top and right edges.
+     Pattern: the Block Concepts diagonal lines from its letterhead (a literal motif): dashed lines (concept) turn solid (build) from left to right, drawn under the blocks so the blocks cut it out.
+     Steps/radii: bc-space-4 (16px) line pitch, bc-space-12 (48px) block unit, square corners. -->
+<rect class="ground" width="960" height="288"/>
+<clipPath id="field"><rect x="480" y="0" width="480" height="288"/></clipPath>
+<g clip-path="url(#field)"><g class="rule"><line x1="480" y1="0" x2="768" y2="288"/><line x1="496" y1="0" x2="784" y2="288"/><line x1="512" y1="0" x2="800" y2="288"/><line x1="528" y1="0" x2="816" y2="288"/><line x1="544" y1="0" x2="832" y2="288"/><line x1="560" y1="0" x2="848" y2="288"/><line x1="576" y1="0" x2="864" y2="288"/><line x1="592" y1="0" x2="880" y2="288"/><line x1="608" y1="0" x2="896" y2="288"/><line x1="624" y1="0" x2="912" y2="288"/><line x1="640" y1="0" x2="928" y2="288"/><line x1="656" y1="0" x2="944" y2="288"/><line x1="672" y1="0" x2="960" y2="288"/><line x1="688" y1="0" x2="976" y2="288"/><line x1="704" y1="0" x2="992" y2="288"/><line x1="720" y1="0" x2="1008" y2="288"/><line x1="736" y1="0" x2="1024" y2="288"/><line x1="752" y1="0" x2="1040" y2="288"/><line x1="768" y1="0" x2="1056" y2="288"/><line x1="784" y1="0" x2="1072" y2="288"/><line x1="800" y1="0" x2="1088" y2="288"/><line x1="816" y1="0" x2="1104" y2="288"/><line x1="832" y1="0" x2="1120" y2="288"/><line x1="848" y1="0" x2="1136" y2="288"/><line x1="864" y1="0" x2="1152" y2="288"/><line x1="880" y1="0" x2="1168" y2="288"/><line x1="896" y1="0" x2="1184" y2="288"/><line x1="912" y1="0" x2="1200" y2="288"/><line x1="928" y1="0" x2="1216" y2="288"/><line x1="944" y1="0" x2="1232" y2="288"/></g>
+<g class="dash"><line x1="240" y1="288" x2="528" y2="0"/><line x1="288" y1="288" x2="576" y2="0"/><line x1="336" y1="288" x2="624" y2="0"/><line x1="384" y1="288" x2="672" y2="0"/><line x1="432" y1="288" x2="720" y2="0"/><line x1="480" y1="288" x2="768" y2="0"/><line x1="528" y1="288" x2="816" y2="0"/><line x1="576" y1="288" x2="864" y2="0"/><line x1="624" y1="288" x2="912" y2="0"/><line x1="672" y1="288" x2="960" y2="0"/><line x1="720" y1="288" x2="1008" y2="0"/><line x1="768" y1="288" x2="1056" y2="0"/><line x1="816" y1="288" x2="1104" y2="0"/><line x1="864" y1="288" x2="1152" y2="0"/><line x1="912" y1="288" x2="1200" y2="0"/></g></g>
+<rect class="blue" x="528" y="48" width="240" height="144"/>
+<rect class="gray" x="768" y="0" width="192" height="96"/>
+<rect class="light" x="768" y="96" width="96" height="96"/>
+<rect class="ink" x="528" y="192" width="48" height="48"/>
+<text class="name" x="48" y="136">Block</text>
+<text class="name" x="48" y="212">Concepts</text>
+<text class="tag" x="48" y="252">One accountable source.</text>
+</svg>
+</body></html>

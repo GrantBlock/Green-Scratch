@@ -1,0 +1,11 @@
+<!-- @dsCard group="Actions" height=112 -->
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>html,body{margin:0}body{background:var(--bc-surface);color:var(--bc-ink);font-family:var(--font-sans)}#root{padding:24px;display:flex;flex-direction:column;gap:24px}.row{display:flex;gap:16px;flex-wrap:wrap;align-items:center}</style></head>
+<body><div id="root"></div>
+<script>
+var B = window.BlockConcepts, h = React.createElement;
+function App(){return h('div',{className:'row'},
+ h(B.Button,null,'Contact'),h(B.Button,{variant:'secondary'},'Solutions'),h(B.Button,{variant:'link',href:'#'},'See sourcing tiers'),h(B.Button,{disabled:true},'Unavailable'));}
+ReactDOM.createRoot(document.getElementById('root')).render(h(App));
+</script></body></html>

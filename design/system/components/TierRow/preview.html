@@ -1,0 +1,12 @@
+<!-- @dsCard group="Sourcing page" height=620 subtitle="Percentage, Steel Blue bar, tier name and render" -->
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>html,body{margin:0}body{background:var(--bc-surface);color:var(--bc-ink);font-family:var(--font-sans)}#root{padding:24px;display:flex;flex-direction:column;gap:24px}.row{display:flex;gap:16px;flex-wrap:wrap;align-items:center}</style></head>
+<body><div id="root"></div>
+<script>
+var B = window.BlockConcepts, h = React.createElement;
+function App(){return h('div',null,
+ h(B.TierRow,{pct:30,name:'Subsystems',items:'Drives and motion, vision packages, feeders, grippers',solution:{title:'Offline 3D dimensional inspection'}}),
+ h(B.TierRow,{pct:85,name:'Integrated cells',items:'Robot, tooling, controls, and safety built and tested together',solution:{title:'Servo-based cap torque measurement'}}));}
+ReactDOM.createRoot(document.getElementById('root')).render(h(App));
+</script></body></html>

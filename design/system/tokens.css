@@ -1,0 +1,63 @@
+/* Block Concepts — generated from tokens.json */
+@font-face { font-family: 'Overpass'; src: url('fonts/Overpass-latin.woff2') format('woff2'); font-weight: 300 800; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Overpass Mono'; src: url('fonts/OverpassMono-latin.woff2') format('woff2'); font-weight: 400 500; font-style: normal; font-display: swap; }
+:root, [data-theme="dark"] {
+  --bc-surface: #0b0c0e;
+  --bc-surface-raised: #16191d;
+  --bc-steel-blue-tint: #16283a;
+  --bc-hairline: #282a2d;
+  --bc-ink: #f2f3f4;
+  --bc-muted: #a3a9b0;
+  --bc-steel-blue: #4682b4;
+  --bc-steel-blue-text: #7faad0;
+  --bc-steel-blue-hover: #3a6f9c;
+  --bc-on-steel-blue: #ffffff;
+  --bc-wordmark-gray: #a3a9b0;
+  --bc-mark-print: #2f5d80;
+  --bc-placeholder: #15181c;
+  --bc-placeholder-alt: #111316;
+  --bc-placeholder-text: #7d848c;
+  --bc-doc-ink: #000000;
+  --bc-doc-secondary: #595959;
+  --bc-doc-table-header: #4a7ba7;
+  --bc-doc-table-zebra: #f2f2f2;
+  --bc-doc-rule: #d9d9d9;
+}
+[data-theme="light"] {
+  --bc-surface: #ffffff;
+  --bc-surface-raised: #f4f6f8;
+  --bc-steel-blue-tint: #e6eff7;
+  --bc-hairline: #d9dee3;
+  --bc-ink: #1b2229;
+  --bc-muted: #5a636c;
+  --bc-steel-blue: #4682b4;
+  --bc-steel-blue-text: #2f5f8a;
+  --bc-steel-blue-hover: #3a6f9c;
+  --bc-on-steel-blue: #ffffff;
+  --bc-wordmark-gray: #8c949c;
+  --bc-mark-print: #2f5d80;
+  --bc-placeholder: #eef1f4;
+  --bc-placeholder-alt: #e6eaee;
+  --bc-placeholder-text: #5a636c;
+  --bc-doc-ink: #000000;
+  --bc-doc-secondary: #595959;
+  --bc-doc-table-header: #4a7ba7;
+  --bc-doc-table-zebra: #f2f2f2;
+  --bc-doc-rule: #d9d9d9;
+}
+:root {
+  --bc-space-1: 4px;
+  --bc-space-2: 8px;
+  --bc-space-3: 12px;
+  --bc-space-4: 16px;
+  --bc-space-6: 24px;
+  --bc-space-8: 32px;
+  --bc-space-12: 48px;
+  --bc-space-16: 64px;
+  --bc-radius-none: 0;
+  --bc-radius-sm: 2px;
+  --bc-radius-md: 4px;
+  --font-sans: "Overpass", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: "Overpass Mono", ui-monospace, Consolas, "Courier New", monospace;
+  --font-doc: Aptos, Calibri, "Segoe UI", Arial, sans-serif;
+}

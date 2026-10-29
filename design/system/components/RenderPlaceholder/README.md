@@ -1,0 +1,1 @@
+Striped stand-in for an AI-generated CAD render, with a mono caption. Provide `label` ("CAD RENDER · SLS print farm") and optionally `ratio` (default 4 / 3). Use it wherever a render is not yet supplied; replace it with the image, not with a stock photo. Never show supplier names or logos in a render.

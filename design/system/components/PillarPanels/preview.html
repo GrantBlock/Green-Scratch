@@ -1,0 +1,13 @@
+<!-- @dsCard group="Homepage" height=520 subtitle="Three panels that open to show scope; swipeable on phones" -->
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>html,body{margin:0}body{background:var(--bc-surface);color:var(--bc-ink);font-family:var(--font-sans)}#root{padding:24px;display:flex;flex-direction:column;gap:24px}.row{display:flex;gap:16px;flex-wrap:wrap;align-items:center}</style></head>
+<body><div id="root"></div>
+<script>
+var B = window.BlockConcepts, h = React.createElement;
+function App(){return h('div',{style:{margin:-24}},h(B.PillarPanels,{height:'440px',open:0,pillars:[
+ {name:'Engineering',label:'Design',scope:['Problem definition','Feasibility','Concept','Cycle-time and ROI analysis','Specifications','Mechanical and controls design']},
+ {name:'Sourcing',label:'Distribution',scope:['Vendor-neutral selection','Quoting','Procurement','Lead-time management']},
+ {name:'Services',label:'Integration',scope:['Mechanical and electrical install','Commissioning','Startup','Training','Handoff','Support']}]}));}
+ReactDOM.createRoot(document.getElementById('root')).render(h(App));
+</script></body></html>

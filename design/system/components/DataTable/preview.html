@@ -1,0 +1,15 @@
+<!-- @dsCard group="Documents" height=360 -->
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>html,body{margin:0}body{background:var(--bc-surface);color:var(--bc-ink);font-family:var(--font-sans)}#root{padding:24px;display:flex;flex-direction:column;gap:24px}.row{display:flex;gap:16px;flex-wrap:wrap;align-items:center}</style></head>
+<body><div id="root"></div>
+<script>
+var B = window.BlockConcepts, h = React.createElement;
+function App(){return h(B.DataTable,{caption:'Risk Rating (RAD Index)',columns:[{key:'i',label:'Index',mono:true},{key:'c',label:'Character of the work'},{key:'t',label:'Initial performance target'}],rows:[
+ {i:'1',c:'Close to standard equipment. Proven technology, tight scope, low precision, linear timeline.',t:'100% of specification, reached at startup.'},
+ {i:'2',c:'Custom equipment built on proven technology.',t:'90\u2013100% of specification, reached with normal tuning.'},
+ {i:'3',c:'Custom equipment with genuine technical challenge.',t:'80% of specification at acceptance; the balance earned through iteration.'},
+ {i:'4',c:'Custom equipment using new-to-application technology.',t:'70\u201380% of specification; development continues after handover.'},
+ {i:'5',c:'New technology, high-mix product, high precision, or narrow timeline.',t:'65% of specification at acceptance; staged proof-out is essential.'}]});}
+ReactDOM.createRoot(document.getElementById('root')).render(h(App));
+</script></body></html>

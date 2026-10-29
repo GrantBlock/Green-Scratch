@@ -1,0 +1,1 @@
+One RAD stage as a web panel, mirroring the Word document: number, name, one-sentence purpose, deliverables and the cost commitment at its milestone. Provide `number`, `name`, `statement` (starts with "We"), `deliverables` (array) and `cost`. Stack the five stages vertically; the sequence is information.
