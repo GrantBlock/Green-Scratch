@@ -55,7 +55,7 @@ An opportunity that was won. Number: the same `YYNNN` digits as its Q.
 
 #### Additional Prompt: Checklist item
 
-- Fields: project, section (01 Commercial, 02 Engineering, 03 Schedule, 04 Procurement, 05 Build and test, 06 Handover, 07 cGMP package, 08 Correspondence), name, required flag, due date.
+- Fields: project, folder (one of the customer or project folders in `docs/FOLDER-STRUCTURE.md`), name, required flag, due date.
 - **Status:** Missing, Requested, Received, In review, Released.
 - **Upload request:** a one-item link that lets a customer upload a file to this item.
 
@@ -104,16 +104,18 @@ An opportunity that was won. Number: the same `YYNNN` digits as its Q.
 
 #### Additional Prompt: Knowledge item (`BC-K`)
 
-- Kinds: Application research, Sales research, Article, Trip plan, Note.
+- Kinds: Application research, Sales research, Article, Trip plan, Note, and the assistant's standing context: **Configuration**, **Glossary**, **Standard work**.
+- **Scope** of an assistant-context item: Company (no link), Customer (linked to an Account) or Project (linked to a Project). More specific scope wins. See `docs/FOLDER-STRUCTURE.md` section 3.
+- Assistant-context items are never Customer-shared or Public, and are not editable through share links.
 - Fields: body (Markdown), source URL or email, summary (assistant-written summaries are labeled), links.
 - **Trip plan:** dates, locations, itinerary items, accounts visited.
 - Items arrive by manual entry, web clip, upload, or the agent email.
 
 #### Additional Prompt: Template (`BC-L`)
 
-- Kinds: Project structure, Checklist, Document template, Work order.
+- Kinds: Customer structure, Project structure, Checklist, Document template, Work order. The folder trees are in `docs/FOLDER-STRUCTURE.md`.
 - Stored as definitions, so a new project type is a new Template, not new code.
-- The **cGMP documentation package** is a Template that adds section 07 items.
+- The **cGMP documentation package** is a Template that adds a `cGMP Package` subfolder under `Documentation - Project` and its items.
 
 #### Additional Prompt: Email message
 

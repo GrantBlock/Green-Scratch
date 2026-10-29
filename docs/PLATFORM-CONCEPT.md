@@ -51,18 +51,7 @@ When an opportunity is marked **Won**, the system creates, from a Template:
 - **Jobs and milestones** from the template (including the 60/30/10 billing milestones).
 - A project folder in OneDrive with a matching structure.
 
-Starter structure (to be replaced by Grant's real folders):
-
-| Section | Typical documents |
-|---|---|
-| 01 Commercial | Quote, PO, contract, invoices |
-| 02 Engineering | Specifications, drawings, BOM, ROI |
-| 03 Schedule | Gantt, roadmap |
-| 04 Procurement | Vendor quotes, order confirmations, certificates |
-| 05 Build and test | FAT and SAT protocols and results |
-| 06 Handover | Manuals, spec sheets, as-built |
-| 07 cGMP documentation package (optional) | Supplied equipment information for a cGMP customer: material and component certificates, finish and cleanability data, drawings, parts lists, manuals, test results. Added only when the project has the cGMP option. |
-| 08 Correspondence | Emails, meeting notes |
+Folders follow Grant's structure in `docs/FOLDER-STRUCTURE.md`: six folders per customer, six inside each project, and a new Claude section at company, customer and project level.
 
 How documents get in: drag and drop, a picker from OneDrive, an email-in address per project, and an **upload request link** you send to a customer for a specific missing item. The project page shows a completeness bar so you can see what is still missing.
 
@@ -130,7 +119,7 @@ Project structures, document checklists, the cGMP document set, the Build this P
 
 ### 2.11 cGMP documentation as an option
 
-Block Concepts' own process is not cGMP. For a customer who operates under cGMP, the project gets an optional **cGMP documentation package**: a template that adds section 07 and its required-document checklist. It supplies equipment information the customer can use in their own quality system.
+Block Concepts' own process is not cGMP. For a customer who operates under cGMP, the project gets an optional **cGMP documentation package**: a template that adds a `cGMP Package` subfolder under `Documentation - Project` and its required-document checklist. It supplies equipment information the customer can use in their own quality system.
 
 - No approvals or electronic signatures inside the app. Signed documents are uploaded as Documents.
 - Documents still have revisions and a locked Released state, so the customer can see exactly which version was supplied.
@@ -207,6 +196,6 @@ I recommend three levels, and starting at the first:
 ## 9. Still open
 
 1. The 7th and 8th apps (the list had six).
-2. Your real project folder and required-document list, to replace the starter structure.
+2. The required-document list for each folder in `docs/FOLDER-STRUCTURE.md` (the folders themselves are decided).
 3. The agent email address and mailbox type.
 4. Confirmation of the money scope in section 8.

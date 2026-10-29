@@ -23,7 +23,8 @@ Built workflow-first from `docs/WORKFLOW.md`, outward from the live website (`do
 
 Still open:
 
-- [ ] 🧑 Your project folder and required-document list.
+- [x] Folder structure supplied (`docs/FOLDER-STRUCTURE.md`), with a Claude section for configurations, glossaries and standard works.
+- [ ] 🧑 Required documents per folder; confirm the folder assumptions in `docs/FOLDER-STRUCTURE.md` (project subfolders repeat per project, cGMP Package location, `Claude - Company`).
 - [ ] 🧑 Agent email address and mailbox type.
 - [ ] 🧑 Money scope (recommended: track project financials; QuickBooks stays the books).
 - [ ] 🧑 Apps 7 and 8 (you listed six).
@@ -44,7 +45,7 @@ Each slice ends with Grant using it on real data. monday.com stays until slice 7
 | 1 | Login, responsive shell (phone, iPad), D1, Registry, audit log, design system | You can sign in on an iPad; serials issue and never repeat |
 | 2 | Accounts (customer, supplier, prospect) and Pipeline (Leads, Opportunities) | Your 30 opportunities are entered and filterable |
 | 3 | Calendar and Today: visits, site visits, events, trips | You can plan next week's visits on your phone |
-| 4 | Projects: activation from a template, checklist, Documents (R2), Onshape and OneDrive links | Your 6 projects are entered with their documents |
+| 4 | Projects: customer and project folders created from the structure, activation from a template, checklist per folder, Documents (R2), Onshape and OneDrive links | Your 6 projects are entered with their documents |
 | 5 | Schedule: Gantt with categories, dependencies, baselines, reasons for date changes, item updates | A project's schedule replaces its monday.com board |
 | 6 | Money: milestones, invoices, receivables, overdue alerts, expenses, monthly export | You can see who hasn't paid and what a project cost |
 | 7 | Cutover from monday.com | You stop using monday.com |
@@ -57,7 +58,7 @@ Each slice ends with Grant using it on real data. monday.com stays until slice 7
 | 9 | Agent email: inbound routing, classification, filing proposals; reminders and drafts |
 | 10 | Sourcing list per project and supplier quote tracking |
 | 11 | Knowledge: research, articles, trip notes, links to accounts and events |
-| 12 | Vault Assistant: search with citations, drafts, confirm-to-write, spend meter |
+| 12 | Vault Assistant: search with citations, drafts, confirm-to-write, spend meter; loads the Claude section (configurations, glossaries, standard works) at company, customer and project level |
 
 ## Phase 4. Concepts Hub: internal first, then public (💻)
 
