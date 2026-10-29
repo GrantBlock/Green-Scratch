@@ -189,7 +189,7 @@ A separate address (for example `agent@...`) that the platform reads, so your ow
 
 **Decision (updated):** Grant wants the Vault to replace QuickBooks for the accounting he actually uses, follow GAAP, and produce a categorized P&L. Details, controls and build order are in `docs/BOOKS.md`.
 
-- The Vault keeps shadow books beside QuickBooks through 2027 and becomes the books of record only after a CPA review, with a cutover target of January 1, 2028. QuickBooks stays the official books until then.
+- The Vault keeps shadow books beside QuickBooks for a comparison period (goal: 2027) and becomes the books of record only after a CPA review and a cutover at a year boundary. QuickBooks stays the official books until then. Books is a starting point and does not hold up the core build.
 - The ledger is double-entry and append-only, with locked periods and a source for every entry.
 - TurboTax is not replaced. The Vault supplies tax-ready category totals and exports.
 - Project financials (milestones, invoices, receivables, expenses) come first and feed the ledger.

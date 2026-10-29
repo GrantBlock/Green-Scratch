@@ -26,8 +26,9 @@ Still open:
 - [x] Folder structure supplied (`docs/FOLDER-STRUCTURE.md`), with a Claude section for configurations, glossaries and standard works.
 - [ ] 🧑 Required documents per folder; confirm the folder assumptions in `docs/FOLDER-STRUCTURE.md` (project subfolders repeat per project, cGMP Package location, `Claude - Company`).
 - [ ] 🧑 Agent email address and mailbox type.
-- [x] Money scope: the Vault replaces QuickBooks for the accounting Grant uses, with GAAP-style reports (`docs/BOOKS.md`). Runs alongside QuickBooks through 2027; cutover target January 1, 2028.
-- [ ] 🧑 Choose the dual-entry method for 2027 (`docs/BOOKS.md` section 5) and answer the accounting questions in `docs/BOOKS.md` section 7 (who needs GAAP, accrual or cash, entity type, payroll and sales tax, reports, accounts, CPA, history).
+- [x] Money scope: the Vault replaces QuickBooks for the accounting Grant uses, with GAAP-style reports (`docs/BOOKS.md`). Starting point, not urgent; runs beside QuickBooks for a comparison period (goal: 2027) before any cutover.
+- [x] Accounting answers recorded (`docs/BOOKS.md` section 7): accrual, two-member LLC, one checking and one credit card, 3 years of history.
+- [ ] 🧑 Find a CPA (`docs/BOOKS.md` section 8); decide sales tax, tax basis and the dual-entry method (section 9) (who needs GAAP, accrual or cash, entity type, payroll and sales tax, reports, accounts, CPA, history).
 - [ ] 🧑 Apps 7 and 8 (you listed six).
 - [ ] 🧑 Process page content (formerly Develop this).
 
@@ -38,8 +39,6 @@ Still open:
 - [ ] 🧑 Review mockups; export into `design/`.
 
 ## Phase 2. Build the Vault (💻), one slice per session
-
-> **Build order for the 2027 parallel year:** slices 1, 2, 4 and 6, then B1, B2, B4 and B3 (Phase 2b), then slices 3, 5 and 7. Books go ahead of the calendar, the Gantt and the monday.com cutover so the shadow books can start in January 2027. See `docs/BOOKS.md` section 5.
 
 Each slice ends with Grant using it on real data. monday.com stays until slice 7.
 
@@ -55,7 +54,7 @@ Each slice ends with Grant using it on real data. monday.com stays until slice 7
 
 ## Phase 2b. Books: replace QuickBooks (💻 + 🧑 + CPA)
 
-Starts as soon as slices 1, 2, 4 and 6 exist (target January 2027). Details and controls: `docs/BOOKS.md`.
+Starts after slice 6 (Money). Timing is flexible and does not hold up the core slices. Details and controls: `docs/BOOKS.md`.
 
 | Slice | Delivers | Done when |
 |---|---|---|
@@ -63,7 +62,7 @@ Starts as soon as slices 1, 2, 4 and 6 exist (target January 2027). Details and 
 | B2 | Invoices, bills, expenses, payments post to the ledger; A/R and A/P aging | An invoice and its payment appear correctly in the ledger |
 | B3 | Manual statement upload (CSV, OFX, QFX), matching, monthly reconciliation to zero | A month reconciles to the statement and closes |
 | B4 | Income statement, balance sheet, cash flows, equity statement, P&L by project, aging, ledger; every report exports to Excel | Reports match known test cases and open cleanly in Excel |
-| B5 | The 2027 parallel year beside QuickBooks, monthly and quarterly comparison, CPA review, then cutover on Jan 1, 2028 | Reports agree line by line; you cancel QuickBooks |
+| B5 | Comparison beside QuickBooks (monthly and quarterly), CPA review, then cutover at a year boundary | Reports agree line by line; you cancel QuickBooks |
 
 ## Phase 3. Connect (💻)
 

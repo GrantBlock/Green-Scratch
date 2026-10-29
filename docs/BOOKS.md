@@ -52,35 +52,15 @@ Every invoice, bill and expense already belongs to a project, so **profit by pro
 7. **Backups and full export** (ledger as CSV) on a schedule.
 8. **Parallel run through 2027.** QuickBooks stays the official books for 2027. The Vault keeps shadow books beside it. Each month and quarter, compare P&L, balance sheet and A/R line by line. Cut over only when they agree.
 
-## 5. The 2027 parallel year
+## 5. Running beside QuickBooks
 
-Decision (Grant): use the Vault's accounting during 2027 alongside QuickBooks.
+Decision (Grant): use the Vault's accounting alongside QuickBooks first, and treat Books as a starting point. It does not need to be finished soon, and it does not drive the build order. The core app (slices 1 to 7) comes first.
 
-- **QuickBooks is the official books for 2027.** The 2027 tax return, any lender or customer financials, and the CPA work come from QuickBooks.
-- **The Vault keeps shadow books** for the same year and is compared with QuickBooks each month and quarter.
-- **Cutover target: January 1, 2028,** a clean fiscal-year boundary. The Vault's opening balances for 2028 come from QuickBooks' closed 2027 year. Cancel QuickBooks only if the 2027 comparisons agree.
-- **Opening balances for 2027** come from QuickBooks' closed 2026 year-end (trial balance as of 12/31/2026). That is usually available in January, so the Vault's first real month is January, back-entered once the opening balances are in.
-
-**Double entry burden.** For the year, transactions exist in two systems. Options:
-
-1. **Full dual entry:** strongest test, most work.
-2. **Vault-first for sales and project costs** (invoices from milestones, bills, expenses), with the same items keyed or imported into QuickBooks, and bank and card statements imported into both. Recommended: it tests the real workflow without doubling every entry by hand.
-
-Pick one before January.
-
-**Targets** (not promises; they depend on pace):
-
-| When | Goal |
-|---|---|
-| Nov to Dec 2026 | Foundation, accounts, projects and documents, money tracking (slices 1, 2, 4, 6) |
-| Jan 2027 | Chart of accounts, ledger, posting of invoices, bills, expenses (B1, B2); opening balances entered; January transactions entered |
-| Feb 2027 | Categorized P&L and balance sheet (B4); close January; compare with QuickBooks |
-| Mar 2027 | Bank and card import and reconciliation (B3); first quarter comparison; CPA review |
-| Apr to Dec 2027 | Monthly close and comparison; calendar, Gantt and the monday.com cutover built alongside |
-| Dec 2027 | Go or no-go for cutover |
-| Jan 1, 2028 | Vault becomes the books; QuickBooks cancelled if the year agreed |
-
-Savings from QuickBooks start in 2028. In the meantime, check whether a cheaper QuickBooks plan is enough for a comparison-only year (confirm options with the vendor and with your CPA, since it remains the official record).
+- **QuickBooks stays the official books** until the Vault has been compared against it and the CPA agrees. The tax return, any financials shared with others, and the CPA's work come from QuickBooks.
+- **The Vault keeps shadow books** from a chosen month-end, using QuickBooks' trial balance at that date as the opening balances. The goal is 2027, but the start month moves with the build. A full year of comparison is best; a full quarter is the minimum.
+- **Cutover** happens at a year boundary, after the comparison agrees and the CPA signs off. The Vault's opening balances for the new year come from QuickBooks' closed prior year.
+- **Double entry burden.** During the comparison, transactions exist in two systems. Recommended: create sales invoices, bills and expenses in the Vault first (from project milestones) and key the same items into QuickBooks; upload the bank and card statements into both. Full dual entry is the stronger test but more work.
+- **QuickBooks plan:** check with the vendor and the CPA whether a cheaper plan is enough for a comparison year.
 
 ## 6. Build order
 
@@ -90,29 +70,45 @@ Savings from QuickBooks start in 2028. In the meantime, check whether a cheaper 
 | B2 | Invoices, bills, expenses and payments post to the ledger; A/R and A/P aging |
 | B3 | Manual statement upload (CSV, OFX or QFX) with a saved column mapping per account, duplicate detection, matching, and a monthly reconciliation that must reach a zero difference before the month can close |
 | B4 | Income statement, balance sheet, statement of cash flows, statement of equity, P&L by project, aging, ledger and trial balance, all exportable to Excel; tax-line mapping |
-| B5 | The 2027 parallel year: monthly and quarterly comparison, CPA review, then the January 2028 cutover |
+| B5 | Comparison beside QuickBooks (monthly and quarterly), CPA review, then cutover at a year boundary |
 
-B1, B2 and B4 come first because they produce the P&L; B3 follows in the first quarter.
+B1, B2 and B4 come first because they produce the statements; B3 follows.
 
 ## 7. Decisions made
 
 - Full GAAP statement set (income statement, balance sheet, cash flows, equity), plus aging and profit by project.
+- GAAP is good practice, not required by a lender, customer or investor. The books use the **accrual** basis.
 - Every report exports to Excel for the accountant.
 - Bank and card data come from statement files uploaded by hand, reconciled every month. No bank feeds.
 - A month closes only after it is reconciled to a zero difference.
+- **Accounts:** one checking account and one credit card. Customers pay by check or ACH into the checking account. No card processing.
+- **Entity:** an LLC with two members.
+- **Payroll:** Grant is the only person on payroll, and takes owner's distributions today. Moving to W-2 pay is planned. Payroll itself is handled by a payroll provider, and its summary is posted to the ledger.
+- **History:** three years of QuickBooks history.
 
-Notes on these:
+What these mean for the design:
 
-- **Cash flow statement** needs each ledger account tagged Operating, Investing, Financing or Cash. That tagging is set up once with the accountant.
+- **Two members.** An LLC with two members is normally taxed as a partnership unless it has elected otherwise. The equity statement and balance sheet need a **capital account for each member** (contributions, distributions, share of income). Confirm the tax treatment with the CPA.
+- **W-2 pay.** Members of an LLC taxed as a partnership are generally not treated as employees, so W-2 wages usually mean a change in how the LLC is taxed (for example an S-corp election). That is a tax-structure decision for the CPA, and it changes how pay and distributions appear in the books. The chart of accounts should leave room for both.
+- **Cash flow statement** needs each ledger account tagged Operating, Investing, Financing or Cash, set up once with the CPA.
 - **Statement files:** most banks offer CSV or OFX/QFX downloads. If a bank offers only PDF statements, tell me, because PDFs cannot be imported reliably.
-- **Disclosures** (notes) and the revenue recognition policy come from the accountant.
+- **Disclosures** (notes) and the revenue recognition policy come from the CPA.
+- **History:** I recommend bringing three years over as monthly trial balances (for comparative statements), plus the project-level history for the projects you enter, rather than every transaction. Full transaction history can follow if the CPA wants it.
 
-## 8. Questions that decide the details
+## 8. Finding a CPA
 
-1. **Who needs GAAP?** A lender, a customer, an investor, an auditor, or is it good practice? This sets how strict the policy must be.
-2. **Accrual or cash** for the books, and which for tax?
-3. **Entity and tax return:** single-member LLC (Schedule C), partnership, or S-corp? This sets the tax mapping of categories.
-4. **Employees or payroll?** Sales tax to collect and file?
-5. **Bank and card accounts:** how many, and how do customers pay (check, ACH, card)?
-6. **A CPA or bookkeeper** who will review the setup and the first closed period?
-7. **QuickBooks history:** how many years to bring over, and what cutover date?
+A CPA is needed before the Vault can be trusted as the books. Look for one who:
+
+- works with small manufacturers or service firms and with two-member LLCs taxed as partnerships;
+- is comfortable with accrual statements and with Excel exports;
+- will review a custom system's chart of accounts, revenue recognition policy and first closed month;
+- can advise on the W-2 and S-corp question.
+
+Ask for this review as a defined, fixed-scope engagement.
+
+## 9. Still open
+
+1. Sales tax: do you collect and file it?
+2. Which basis for the tax return (the books are accrual; the return may differ)?
+3. Who the CPA will be.
+4. The dual-entry method during the comparison.
