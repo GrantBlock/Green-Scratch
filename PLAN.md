@@ -2,6 +2,8 @@
 
 Built workflow-first from `docs/WORKFLOW.md`, outward from the live website (`docs/RESET.md`). Records: `spec/data-model.md`. Concept and reasons: `docs/PLATFORM-CONCEPT.md`. Branding: `design/system/`.
 
+**Proof of concept first:** `docs/POC.md` defines the gate (an end-to-end story on an iPad), the parallel design and build tracks, and who owns which folders. Books starts only after the gate.
+
 **Timeline:** `docs/roadmap.html` shows the milestones as a reorderable chart, with what you provide before each and what you review after.
 
 **Legend:** 🧑 Grant · 🎨 Claude Design · 💻 Claude Code
@@ -57,7 +59,7 @@ Each slice ends with Grant using it on real data. monday.com stays until slice 7
 
 ## Phase 2b. Books: replace QuickBooks (💻 + 🧑 + CPA)
 
-Starts after slice 6 (Money). Timing is flexible and does not hold up the core slices. Details and controls: `docs/BOOKS.md`.
+Starts after the proof-of-concept gate (`docs/POC.md`). Timing is flexible. Details and controls: `docs/BOOKS.md`.
 
 | Slice | Delivers | Done when |
 |---|---|---|
