@@ -1,0 +1,1 @@
+Bar above the builder with the Config Number field, Reload Past Configuration, Back and Next. Provide `value`, `onChange`, `onReload`, `onBack`, `onNext`, `nextLabel`, `backDisabled`, `hint` and `error`. Next is the one primary button.

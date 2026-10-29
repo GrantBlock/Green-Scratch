@@ -1,0 +1,1 @@
+First page of a PDF as a picture, in three sizes. Provide `src` (the rendered first page), `name`, `size` (`sm` in a table cell, `md`, `lg` in the detail pane) and `alt` (default "First page of <name>"). Without `src` it shows a PDF placeholder with the same accessible name. Render the first page when the file is uploaded; do not show a generic icon as if it were the page.

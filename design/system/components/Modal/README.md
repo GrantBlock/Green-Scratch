@@ -1,0 +1,1 @@
+Dialog over a dimmed page with a title, body and actions. Provide `open`, `title`, `onClose`, `children`, `actions` and `role`. It moves focus into the dialog, keeps Tab inside it, closes on Escape and returns focus to the control that opened it. Use sparingly; prefer inline editing. For a yes-or-no decision use `ConfirmDialog`.

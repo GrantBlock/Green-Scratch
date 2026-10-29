@@ -1,0 +1,10 @@
+<!-- @dsCard group="Feedback" height=360 subtitle="Dialog with title, body and actions" -->
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>html,body{margin:0}body{background:var(--bc-surface);color:var(--bc-ink);font-family:var(--font-sans)}#root{padding:24px;display:flex;flex-direction:column;gap:24px;box-sizing:border-box}.row{display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start}.col{flex:1 1 220px;min-width:0}</style></head>
+<body><div id="root"></div>
+<script>
+var B = window.BlockConcepts, h = React.createElement;
+function App(){return h('div',{style:{position:'relative',height:300,margin:-24}},h(B.Modal,{open:true,inline:true,title:'Edit revision note',onClose:function(){},actions:[h(B.Button,{key:1,variant:'secondary'},'Cancel'),h(B.Button,{key:2},'Save')],children:h(B.TextField,{label:'Note',defaultValue:'Updated guarding'})}));}
+ReactDOM.createRoot(document.getElementById('root')).render(h(App));
+</script></body></html>

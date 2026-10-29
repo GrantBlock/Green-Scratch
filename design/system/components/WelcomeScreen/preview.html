@@ -1,0 +1,10 @@
+<!-- @dsCard group="Station builder" height=480 subtitle="Near-black welcome with the corner pattern" -->
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>html,body{margin:0}body{background:var(--bc-surface);color:var(--bc-ink);font-family:var(--font-sans)}#root{padding:24px;display:flex;flex-direction:column;gap:24px;box-sizing:border-box}.row{display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start}.col{flex:1 1 220px;min-width:0}</style></head>
+<body><div id="root"></div>
+<script>
+var B = window.BlockConcepts, h = React.createElement;
+function App(){return h('div',{style:{margin:-24}},h(B.WelcomeScreen,{pattern:'/_blob/231e51f8fcd62d58ec92750417a470d2',heading:'Build this',text:'Lay out your stations and see a proposed line in minutes.',startLabel:'Start'}));}
+ReactDOM.createRoot(document.getElementById('root')).render(h(App));
+</script></body></html>

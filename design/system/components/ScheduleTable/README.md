@@ -1,0 +1,1 @@
+Dense print table for station schedules and utilities summaries on drawing sheets and in process documents. Provide `columns` as `{key, label, align}`, `rows` and an optional `caption`. Header rule is 0.6 mm, cell rules 0.3 mm, 8pt text, always light theme. In Word, build the same table with the process document template instead.

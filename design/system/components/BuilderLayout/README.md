@@ -1,0 +1,1 @@
+Two-column builder: a form that scrolls on the left and a preview that stays in view on the right. Provide `form`, `preview` and `previewLabel`. The preview is sticky at the top; below 820px the columns stack with the form first.

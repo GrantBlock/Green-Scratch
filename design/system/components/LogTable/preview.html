@@ -1,0 +1,14 @@
+<!-- @dsCard group="Tables" height=420 subtitle="Sortable, filterable, selectable, sticky header" -->
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>html,body{margin:0}body{background:var(--bc-surface);color:var(--bc-ink);font-family:var(--font-sans)}#root{padding:24px;display:flex;flex-direction:column;gap:24px;box-sizing:border-box}.row{display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start}.col{flex:1 1 220px;min-width:0}</style></head>
+<body><div id="root"></div>
+<script>
+var B = window.BlockConcepts, h = React.createElement;
+function App(){var s=React.useState('Designing'),rows=[
+ {id:'BC-1042',customer:'A dispensing manufacturer',kind:'Quote request',build:'Designing',file:{name:'BC-1042-quote.pdf'},date:'Oct 22'},
+ {id:'BC-1041',customer:'A medical device maker',kind:'Fix request',build:'Quoting',file:{name:'BC-1041-scope.pdf'},date:'Oct 21'},
+ {id:'BC-1040',customer:'A material handling plant',kind:'Quote request',build:'Manufacturing',file:{name:'BC-1040-quote.pdf'},date:'Oct 18'},
+ {id:'BC-1039',customer:'A dispensing manufacturer',kind:'Fix request',build:'Completed',file:null,date:'Oct 14'}];return h(B.LogTable,{height:'360px',columns:[{key:'customer',label:'Customer',filter:true},{key:'kind',label:'Type',filter:true},{key:'build',label:'Build State',type:'build'},{key:'file',label:'File',type:'file'},{key:'date',label:'Received'}],rows:rows,defaultSelected:['BC-1041'],defaultSort:{key:'date',dir:'desc'},onAction:function(){}});}
+ReactDOM.createRoot(document.getElementById('root')).render(h(App));
+</script></body></html>

@@ -1,0 +1,10 @@
+<!-- @dsCard group="Print" height=240 subtitle="Numbered list for the process description sheet" -->
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>html,body{margin:0}body{background:#fff;color:var(--bc-ink);font-family:var(--font-sans)}#root{padding:24px;display:flex;flex-direction:column;gap:24px;box-sizing:border-box}.row{display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start}.col{flex:1 1 220px;min-width:0}</style></head>
+<body><div id="root"></div>
+<script>
+var B = window.BlockConcepts, h = React.createElement;
+function App(){return h('div',{style:{background:'#fff',padding:16,maxWidth:520}},h(B.ProcessList,{items:[{title:'Infeed',text:'Parts arrive on the conveyor and stop at the pick position.'},{title:'Pick and place',text:'The robot moves each part into the torque fixture.'},{title:'Torque test',text:'The servo turns the cap and records peak torque.'},'Parts that pass continue to the outfeed; failures go to the reject bin.']}));}
+ReactDOM.createRoot(document.getElementById('root')).render(h(App));
+</script></body></html>

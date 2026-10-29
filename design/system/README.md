@@ -1,4 +1,4 @@
-Block Concepts is a specialty automation company: one accountable source from the first conversation to a running system, for small fixes and full machines alike. The brand is plain, engineered and exact. This system builds two things: the public website (dark theme, Overpass) and customer-facing Word documents (light theme, Aptos). Read `website.md` before building a page and `word-documents.md` before building a document.
+Block Concepts is a specialty automation company: one accountable source from the first conversation to a running system, for small fixes and full machines alike. The brand is plain, engineered and exact. This system builds two things: the public website (dark theme, Overpass) and customer-facing Word documents (light theme, Aptos). Read `website.md` before building a page, `word-documents.md` before building a document, `application.md` before building Concepts Hub or Concepts Vault, and `print-drawings.md` before building a drawing sheet.
 
 ## Content fundamentals
 
@@ -35,3 +35,19 @@ Block Concepts is a specialty automation company: one accountable source from th
 ## Using the components
 
 Load `tokens.css` and `components/bundle.css`, then React 18 and `components/bundle.js`; components live on `window.BlockConcepts`. Website: `NavBar`, `PillarPanels`, `Statement`, `SolutionTile`, `TierRow`, `CredibilityBand`, `CtaBand`, `Footer`, `CookieBanner`, `RenderPlaceholder`, `Button`, `Wordmark`. Document patterns: `Callout`, `Stage`, `DataTable`.
+
+## Application components (Concepts Hub and Concepts Vault)
+
+Both apps use the `dark` theme and the same components bundle. Rules are in `application.md`; drawing sheets are in `print-drawings.md`. Components by area:
+
+- **Forms:** `TextField`, `SelectField`, `TextArea`, `FileDrop`, `Checkbox`, `Radio`, `SearchField`.
+- **Navigation lists:** `TabBar`, `ListBox`, `ButtonColumn`.
+- **Status:** `StatusPill`, `StatusSelect` (tokens `bc-status-*`, `bc-build-*`, `bc-feedback-*`, built on `bc-tone-*`).
+- **Tables and panes:** `LogTable`, `PdfPreview`, `DetailPane`.
+- **Layouts:** `GrabLayout`, `FixLayout`, `VaultShell`, `BuilderLayout`.
+- **Feedback and overlays:** `Modal`, `ConfirmDialog`, `Toast`, `StateMessage`, `StagedBar`.
+- **Station builder:** `StepRail`, `ConfigBar`, `StationCard`, `AddStation`, `LayoutPreview`, `WelcomeScreen`.
+- **Chat:** `ChatWindow`.
+- **Print drawings:** `DrawingSheet`, `StationBox`, `DrawingLine`, `FlowArrow`, `DrawingLegend`, `ScheduleTable`, `ProcessList`.
+
+Pattern per screen: top-right lines on Hub home and the builder's welcome screen, bottom-left lines on the private login and full-page empty states, none on working screens. Favicons are in `assets/Favicons/`.

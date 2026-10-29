@@ -1,0 +1,1 @@
+Near-black opening screen of a builder: the corner line pattern, a BLOCK CONCEPTS tag, a large uppercase heading, one line of text and a Start button. Provide `heading`, `text`, `onStart` or `href`, `startLabel` and `pattern` (the URL of `assets/Patterns/lines-top-right.png`). The tag is square-cornered like every control. Show it once, before step one.

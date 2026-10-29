@@ -36,7 +36,8 @@ Still open:
 
 ## Phase 1. Design (🎨 + 🧑), can run alongside Phase 2
 
-- [ ] 🧑 Add missing components with `design/GAPS-PROMPT.md`; re-export to `design/system/`.
+- [x] Round 1 of the design-system additions delivered and imported (`design/DESIGN-SYSTEM.md`).
+- [ ] 🧑 Run round 2 with `design/GAPS-PROMPT-2.md` (nine-tab navigation, new state sets, Gantt, calendar, pipeline, project documents, money, Assistant panel, customer page); re-export to `design/system/`.
 - [ ] 💻 Update `design/BRIEF.md` with the Vault screens: Today, Calendar, Pipeline, Project (checklist, Gantt with baselines, Sourcing), Money (Receivables, Expenses), Accounts, Knowledge, Assistant panel, customer project page. All designed for phone and iPad.
 - [ ] 🧑 Review mockups; export into `design/`.
 

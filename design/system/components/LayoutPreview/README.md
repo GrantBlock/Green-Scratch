@@ -1,0 +1,1 @@
+Overhead drawing area for the proposed line: an 11 × 8.5 inch grid (one inch squares), the stations in order with flow arrows, and a Proposed Operation Order card beneath. Provide `stations` as `{name, flow, type}`; the first station's Flow Direction sets the direction. Use inside `BuilderLayout`'s preview column.

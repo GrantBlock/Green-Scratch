@@ -1,0 +1,10 @@
+<!-- @dsCard group="Chat" height=700 subtitle="Messages, streaming, composer, handoff and notice" -->
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>html,body{margin:0}body{background:var(--bc-surface);color:var(--bc-ink);font-family:var(--font-sans)}#root{padding:24px;display:flex;flex-direction:column;gap:24px;box-sizing:border-box}.row{display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start}.col{flex:1 1 220px;min-width:0}</style></head>
+<body><div id="root"></div>
+<script>
+var B = window.BlockConcepts, h = React.createElement;
+function App(){return h('div',{style:{maxWidth:560,height:640}},h(B.ChatWindow,{static:true,messages:[{id:1,role:'visitor',text:'Can you help with a cap torque check on a dispensing line?'},{id:2,role:'agent',text:'Yes. Tell me the cap size and the rate, and I can point you to a matching solution.'},{id:3,role:'visitor',text:'About 60 caps a minute.'},{id:4,role:'agent',text:'At that rate a servo-based torque cell fits. A person can confirm',streaming:true}],handoff:{onContact:function(){}}}));}
+ReactDOM.createRoot(document.getElementById('root')).render(h(App));
+</script></body></html>

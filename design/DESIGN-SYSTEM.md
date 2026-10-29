@@ -1,38 +1,63 @@
 # Design system: status, coverage and gaps
 
-The Block Concepts design system was authored in Claude Design and is exported into `design/system/`. It is the **only** source of branding for the Hub, the Vault and every tool (`spec/system-architecture.md`, "Design Tokens"). Read `design/system/README.md`, then `website.md` (screens) or `word-documents.md` (documents).
+The Block Concepts design system is authored in Claude Design and exported into `design/system/`. It is the **only** source of branding for the Hub, the Vault and every tool. Read, in order: `design/system/README.md`, `application.md` (apps), `print-drawings.md` (drawing sheets), `website.md`, `word-documents.md`.
 
-## What it provides
+## Round 1: delivered (second export)
 
-- **Tokens:** `tokens.css` and `tokens.json`. Two themes: `dark` (website) and `light` (documents). Spacing on a 4px grid, radius 0/2/4px, Overpass, Overpass Mono, Aptos (Word only).
-- **Components** (`components/`, load `bundle.css` + React 18 + `bundle.js`, globals on `window.BlockConcepts`): NavBar, PillarPanels, Statement, SolutionTile, TierRow, CredibilityBand, CtaBand, Footer, CookieBanner, RenderPlaceholder, Button (primary, secondary, link), Wordmark, Callout, Stage, DataTable.
-- **Assets:** logo mark (print, dark, reversed), corner line patterns, Word page art, fonts.
-- **Rules:** content and copy fundamentals, logo use, motion, focus, and Word document specs.
+Everything asked for in `GAPS-PROMPT-round1-done.md` is in the system:
 
-## Gaps this app needs filled (add to the design system first, then use)
+| Round 1 item | Delivered as |
+|---|---|
+| Form controls | `TextField`, `SelectField`, `TextArea`, `FileDrop`, `Checkbox`, `Radio`, `SearchField` |
+| Navigation lists | `TabBar`, `ListBox`, `ButtonColumn` |
+| Status colors, pill, dropdown | Tokens `bc-tone-*`, `bc-status-*`, `bc-build-*`, `bc-feedback-*`; `StatusPill`, `StatusSelect` |
+| Log table | `LogTable` |
+| Detail pane | `DetailPane`, `PdfPreview` |
+| Layouts | `GrabLayout`, `FixLayout`, `VaultShell`, `BuilderLayout` |
+| Feedback and overlays | `Modal`, `ConfirmDialog`, `Toast`, `StateMessage`, `StagedBar` |
+| Station builder | `StepRail`, `ConfigBar`, `StationCard`, `AddStation`, `LayoutPreview`, `WelcomeScreen` |
+| Chat | `ChatWindow` |
+| Drawing sheets | `DrawingSheet`, `StationBox`, `DrawingLine`, `FlowArrow`, `DrawingLegend`, `ScheduleTable`, `ProcessList`, plus `print-drawings.md` |
+| Word process document | Template section in `word-documents.md` |
+| Favicons and pattern guidance | `assets/Favicons/`, pattern table in `application.md` |
 
-| # | Needed | Used by | Note |
-|---|---|---|---|
-| 1 | Form controls: text input, select, textarea, file input, checkbox, labelled search box, validation and error states | Give this, Build this, Vault forms, Grab this search | Radius 2px per system rules. |
-| 2 | Tab bar (horizontal) and vertical selectable list with active state | Grab this, Vault tab bar, Fix this column | Active = Steel Blue; 44px targets. |
-| 3 | Status colors | Log List Status (New / Contacted / Quoted / Closed), Build State, form errors | The system says "Status colors are not defined yet" and bans decorative red and green. Needs a decision. |
-| 4 | Status pill and build-state dropdown | Log List | Can reuse tag styles once status colors are decided. |
-| 5 | Step rail, config bar, station card, sticky preview panel | Build this | Not in the system. |
-| 6 | Detail pane with preview image, revision selector, expand button | Grab this | Not in the system. |
-| 7 | Modal / confirm, toast, empty states | Vault, Grab this | Not in the system. |
-| 8 | Chat window | Ask this | Not in the system. |
-| 9 | Engineering **drawing sheets** (ANSI A landscape and portrait): line weights, double-line border, label type, title block (proprietary notice, tolerance notes, company block, drawing number, version, scale, "Sheet X of N") | Build this output | The system covers US Letter Word documents only. Print on the `light` theme. |
-| 10 | Font for generated PDFs | Build this output | Decided: the PDF sheets use Overpass (shipped by the system); the Word document uses Aptos. Confirm the system documents this. |
+## Mismatch: built to the older spec
+
+The export follows the earlier Vault and Hub spec, before the platform concept. These parts are out of date:
+
+| In the design system | Platform now |
+|---|---|
+| `VaultShell` has six fixed tabs: Log List, Releases, Directory, Customers, Settings, Registry. `TabBar` allows six or fewer, with type shrinking to 9px | Nine tabs: Today, Calendar, Pipeline, Projects, Accounts, Money, Knowledge, Library, Settings |
+| Status states: New, Contacted, Quoted, Closed; Build State Quoting to Completed | Lead, Opportunity, Project stage, Checklist, Document, Invoice, Milestone, Job and Sourcing states (see round 2) |
+| Names: Grab this, Fix this, Give this, Build this, Ask this, Log List | Library, Hub home, Contact, Builder, Assistant, Inbox |
+| `StatusPill` says "Do not invent new states or colors" | The system must be extended with the new states |
+| Screens: Log List and Grab this only | The Vault screens in `design/BRIEF.md` |
+
+Component names (`GrabLayout`, `FixLayout`) are internal and may stay. Visible copy, tab labels and default text must use the platform names (`docs/WORKFLOW.md` section 4).
+
+## Round 2: still missing
+
+Paste `design/GAPS-PROMPT-2.md` into the design-system session.
+
+1. **Navigation for nine Vault tabs** on desktop, iPad and phone (side rail plus bottom bar or overflow); rename the shell and its labels.
+2. **New state sets** (Lead, Opportunity, Project stage, Checklist, Document, Invoice, Milestone, Job, Sourcing), plus overdue and days-late indicators.
+3. **Gantt chart:** categories, dependencies, percent complete, baseline overlay, reason prompt on date change, touch operation. (`ScheduleTable` is the drawing schedule, not a Gantt.)
+4. **Calendar:** week and agenda views, event kinds, add-event sheet, trips.
+5. **Pipeline:** list and board with opportunity cards and a won/lost action with reason.
+6. **Today feed** of items needing attention.
+7. **Record page pattern:** header with number, title, state and actions; sub-tabs; Updates feed; link chips.
+8. **Project documents:** folder checklist with completeness bar and per-item status, upload request.
+9. **Money:** receivables table with days overdue, milestone list, invoice composer, expense entry with receipt capture. Later, ledger and reconciliation tables and a statement report layout.
+10. **Vault Assistant panel:** side panel and phone sheet with citations, proposed actions (Confirm and Cancel), spend meter, role chips.
+11. **Customer project page (Hub):** documents by folder, download, upload slots, expiry notice.
+12. **Knowledge:** list, Markdown item view, trip itinerary.
+13. **Claude section editor** with version history.
+14. **Global search or command bar.**
+15. **Word invoice template** (for later).
 
 ## Decisions made
 
-1. **Vault theme:** `dark`, same as the Hub.
-2. **Hub navigation:** the Hub has its own header at `/tools` using the system's NavBar style. Grant adds a **Tools** section to the live website at release; the website says nothing about the Hub until then.
-3. **Section names:** the website is the single source of truth (Engineering, Sourcing, Services). Develop this stays as a Hub section but will be re-specified with its own detail and must not overlap the pillars.
-4. **Process document format:** Build this produces both the PDF drawing sheets and the Word process document.
-
-## Still open
-
-- Gap 3 (status colors) and the other gaps above.
-- Who this: what it holds, since the website already has About.
-- Whether the Word document is part of the free Preview tier.
+1. Vault theme: `dark`, same as the Hub.
+2. Hub has its own header, on `hub.blockconceptsllc.com`.
+3. The website is the single source of truth for pillars and positioning.
+4. Build this produces both the PDF drawing sheets and the Word process document.

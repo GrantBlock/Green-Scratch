@@ -1,0 +1,1 @@
+Key to every line and symbol used on a drawing: the four line types, the flow arrow, the numbered station tag, the tentative style and the pick-and-place highlight. Place it on the first sheet of a set or in the process document.

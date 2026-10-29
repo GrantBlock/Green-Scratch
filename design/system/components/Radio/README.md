@@ -1,0 +1,1 @@
+Radio group in one fieldset with a visible legend. Provide `legend`, `options` as `{value, label}`, `value` or `defaultValue`, `onChange(value)`, `error`, `disabled`. Use when exactly one choice is allowed and there are two to five options. Radios are square (the system's maximum radius is 4px); the selected one shows an inner square, and the checkbox shows a check mark.

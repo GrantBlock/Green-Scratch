@@ -1,6 +1,6 @@
 # Claude Design brief: Concepts Vault and Concepts Hub
 
-Run this in Claude Design after the design system has been extended with `design/GAPS-PROMPT.md`.
+Run this in Claude Design after the design system has been extended with `design/GAPS-PROMPT-2.md` (round 1 is already in `design/system/`).
 
 ## Ground rules
 

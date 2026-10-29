@@ -1,0 +1,1 @@
+Search box with a visible label and a search icon. Provide `label` (default Search), `value` or `defaultValue`, `onChange(value)`, `placeholder`, `disabled`. It is wrapped in `role="search"`. Place it above a `ListBox` or a table; do not use a placeholder in place of the label.

@@ -1,0 +1,12 @@
+<!-- @dsCard group="Forms" height=210 subtitle="Checkbox and radio group" -->
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>html,body{margin:0}body{background:var(--bc-surface);color:var(--bc-ink);font-family:var(--font-sans)}#root{padding:24px;display:flex;flex-direction:column;gap:24px;box-sizing:border-box}.row{display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start}.col{flex:1 1 220px;min-width:0}</style></head>
+<body><div id="root"></div>
+<script>
+var B = window.BlockConcepts, h = React.createElement;
+function App(){return h('div',{className:'row'},
+ h('div',{className:'col'},h(B.Checkbox,{label:'Send me the quote by email',defaultChecked:true}),h(B.Checkbox,{label:'Include install and startup'}),h(B.Checkbox,{label:'Locked option',disabled:true})),
+ h('div',{className:'col'},h(B.Radio,{legend:'Delivery',options:[{value:'ship',label:'Ship to site'},{value:'pickup',label:'Pick up'},{value:'install',label:'Install on site'}],defaultValue:'ship'})));}
+ReactDOM.createRoot(document.getElementById('root')).render(h(App));
+</script></body></html>

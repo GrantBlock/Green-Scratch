@@ -1,3 +1,5 @@
+> **Round 1: delivered.** The design system export of this date covers every item below. It was built to the earlier Vault and Hub spec; the platform needs the additions in `GAPS-PROMPT-2.md`.
+
 # Prompt for the design-system session: add what the app needs
 
 Paste everything below the line into the Claude Design session that built the Block Concepts design system. After it finishes, re-export and replace the contents of `design/system/` in this repo.

@@ -1,0 +1,14 @@
+<!-- @dsCard group="Print" height=360 subtitle="Station, highlight, tentative and cabinet boxes" -->
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>html,body{margin:0}body{background:#fff;color:var(--bc-ink);font-family:var(--font-sans)}#root{padding:24px;display:flex;flex-direction:column;gap:24px;box-sizing:border-box}.row{display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start}.col{flex:1 1 220px;min-width:0}</style></head>
+<body><div id="root"></div>
+<script>
+var B = window.BlockConcepts, h = React.createElement;
+function App(){return h('svg',{viewBox:'0 0 760 300',width:'100%',style:{background:'#fff'},'data-theme':'light'},
+ h(B.StationBox,{x:20,y:40,w:160,h:100,number:1,name:'Torque test',type:'Inspection',size:'24 x 20 in',speed:'60 parts/min'}),
+ h(B.StationBox,{kind:'highlight',x:210,y:40,w:160,h:100,number:2,name:'Pick and place',type:'Pick and place',size:'30 x 24 in',speed:'12 parts/min'}),
+ h(B.StationBox,{kind:'tentative',x:400,y:40,w:160,h:100,number:3,name:'Outfeed',type:'Conveyor',size:'36 x 18 in'}),
+ h(B.StationBox,{kind:'cabinet',x:590,y:40,w:150,h:100,name:'Control cabinet',type:'Cabinet',size:'30 x 24 in'}));}
+ReactDOM.createRoot(document.getElementById('root')).render(h(App));
+</script></body></html>

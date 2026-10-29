@@ -1,0 +1,1 @@
+Frame for the private admin: header, a six-tab bar and the content area. Provide `tabs` (Log List, Releases, Directory, Customers, Settings, Registry), `tab`, `onTab`, `actions` (such as Sign out) and `children`. Use the dark theme, put `StagedBar` at the bottom of the content, and keep the Vault out of public navigation.

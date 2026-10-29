@@ -1,0 +1,1 @@
+Inline empty, loading and error states for a pane or list. Provide `kind` (`empty`, `loading`, `error`), `title`, `children` and `action`. Say what is missing and what to do next; errors offer a retry. The loading bars stop under reduced-motion settings.

@@ -1,0 +1,13 @@
+<!-- @dsCard group="Forms" height=420 subtitle="Default, filled, email check, error and disabled" -->
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>html,body{margin:0}body{background:var(--bc-surface);color:var(--bc-ink);font-family:var(--font-sans)}#root{padding:24px;display:flex;flex-direction:column;gap:24px;box-sizing:border-box}.row{display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start}.col{flex:1 1 220px;min-width:0}</style></head>
+<body><div id="root"></div>
+<script>
+var B = window.BlockConcepts, h = React.createElement;
+function App(){return h('div',{className:'row'},
+ h('div',{className:'col'},h(B.TextField,{label:'Company',defaultValue:'',hint:'Name as it should appear on the quote.'}),h('div',{style:{height:16}}),h(B.TextField,{label:'Config Number',defaultValue:'BC-1042'})),
+ h('div',{className:'col'},h(B.TextField,{label:'Email',type:'email',defaultValue:'name@company',touched:true,hint:'We reply to this address.'}),h('div',{style:{height:16}}),h(B.TextField,{label:'Length',defaultValue:'24',suffix:'in'})),
+ h('div',{className:'col'},h(B.TextField,{label:'Phone',error:'Enter a phone number we can call.'}),h('div',{style:{height:16}}),h(B.TextField,{label:'Locked field',defaultValue:'Read only',disabled:true})));}
+ReactDOM.createRoot(document.getElementById('root')).render(h(App));
+</script></body></html>

@@ -1,0 +1,1 @@
+StatusPill that edits itself: a native dropdown styled as the pill, for changing Status or Build State inline in a table row. Provide `kind`, `value`, `onChange(value)` and `label` (the accessible name, such as "Build State for BC-1042"). Build State lists the six values in order. Stage changes with `StagedBar` rather than saving on each pick when the user may want to undo.

@@ -1,0 +1,11 @@
+<!-- @dsCard group="Layouts" height=420 subtitle="Header, six-tab bar and content" -->
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>html,body{margin:0}body{background:var(--bc-surface);color:var(--bc-ink);font-family:var(--font-sans)}#root{padding:24px;display:flex;flex-direction:column;gap:24px;box-sizing:border-box}.row{display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start}.col{flex:1 1 220px;min-width:0}</style></head>
+<body><div id="root"></div>
+<script>
+var B = window.BlockConcepts, h = React.createElement;
+function App(){var s=React.useState('Log List');return h('div',{style:{margin:-24,height:420,display:'flex'}},h(B.VaultShell,{tabs:['Log List','Releases','Directory','Customers','Settings','Registry'].map(function(t){return{id:t,label:t}}),tab:s[0],onTab:s[1],actions:h(B.Button,{variant:'secondary',className:'bc-button--compact'},'Sign out'),
+ children:h('div',null,h('h1',{className:'bc-detail__title',style:{margin:'0 0 8px',textTransform:'uppercase'}},s[0]),h('p',{className:'bc-body bc-body--muted'},'Content for '+s[0]+' goes here.'))}));}
+ReactDOM.createRoot(document.getElementById('root')).render(h(App));
+</script></body></html>

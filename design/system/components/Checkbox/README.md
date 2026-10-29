@@ -1,0 +1,1 @@
+Checkbox with a 24px box and a 44px row. Provide `label`, `checked` or `defaultChecked`, `onChange(checked)`, `disabled`. Use for independent yes/no options. The checked state is a Steel Blue fill with a check mark, so it does not rely on color alone. Group related checkboxes under a visible heading.

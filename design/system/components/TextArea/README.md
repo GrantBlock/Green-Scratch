@@ -1,0 +1,1 @@
+Multi-line text with a visible label, hint and error. Provide `label`, `rows` (default 4), `value` or `defaultValue`, `onChange(value)`, `hint`, `error`, `optional`, `disabled`. Use for problem descriptions and notes. State what to include in `hint`, for example parts, rates and what is not working today.

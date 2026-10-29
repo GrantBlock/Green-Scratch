@@ -51,3 +51,18 @@ Place `page-art-bottom-left.png` as a full-page picture behind text in the heade
 | Secondary text, notice | 595959 |
 
 Pictures: `assets/Logos/block-concepts-mark.png` (2000px, transparent), `assets/Documents/page-art-bottom-left.png` and `page-art-both-corners.png` (full page, white ground, for light documents only).
+
+## Process document template
+
+A process document describes a proposed line: what each station does, how parts move, and what the building must supply. It uses the same Word styles as every Block Concepts document: Aptos, US Letter, 1 inch margins, Heading 1 and 2 in `#2F5D80`, body at 10.5pt, and the standard table style. The cover is the standard cover page.
+
+| Section | Style and content |
+| --- | --- |
+| Overview | Heading 1, then two or three body paragraphs: the problem, the rate and what the line delivers. |
+| Station schedule | Heading 1, then a table titled "Station Schedule" (bold 11pt). Columns: No., Station, Type, L × W (in), Rate, Air (psi), Electrical (V). One row per station in operation order; No. and numeric columns right-aligned. Header row `#4A7BA7` with bold white text, zebra rows `#F2F2F2`, borders `#D9D9D9`. |
+| Sequence of operation | Heading 1, then a numbered list in body style: one sentence per step in operation order, the station name in bold, then a dash and the action ("**Pick and place** — the robot moves each part into the torque fixture."). Parts that fail or exit the flow get their own steps. |
+| Utilities summary | Heading 1, then a table titled "Utilities Summary". Columns: Utility, Requirement, Notes. Rows: compressed air (pressure and flow), electrical (voltage, phase, total load), and any others the line needs. Same table style. |
+| Layout | Heading 1, then the layout figure. Export the drawing sheet's drawing area as a PNG at 300 dpi, place it inline at full text width (6.5 in) on its own page, centered, with no border. The caption sits directly below in 9pt italic `#595959`: "Figure 1 — Proposed layout, [scale]". Refer to stations by their numbers. |
+| How to Proceed? | Heading 1, closing paragraph naming the next step and what sign-off releases. |
+
+Keep numbers consistent across the schedule, the sequence and the figure, and mark any tentative station "(tentative)" in the schedule and dashed in the figure.

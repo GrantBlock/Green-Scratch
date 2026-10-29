@@ -1,0 +1,1 @@
+Bar that holds pending edits until Apply. Provide `count`, `onApply` and `onDiscard`. It shows "N changes pending" and enables Apply (N) and Discard only when something is staged. Stick it to the bottom of the Vault content. Pair Apply with a `ConfirmDialog` when changes are hard to reverse.

@@ -1,0 +1,10 @@
+<!-- @dsCard group="Print" height=250 subtitle="Dense print table for sheets and documents" -->
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>html,body{margin:0}body{background:#fff;color:var(--bc-ink);font-family:var(--font-sans)}#root{padding:24px;display:flex;flex-direction:column;gap:24px;box-sizing:border-box}.row{display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start}.col{flex:1 1 220px;min-width:0}</style></head>
+<body><div id="root"></div>
+<script>
+var B = window.BlockConcepts, h = React.createElement;
+function App(){return h('div',{style:{background:'#fff',padding:16}},h(B.ScheduleTable,{caption:'Station schedule',columns:[{key:'n',label:'No.',align:'right'},{key:'s',label:'Station'},{key:'t',label:'Type'},{key:'sz',label:'L x W (in)'},{key:'sp',label:'Rate'}],rows:[{n:1,s:'Infeed',t:'Conveyor',sz:'48 x 18',sp:'10 in/s'},{n:2,s:'Pick and place',t:'Pick and place',sz:'30 x 24',sp:'12 parts/min'},{n:3,s:'Torque test',t:'Inspection',sz:'24 x 20',sp:'60 parts/min'}]}));}
+ReactDOM.createRoot(document.getElementById('root')).render(h(App));
+</script></body></html>

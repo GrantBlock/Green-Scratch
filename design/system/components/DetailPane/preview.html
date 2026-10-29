@@ -1,0 +1,11 @@
+<!-- @dsCard group="Panes" height=620 subtitle="Preview, revision selector, expand button and empty state" -->
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>html,body{margin:0}body{background:var(--bc-surface);color:var(--bc-ink);font-family:var(--font-sans)}#root{padding:24px;display:flex;flex-direction:column;gap:24px;box-sizing:border-box}.row{display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start}.col{flex:1 1 220px;min-width:0}</style></head>
+<body><div id="root"></div>
+<script>
+var B = window.BlockConcepts, h = React.createElement;
+function App(){return h('div',{className:'row'},h('div',{style:{flex:'3 1 420px',minWidth:0}},h(B.DetailPane,{title:'Servo cap torque cell',description:'A servo-driven fixture that measures cap removal torque on every part and logs the result.',whenToUse:'Use when caps are checked by hand today and you need a record for each part.',revisions:[{id:'r3',label:'Rev C'},{id:'r2',label:'Rev B'},{id:'r1',label:'Rev A'}],preview:{alt:'First page of the cap torque cell drawing, showing the fixture from above'},downloadLabel:'Download PDF'})),
+ h('div',{style:{flex:'1 1 200px',minWidth:0}},h(B.DetailPane,{empty:true})));}
+ReactDOM.createRoot(document.getElementById('root')).render(h(App));
+</script></body></html>

@@ -1,0 +1,1 @@
+Short message after an action. Provide `tone` (`success`, `info`, `warning`, `error`), `children` and `onClose`. Each tone has a leading word (Done, Note, Check this, Error) and an icon as well as color. Errors are announced immediately; the others politely. Keep it to one sentence that says what happened.

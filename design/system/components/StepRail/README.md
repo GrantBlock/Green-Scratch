@@ -1,0 +1,1 @@
+Progress rail for the station builder. Provide `steps` (labels) and `active` (zero-based). Steps before it are done (check mark), the active step is Steel Blue, and later steps are outlined, with hidden text for screen readers. Badges are numbered squares, following the shape rule.

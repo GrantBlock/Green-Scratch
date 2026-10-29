@@ -138,7 +138,7 @@ footer p { color: var(--muted); font-size: 14px; max-width: 70ch; }
   <section aria-labelledby="h-design">
     <h2 id="h-design">Your work in Claude Design, alongside the build</h2>
     <div class="design">
-      <div><span class="lbl">Before Foundation</span><h3>Add the missing components</h3><p>Paste <code>design/GAPS-PROMPT.md</code> into the design-system session and re-export to <code>design/system/</code>. Helps every screen; Foundation can start with the basics first.</p></div>
+      <div><span class="lbl">Before Foundation</span><h3>Design system round 2</h3><p>Round 1 is in the repo. Paste <code>design/GAPS-PROMPT-2.md</code> into the design-system session: nine-tab navigation, new states, Gantt, calendar, pipeline and the rest. Foundation can start on the round 1 components first.</p></div>
       <div><span class="lbl">Before Accounts and Pipeline</span><h3>Vault mockups</h3><p>Run <code>design/BRIEF.md</code> for the Vault screens and export them to <code>design/</code>. Review phone and iPad first.</p></div>
       <div><span class="lbl">Before Customer pages</span><h3>Hub mockups</h3><p>Same brief, Hub section: Contact, Builder, Library, Assistant and the customer project page.</p></div>
     </div>
@@ -153,7 +153,7 @@ footer p { color: var(--muted); font-size: 14px; max-width: 70ch; }
   var M = [
     { id: 'foundation', phase: 'Core', name: 'Foundation', len: 3, deps: [],
       does: 'Sign-in, the phone and iPad layout, the database, Registry numbering and the audit log, wired to the design system.',
-      you: ['Create the Cloudflare database, file storage and the vault. and hub. subdomains', 'Re-export the design system with the missing components (or start with the basics)'],
+      you: ['Create the Cloudflare database, file storage and the vault. and hub. subdomains', 'Round 2 of the design system (or start Foundation on the round 1 components)'],
       review: 'Sign in on your iPad. New numbers are issued and never repeat.' },
     { id: 'pipeline', phase: 'Core', name: 'Accounts and Pipeline', len: 2, deps: ['foundation'],
       does: 'Customers, suppliers, prospects. Leads, opportunities, next actions, won and lost with a reason.',

@@ -1,0 +1,1 @@
+Line for a drawing, inside an `<svg>`. Provide `kind` (`object` 0.6 mm solid, `hidden` 0.3 mm dashed, `center` 0.3 mm long-short, `dimension` 0.3 mm with arrowheads) and `x1`, `y1`, `x2`, `y2`; dimension lines take a `label`. Do not mix other weights.

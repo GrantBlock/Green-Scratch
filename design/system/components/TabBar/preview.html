@@ -1,0 +1,12 @@
+<!-- @dsCard group="Navigation" height=150 subtitle="Fixed count, one row, scales to fit" -->
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>html,body{margin:0}body{background:var(--bc-surface);color:var(--bc-ink);font-family:var(--font-sans)}#root{padding:24px;display:flex;flex-direction:column;gap:24px;box-sizing:border-box}.row{display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start}.col{flex:1 1 220px;min-width:0}</style></head>
+<body><div id="root"></div>
+<script>
+var B = window.BlockConcepts, h = React.createElement;
+function App(){return h('div',{style:{display:'flex',flexDirection:'column',gap:24}},
+ h(B.TabBar,{label:'Library',tabs:[{id:'a',label:'Drawings'},{id:'b',label:'Specs'},{id:'c',label:'Templates'}],defaultValue:'a'}),
+ h('div',{style:{maxWidth:420}},h(B.TabBar,{label:'Vault sections',tabs:['Log List','Releases','Directory','Customers','Settings','Registry'].map(function(t){return{id:t,label:t}}),defaultValue:'Log List'})));}
+ReactDOM.createRoot(document.getElementById('root')).render(h(App));
+</script></body></html>

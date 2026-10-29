@@ -1,0 +1,1 @@
+Layout for Fix this: a one-fifth button column and a four-fifths content area. Provide `buttons` (usually a `ButtonColumn`) and `children`. Below 820px the buttons stack as a full-width menu above the content.

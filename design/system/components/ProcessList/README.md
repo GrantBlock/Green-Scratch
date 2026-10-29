@@ -1,0 +1,1 @@
+Numbered list for the process description sheet. Provide `items` as strings or `{title, text}`; titles are bold and followed by a dash and the sentence. Number every step in operation order and keep each to one sentence.

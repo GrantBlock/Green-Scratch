@@ -1,0 +1,1 @@
+Confirmation for Archive and Apply. Provide `open`, `title` (a question naming the item, such as "Archive BC-1042?"), `message` (the exact consequence and how to undo it), `confirmLabel` (repeat the action: Archive, Apply), `cancelLabel`, `onConfirm` and `onCancel`. It is an alert dialog; the confirm button is the only Steel Blue button in it.

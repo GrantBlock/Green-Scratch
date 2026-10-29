@@ -1,0 +1,29 @@
+<!-- @dsCard group="Print" height=1960 width=1056 subtitle="ANSI A landscape and portrait sheets" -->
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>html,body{margin:0}body{background:#e9ecef;color:var(--bc-ink);font-family:var(--font-sans)}#root{padding:0px;display:flex;flex-direction:column;gap:24px;box-sizing:border-box}.row{display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start}.col{flex:1 1 220px;min-width:0}</style></head>
+<body><div id="root"></div>
+<script>
+var B = window.BlockConcepts, h = React.createElement;
+function Sheet(o){return h(B.DrawingSheet,{orientation:o,drawing:{number:'BC-1042-L1',title:'Proposed station layout',date:'2026-10-29',size:'A',version:'A',scale:'1:12',sheet:1,of:2}},
+ h('svg',{viewBox:o==='landscape'?'0 0 960 500':'0 0 700 760',preserveAspectRatio:'xMidYMid meet'},
+  o==='landscape'?h(React.Fragment,null,
+   h(B.StationBox,{kind:'cabinet',x:40,y:40,w:150,h:90,name:'Control cabinet',type:'Cabinet',size:'30 x 24 in'}),
+   h(B.StationBox,{x:60,y:260,w:170,h:110,number:1,name:'Infeed',type:'Conveyor',size:'48 x 18 in',speed:'10 in/s'}),
+   h(B.StationBox,{kind:'highlight',x:300,y:260,w:170,h:110,number:2,name:'Pick and place',type:'Pick and place',size:'30 x 24 in',speed:'12 parts/min'}),
+   h(B.StationBox,{x:540,y:260,w:170,h:110,number:3,name:'Torque test',type:'Inspection',size:'24 x 20 in',speed:'60 parts/min'}),
+   h(B.StationBox,{kind:'tentative',x:780,y:260,w:150,h:110,number:4,name:'Outfeed',type:'Conveyor',size:'36 x 18 in'}),
+   h(B.FlowArrow,{x1:230,y1:315,x2:300,y2:315}),h(B.FlowArrow,{x1:470,y1:315,x2:540,y2:315}),h(B.FlowArrow,{x1:710,y1:315,x2:780,y2:315}),
+   h(B.DrawingLine,{kind:'center',x1:385,y1:230,x2:385,y2:400}),
+   h(B.DrawingLine,{kind:'dimension',x1:60,y1:420,x2:930,y2:420,label:'14 ft 4 in'}),
+   h(B.DrawingLine,{kind:'hidden',x1:190,y1:130,x2:190,y2:260}))
+  :h(React.Fragment,null,
+   h(B.StationBox,{kind:'cabinet',x:40,y:30,w:150,h:90,name:'Control cabinet',type:'Cabinet',size:'30 x 24 in'}),
+   h(B.StationBox,{x:260,y:150,w:170,h:100,number:1,name:'Infeed',type:'Conveyor',size:'48 x 18 in'}),
+   h(B.StationBox,{kind:'highlight',x:260,y:330,w:170,h:100,number:2,name:'Pick and place',type:'Pick and place',size:'30 x 24 in'}),
+   h(B.StationBox,{x:260,y:510,w:170,h:100,number:3,name:'Torque test',type:'Inspection',size:'24 x 20 in'}),
+   h(B.FlowArrow,{x1:345,y1:250,x2:345,y2:330}),h(B.FlowArrow,{x1:345,y1:430,x2:345,y2:510}),
+   h(B.DrawingLine,{kind:'dimension',x1:560,y1:150,x2:560,y2:610,label:'9 ft 2 in'}))));}
+function App(){return h('div',{style:{display:'flex',flexDirection:'column',gap:32,alignItems:'flex-start'}},Sheet('landscape'),Sheet('portrait'));}
+ReactDOM.createRoot(document.getElementById('root')).render(h(App));
+</script></body></html>
