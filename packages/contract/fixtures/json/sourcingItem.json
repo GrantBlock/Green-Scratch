@@ -1,0 +1,63 @@
+[
+  {
+    "id": "src-1",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "sourcingItem",
+    "projectId": "proj-1",
+    "description": "Servo motor and drive",
+    "supplierAccountId": "acc-vertex",
+    "quoteRequestedDate": "2026-08-20",
+    "quoteDocumentId": "doc-supplier-1",
+    "priceCents": 184000,
+    "leadTimeDays": 28,
+    "status": "Ordered",
+    "poNumber": "BC-PO-0041"
+  },
+  {
+    "id": "src-2",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "sourcingItem",
+    "projectId": "proj-1",
+    "description": "Torque transducer",
+    "supplierAccountId": "acc-vertex",
+    "quoteRequestedDate": "2026-08-20",
+    "priceCents": 96000,
+    "leadTimeDays": 21,
+    "status": "Quoted"
+  },
+  {
+    "id": "src-3",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "sourcingItem",
+    "projectId": "proj-1",
+    "description": "Guarding panels",
+    "supplierAccountId": "acc-ironline",
+    "status": "To quote"
+  },
+  {
+    "id": "src-4",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "sourcingItem",
+    "projectId": "proj-2",
+    "description": "Granite inspection plate",
+    "supplierAccountId": "acc-ironline",
+    "quoteRequestedDate": "2026-10-22",
+    "status": "To quote"
+  }
+]

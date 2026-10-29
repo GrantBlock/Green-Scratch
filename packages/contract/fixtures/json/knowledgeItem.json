@@ -1,0 +1,125 @@
+[
+  {
+    "id": "know-research",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "knowledgeItem",
+    "number": "BC-K-26001",
+    "kind": "Application research",
+    "title": "Cap torque measurement approaches",
+    "scope": "Company",
+    "body": "Inline versus offline torque measurement. Offline gives better data; inline catches every cap."
+  },
+  {
+    "id": "know-trip",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "knowledgeItem",
+    "number": "BC-K-26002",
+    "kind": "Trip plan",
+    "title": "Pack Expo plan",
+    "scope": "Company",
+    "body": "Priorities: servo suppliers, vision vendors, two customer meetings.",
+    "trip": {
+      "startDate": "2026-11-09",
+      "endDate": "2026-11-12",
+      "locations": [
+        "Convention center",
+        "Hotel"
+      ],
+      "itinerary": [
+        {
+          "date": "2026-11-10",
+          "text": "Walk the automation hall"
+        },
+        {
+          "date": "2026-11-11",
+          "text": "Meet Vertex at their booth",
+          "accountId": "acc-vertex"
+        }
+      ]
+    }
+  },
+  {
+    "id": "know-article",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "knowledgeItem",
+    "number": "BC-K-26003",
+    "kind": "Article",
+    "title": "Washdown conveyor design notes",
+    "scope": "Company",
+    "body": "Saved notes on sloped frames and sealed bearings.",
+    "sourceUrl": "https://example.com/articles/washdown",
+    "summary": {
+      "text": "Sloped frames and sealed bearings keep washdown conveyors cleanable.",
+      "byAssistant": true
+    }
+  },
+  {
+    "id": "know-config",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "knowledgeItem",
+    "number": "BC-K-26004",
+    "kind": "Configuration",
+    "title": "Company assistant configuration",
+    "scope": "Company",
+    "body": "Speak as Block Concepts. Address the reader as you. No emoji, no superlatives. Never name customers or suppliers in public text."
+  },
+  {
+    "id": "know-glossary",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "knowledgeItem",
+    "number": "BC-K-26005",
+    "kind": "Glossary",
+    "title": "Company glossary",
+    "scope": "Company",
+    "body": "**FAT**: factory acceptance test.\n**SAT**: site acceptance test.\n**RAD Index**: risk and complexity rating."
+  },
+  {
+    "id": "know-standard",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "knowledgeItem",
+    "number": "BC-K-26006",
+    "kind": "Standard work",
+    "title": "Site measurement",
+    "scope": "Company",
+    "body": "1. Confirm access and safety rules.\n2. Photograph the area.\n3. Measure clearances and note utilities.\n4. Record everything in the project folder."
+  },
+  {
+    "id": "know-proj-config",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "knowledgeItem",
+    "number": "BC-K-26007",
+    "kind": "Configuration",
+    "title": "Torque station project notes",
+    "scope": "Project",
+    "body": "Meridian prefers email summaries on Fridays. Maintenance lead is the day-to-day contact.",
+    "projectId": "proj-1"
+  }
+]

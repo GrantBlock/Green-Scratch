@@ -55,7 +55,7 @@ Rules that keep parallel design consistent are in `design/sessions/00-shared.md`
 
 | Track | Owns | Needs | Can start |
 |---|---|---|---|
-| **C0 Contracts** | `packages/contract` (types from `spec/data-model.md`, API routes, fixtures) | Nothing | Now. Finish first; it unblocks the rest |
+| **C0 Contracts** | `packages/contract` (types from `spec/data-model.md`, API routes, fixtures, mock server) | Nothing | **Done (first version).** 35 tests pass, including the first nine steps of the story over HTTP |
 | **C1 Core** | `apps/vault/server`, database schema, Registry, auth, audit log, storage | C0 | After C0 |
 | **C2 Vault UI** | `apps/vault/ui` against a **mock API** built from the fixtures | C0 and design mockups | As mockups land |
 | **C3 Hub** | `apps/hub` (home, Contact, customer page) | C0 | After C0 |
@@ -88,7 +88,7 @@ A change to a contract goes in `packages/contract` first, as its own small commi
 
 ## 6. Integration steps
 
-1. C0 lands; fixtures and mock API run locally.
+1. C0 has landed; fixtures and the mock API run locally (`cd packages/contract && npm run mock`).
 2. Design sessions export mockups; DS lands round 2; placeholders are swapped.
 3. C2 and C3 build screens against the mock API.
 4. C1 lands the real server; each route is switched from mock to real, one record type at a time.

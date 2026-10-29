@@ -1,0 +1,71 @@
+[
+  {
+    "id": "act-1",
+    "version": 1,
+    "createdAt": "2026-10-22T15:30:00Z",
+    "updatedAt": "2026-10-22T15:30:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "activity",
+    "about": {
+      "recordType": "opportunity",
+      "recordId": "opp-3"
+    },
+    "kind": "note",
+    "text": "Called Sam. Wants the measurement done before the quote is revised.",
+    "actor": "grant",
+    "at": "2026-10-22T15:30:00Z"
+  },
+  {
+    "id": "act-2",
+    "version": 1,
+    "createdAt": "2026-10-05T13:00:00Z",
+    "updatedAt": "2026-10-05T13:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "activity",
+    "about": {
+      "recordType": "scheduleItem",
+      "recordId": "si-4"
+    },
+    "kind": "date_change",
+    "text": "Fabrication end moved from 2026-11-13 to 2026-11-27.",
+    "actor": "grant",
+    "at": "2026-10-05T13:00:00Z",
+    "reason": "Servo drive lead time added two weeks."
+  },
+  {
+    "id": "act-3",
+    "version": 1,
+    "createdAt": "2026-10-05T12:00:00Z",
+    "updatedAt": "2026-10-05T12:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "activity",
+    "about": {
+      "recordType": "project",
+      "recordId": "proj-1"
+    },
+    "kind": "state_change",
+    "text": "Stage changed from Design to Build.",
+    "actor": "system",
+    "at": "2026-10-05T12:00:00Z"
+  },
+  {
+    "id": "act-4",
+    "version": 1,
+    "createdAt": "2026-10-28T16:20:00Z",
+    "updatedAt": "2026-10-28T16:20:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "activity",
+    "about": {
+      "recordType": "lead",
+      "recordId": "lead-1"
+    },
+    "kind": "system",
+    "text": "Lead created from the Contact form.",
+    "actor": "system",
+    "at": "2026-10-28T16:20:00Z"
+  }
+]

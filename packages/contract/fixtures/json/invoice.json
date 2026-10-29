@@ -1,0 +1,72 @@
+[
+  {
+    "id": "inv-1",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "invoice",
+    "projectId": "proj-1",
+    "accountId": "acc-meridian",
+    "invoiceNumber": "INV-2026-014",
+    "lines": [
+      {
+        "description": "Deposit (60%)",
+        "amountCents": 2910000,
+        "milestoneId": "ms-1-a"
+      }
+    ],
+    "amountCents": 2910000,
+    "issuedDate": "2026-07-24",
+    "dueDate": "2026-08-23",
+    "paidDate": "2026-08-15",
+    "status": "Paid",
+    "documentId": "doc-invoice-1"
+  },
+  {
+    "id": "inv-2",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "invoice",
+    "projectId": "proj-1",
+    "accountId": "acc-meridian",
+    "invoiceNumber": "INV-2026-021",
+    "lines": [
+      {
+        "description": "Delivery (30%)",
+        "amountCents": 1455000,
+        "milestoneId": "ms-1-b"
+      }
+    ],
+    "amountCents": 1455000,
+    "issuedDate": "2026-09-10",
+    "dueDate": "2026-10-10",
+    "status": "Sent"
+  },
+  {
+    "id": "inv-3",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "invoice",
+    "projectId": "proj-2",
+    "accountId": "acc-harbor",
+    "invoiceNumber": "INV-2026-024",
+    "lines": [
+      {
+        "description": "Deposit (60%)",
+        "amountCents": 7920000,
+        "milestoneId": "ms-2-a"
+      }
+    ],
+    "amountCents": 7920000,
+    "dueDate": "2026-11-15",
+    "status": "Draft"
+  }
+]

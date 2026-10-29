@@ -1,0 +1,229 @@
+[
+  {
+    "id": "tpl-project",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "template",
+    "number": "BC-L-26001",
+    "kind": "Project structure",
+    "name": "Standard project",
+    "cgmpOption": false,
+    "definition": {
+      "folders": [
+        {
+          "folder": "Customer Correspondence"
+        },
+        {
+          "folder": "Documentation - Project"
+        },
+        {
+          "folder": "Electrical - Project"
+        },
+        {
+          "folder": "Mechanical - Project"
+        },
+        {
+          "folder": "Temp - Project"
+        },
+        {
+          "folder": "Supplier Correspondence"
+        },
+        {
+          "folder": "Claude - Project"
+        }
+      ],
+      "checklist": [
+        {
+          "location": {
+            "folder": "Finance, Sales, and Servicing - Customer"
+          },
+          "name": "Customer purchase order",
+          "required": true
+        },
+        {
+          "location": {
+            "folder": "Customer Correspondence"
+          },
+          "name": "Customer layout and requirements",
+          "required": true
+        },
+        {
+          "location": {
+            "folder": "Mechanical - Project"
+          },
+          "name": "Mechanical drawings",
+          "required": true
+        },
+        {
+          "location": {
+            "folder": "Electrical - Project"
+          },
+          "name": "Electrical drawings",
+          "required": true
+        },
+        {
+          "location": {
+            "folder": "Supplier Correspondence"
+          },
+          "name": "Supplier data sheets and quotes",
+          "required": true
+        },
+        {
+          "location": {
+            "folder": "Documentation - Project"
+          },
+          "name": "Operating manual",
+          "required": true
+        },
+        {
+          "location": {
+            "folder": "Documentation - Project"
+          },
+          "name": "Spec sheet",
+          "required": true
+        },
+        {
+          "location": {
+            "folder": "Documentation - Project"
+          },
+          "name": "Project schedule export",
+          "required": false
+        },
+        {
+          "location": {
+            "folder": "Documentation - Project"
+          },
+          "name": "ROI summary",
+          "required": false
+        }
+      ],
+      "jobs": [
+        {
+          "category": "24",
+          "description": "Engineering"
+        },
+        {
+          "category": "06",
+          "description": "Mechanical build"
+        },
+        {
+          "category": "03",
+          "description": "Electrical build"
+        }
+      ],
+      "milestones": [
+        {
+          "name": "Deposit",
+          "percent": 60
+        },
+        {
+          "name": "Delivery",
+          "percent": 30
+        },
+        {
+          "name": "Acceptance",
+          "percent": 10
+        }
+      ],
+      "schedule": [
+        {
+          "name": "Concept and specifications",
+          "category": "Design",
+          "durationDays": 10
+        },
+        {
+          "name": "Detailed design",
+          "category": "Design",
+          "durationDays": 15,
+          "dependsOnIndex": 0
+        },
+        {
+          "name": "Order long-lead parts",
+          "category": "Sourcing",
+          "durationDays": 5,
+          "dependsOnIndex": 1
+        },
+        {
+          "name": "Fabrication and assembly",
+          "category": "Build",
+          "durationDays": 25,
+          "dependsOnIndex": 2
+        },
+        {
+          "name": "Factory acceptance test",
+          "category": "Build",
+          "durationDays": 3,
+          "dependsOnIndex": 3
+        },
+        {
+          "name": "Site installation and acceptance",
+          "category": "Install",
+          "durationDays": 7,
+          "dependsOnIndex": 4
+        }
+      ]
+    }
+  },
+  {
+    "id": "tpl-cgmp",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "template",
+    "number": "BC-L-26002",
+    "kind": "Checklist",
+    "name": "cGMP documentation package",
+    "cgmpOption": true,
+    "definition": {
+      "subfolder": "cGMP Package",
+      "under": "Documentation - Project",
+      "checklist": [
+        {
+          "name": "Material certificates",
+          "required": true
+        },
+        {
+          "name": "Surface finish and cleanability data",
+          "required": true
+        },
+        {
+          "name": "Component list with certificates",
+          "required": true
+        },
+        {
+          "name": "Test results",
+          "required": true
+        }
+      ]
+    }
+  },
+  {
+    "id": "tpl-customer",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "template",
+    "number": "BC-L-26003",
+    "kind": "Customer structure",
+    "name": "Standard customer folders",
+    "cgmpOption": false,
+    "definition": {
+      "folders": [
+        "Archive - Customer",
+        "Finance, Sales, and Servicing - Customer",
+        "Inbox - Customer",
+        "Documents - Customer",
+        "Temp - Customer",
+        "Project - Customer",
+        "Claude - Customer"
+      ]
+    }
+  }
+]

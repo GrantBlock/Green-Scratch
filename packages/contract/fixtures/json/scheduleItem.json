@@ -1,0 +1,179 @@
+[
+  {
+    "id": "si-1",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "scheduleItem",
+    "projectId": "proj-1",
+    "name": "Concept and specifications",
+    "category": "Design",
+    "start": "2026-08-03",
+    "end": "2026-08-14",
+    "dependsOn": [],
+    "percentComplete": 100,
+    "sortOrder": 1,
+    "owner": "Grant"
+  },
+  {
+    "id": "si-2",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "scheduleItem",
+    "projectId": "proj-1",
+    "name": "Detailed design",
+    "category": "Design",
+    "start": "2026-08-17",
+    "end": "2026-09-22",
+    "dependsOn": [
+      "si-1"
+    ],
+    "percentComplete": 100,
+    "sortOrder": 2,
+    "owner": "Grant"
+  },
+  {
+    "id": "si-3",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "scheduleItem",
+    "projectId": "proj-1",
+    "name": "Order long-lead parts",
+    "category": "Sourcing",
+    "start": "2026-09-23",
+    "end": "2026-10-02",
+    "dependsOn": [
+      "si-2"
+    ],
+    "percentComplete": 100,
+    "sortOrder": 3,
+    "owner": "Grant"
+  },
+  {
+    "id": "si-4",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "scheduleItem",
+    "projectId": "proj-1",
+    "name": "Fabrication and assembly",
+    "category": "Build",
+    "start": "2026-10-05",
+    "end": "2026-11-27",
+    "dependsOn": [
+      "si-3"
+    ],
+    "percentComplete": 45,
+    "sortOrder": 4,
+    "owner": "Grant"
+  },
+  {
+    "id": "si-5",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "scheduleItem",
+    "projectId": "proj-1",
+    "name": "Controls wiring",
+    "category": "Build",
+    "start": "2026-11-09",
+    "end": "2026-12-04",
+    "dependsOn": [
+      "si-3"
+    ],
+    "percentComplete": 0,
+    "sortOrder": 5,
+    "owner": "Grant"
+  },
+  {
+    "id": "si-6",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "scheduleItem",
+    "projectId": "proj-1",
+    "name": "Factory acceptance test",
+    "category": "Build",
+    "start": "2026-12-07",
+    "end": "2026-12-09",
+    "dependsOn": [
+      "si-4",
+      "si-5"
+    ],
+    "percentComplete": 0,
+    "sortOrder": 6,
+    "owner": "Grant"
+  },
+  {
+    "id": "si-7",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "scheduleItem",
+    "projectId": "proj-1",
+    "name": "Site installation and acceptance",
+    "category": "Install",
+    "start": "2026-12-14",
+    "end": "2026-12-18",
+    "dependsOn": [
+      "si-6"
+    ],
+    "percentComplete": 0,
+    "sortOrder": 7,
+    "owner": "Grant"
+  },
+  {
+    "id": "si-p2-1",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "scheduleItem",
+    "projectId": "proj-2",
+    "name": "Concept and specifications",
+    "category": "Design",
+    "start": "2026-10-01",
+    "end": "2026-10-30",
+    "dependsOn": [],
+    "percentComplete": 70,
+    "sortOrder": 1,
+    "owner": "Grant"
+  },
+  {
+    "id": "si-p2-2",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "scheduleItem",
+    "projectId": "proj-2",
+    "name": "Detailed design",
+    "category": "Design",
+    "start": "2026-11-02",
+    "end": "2026-12-15",
+    "dependsOn": [
+      "si-p2-1"
+    ],
+    "percentComplete": 0,
+    "sortOrder": 2,
+    "owner": "Grant"
+  }
+]

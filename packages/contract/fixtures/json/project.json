@@ -1,0 +1,45 @@
+[
+  {
+    "id": "proj-1",
+    "version": 1,
+    "createdAt": "2026-07-20T15:00:00Z",
+    "updatedAt": "2026-07-20T15:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "project",
+    "number": "BC-B-26011",
+    "accountId": "acc-meridian",
+    "opportunityId": "opp-1",
+    "title": "Cap torque measurement station",
+    "contractValueCents": 4850000,
+    "stage": "Build",
+    "targetStart": "2026-08-03",
+    "targetEnd": "2026-12-18",
+    "templateId": "tpl-project",
+    "cgmp": false,
+    "oneDriveUrl": "https://example.com/onedrive/meridian/BC-B-26011",
+    "onshapeUrls": [
+      "https://example.com/onshape/torque-station"
+    ]
+  },
+  {
+    "id": "proj-2",
+    "version": 1,
+    "createdAt": "2026-09-18T15:00:00Z",
+    "updatedAt": "2026-09-18T15:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "project",
+    "number": "BC-B-26014",
+    "accountId": "acc-harbor",
+    "opportunityId": "opp-2",
+    "title": "Offline dimensional inspection cell",
+    "contractValueCents": 13200000,
+    "stage": "Design",
+    "targetStart": "2026-10-01",
+    "targetEnd": "2027-03-31",
+    "templateId": "tpl-project",
+    "cgmp": true,
+    "onshapeUrls": []
+  }
+]

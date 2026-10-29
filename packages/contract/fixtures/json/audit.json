@@ -1,0 +1,24 @@
+[
+  {
+    "id": "aud-1",
+    "version": 1,
+    "createdAt": "2026-10-05T12:00:00Z",
+    "updatedAt": "2026-10-05T12:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "audit",
+    "actor": "grant",
+    "action": "project.setStage",
+    "about": {
+      "recordType": "project",
+      "recordId": "proj-1"
+    },
+    "before": {
+      "stage": "Design"
+    },
+    "after": {
+      "stage": "Build"
+    },
+    "at": "2026-10-05T12:00:00Z"
+  }
+]

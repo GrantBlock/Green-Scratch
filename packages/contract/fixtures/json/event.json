@@ -1,0 +1,116 @@
+[
+  {
+    "id": "ev-1",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "event",
+    "kind": "Supplier visit",
+    "title": "Visit Vertex Motion Supply",
+    "start": "2026-10-27T14:00:00-05:00",
+    "end": "2026-10-27T15:30:00-05:00",
+    "allDay": false,
+    "location": "Supplier plant",
+    "accountIds": [
+      "acc-vertex"
+    ],
+    "contactIds": [
+      "con-vertex-1"
+    ],
+    "projectId": "proj-1",
+    "purpose": "Confirm servo lead time",
+    "outcomeNotes": "Lead time holds at four weeks. Drive ships with the motor.",
+    "photoDocumentIds": []
+  },
+  {
+    "id": "ev-2",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "event",
+    "kind": "Customer visit",
+    "title": "Progress review at Meridian",
+    "start": "2026-10-30T10:00:00-05:00",
+    "end": "2026-10-30T11:30:00-05:00",
+    "allDay": false,
+    "location": "Customer plant",
+    "accountIds": [
+      "acc-meridian"
+    ],
+    "contactIds": [
+      "con-meridian-1"
+    ],
+    "projectId": "proj-1",
+    "purpose": "Review build progress and the delivery invoice",
+    "photoDocumentIds": []
+  },
+  {
+    "id": "ev-3",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "event",
+    "kind": "Site measurement",
+    "title": "Measure conveyor drive area",
+    "start": "2026-11-03T09:00:00-06:00",
+    "end": "2026-11-03T11:00:00-06:00",
+    "allDay": false,
+    "location": "Customer plant",
+    "accountIds": [
+      "acc-prairie"
+    ],
+    "contactIds": [
+      "con-prairie-1"
+    ],
+    "opportunityId": "opp-3",
+    "purpose": "Panel clearances and cable runs",
+    "photoDocumentIds": []
+  },
+  {
+    "id": "ev-4",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "event",
+    "kind": "Trade show",
+    "title": "Pack Expo, day 1",
+    "start": "2026-11-10T00:00:00-06:00",
+    "allDay": true,
+    "location": "Convention center",
+    "accountIds": [],
+    "contactIds": [],
+    "tripId": "trip-1",
+    "purpose": "Meet suppliers and look for leads",
+    "photoDocumentIds": []
+  },
+  {
+    "id": "ev-5",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "event",
+    "kind": "Networking event",
+    "title": "Association dinner",
+    "start": "2026-11-11T18:30:00-06:00",
+    "allDay": false,
+    "location": "Hotel ballroom",
+    "accountIds": [
+      "acc-plains"
+    ],
+    "contactIds": [
+      "con-plains-1"
+    ],
+    "tripId": "trip-1",
+    "photoDocumentIds": []
+  }
+]

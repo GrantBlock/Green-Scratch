@@ -1,0 +1,117 @@
+[
+  {
+    "id": "acc-meridian",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "account",
+    "name": "Meridian Packaging Co.",
+    "kind": "Customer",
+    "clientCode": "MPC",
+    "industries": [
+      "Packaging and dispensing"
+    ],
+    "website": "https://example.com/meridian"
+  },
+  {
+    "id": "acc-harbor",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "account",
+    "name": "Harbor Lab Diagnostics",
+    "kind": "Customer",
+    "clientCode": "HLD",
+    "industries": [
+      "Laboratory and diagnostics"
+    ],
+    "notes": "Operates under cGMP. Documentation package required."
+  },
+  {
+    "id": "acc-prairie",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "account",
+    "name": "Prairie Foods Co-op",
+    "kind": "Customer",
+    "clientCode": "PFC",
+    "industries": [
+      "Material handling"
+    ]
+  },
+  {
+    "id": "acc-vertex",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "account",
+    "name": "Vertex Motion Supply",
+    "kind": "Supplier",
+    "clientCode": "VMS",
+    "industries": []
+  },
+  {
+    "id": "acc-ironline",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "account",
+    "name": "Ironline Conveyor Parts",
+    "kind": "Supplier",
+    "clientCode": "ILC",
+    "industries": []
+  },
+  {
+    "id": "acc-lakeside",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "account",
+    "name": "Lakeside Medical Devices",
+    "kind": "Prospect",
+    "clientCode": "GEN",
+    "industries": [
+      "Medical device"
+    ]
+  },
+  {
+    "id": "acc-plains",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "account",
+    "name": "Plains Manufacturing Association",
+    "kind": "Organization",
+    "clientCode": "PMA",
+    "industries": []
+  },
+  {
+    "id": "acc-bc",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "account",
+    "name": "Block Concepts LLC",
+    "kind": "Organization",
+    "clientCode": "BCL",
+    "industries": [],
+    "notes": "Own record. Public documents are linked here."
+  }
+]

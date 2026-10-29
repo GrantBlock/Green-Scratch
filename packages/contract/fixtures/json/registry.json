@@ -1,0 +1,687 @@
+[
+  {
+    "id": "reg-BC-D-26001",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-D-26001",
+    "registryType": "D",
+    "status": "Issued",
+    "about": {
+      "recordType": "lead",
+      "recordId": "lead-1"
+    }
+  },
+  {
+    "id": "reg-BC-D-26002",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-D-26002",
+    "registryType": "D",
+    "status": "Issued",
+    "about": {
+      "recordType": "lead",
+      "recordId": "lead-2"
+    }
+  },
+  {
+    "id": "reg-BC-D-26003",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-D-26003",
+    "registryType": "D",
+    "status": "Issued",
+    "about": {
+      "recordType": "lead",
+      "recordId": "lead-3"
+    }
+  },
+  {
+    "id": "reg-BC-D-26004",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-D-26004",
+    "registryType": "D",
+    "status": "Issued",
+    "about": {
+      "recordType": "lead",
+      "recordId": "lead-4"
+    }
+  },
+  {
+    "id": "reg-BC-Q-26011",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-Q-26011",
+    "registryType": "Q",
+    "status": "Issued",
+    "about": {
+      "recordType": "opportunity",
+      "recordId": "opp-1"
+    }
+  },
+  {
+    "id": "reg-BC-Q-26014",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-Q-26014",
+    "registryType": "Q",
+    "status": "Issued",
+    "about": {
+      "recordType": "opportunity",
+      "recordId": "opp-2"
+    }
+  },
+  {
+    "id": "reg-BC-Q-26015",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-Q-26015",
+    "registryType": "Q",
+    "status": "Issued",
+    "about": {
+      "recordType": "opportunity",
+      "recordId": "opp-3"
+    }
+  },
+  {
+    "id": "reg-BC-Q-26016",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-Q-26016",
+    "registryType": "Q",
+    "status": "Issued",
+    "about": {
+      "recordType": "opportunity",
+      "recordId": "opp-4"
+    }
+  },
+  {
+    "id": "reg-BC-Q-26017",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-Q-26017",
+    "registryType": "Q",
+    "status": "Issued",
+    "about": {
+      "recordType": "opportunity",
+      "recordId": "opp-5"
+    }
+  },
+  {
+    "id": "reg-BC-Q-26018",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-Q-26018",
+    "registryType": "Q",
+    "status": "Issued",
+    "about": {
+      "recordType": "opportunity",
+      "recordId": "opp-6"
+    }
+  },
+  {
+    "id": "reg-BC-Q-26019",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-Q-26019",
+    "registryType": "Q",
+    "status": "Issued",
+    "about": {
+      "recordType": "opportunity",
+      "recordId": "opp-7"
+    }
+  },
+  {
+    "id": "reg-BC-Q-26020",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-Q-26020",
+    "registryType": "Q",
+    "status": "Issued",
+    "about": {
+      "recordType": "opportunity",
+      "recordId": "opp-8"
+    }
+  },
+  {
+    "id": "reg-BC-B-26011",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-B-26011",
+    "registryType": "B",
+    "status": "Issued",
+    "about": {
+      "recordType": "project",
+      "recordId": "proj-1"
+    }
+  },
+  {
+    "id": "reg-BC-B-26014",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-B-26014",
+    "registryType": "B",
+    "status": "Issued",
+    "about": {
+      "recordType": "project",
+      "recordId": "proj-2"
+    }
+  },
+  {
+    "id": "reg-BC-J-26001",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-J-26001",
+    "registryType": "J",
+    "status": "Issued",
+    "about": {
+      "recordType": "job",
+      "recordId": "job-1"
+    }
+  },
+  {
+    "id": "reg-BC-J-26002",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-J-26002",
+    "registryType": "J",
+    "status": "Issued",
+    "about": {
+      "recordType": "job",
+      "recordId": "job-2"
+    }
+  },
+  {
+    "id": "reg-BC-J-26003",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-J-26003",
+    "registryType": "J",
+    "status": "Issued",
+    "about": {
+      "recordType": "job",
+      "recordId": "job-3"
+    }
+  },
+  {
+    "id": "reg-BC-J-26004",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-J-26004",
+    "registryType": "J",
+    "status": "Issued",
+    "about": {
+      "recordType": "job",
+      "recordId": "job-4"
+    }
+  },
+  {
+    "id": "reg-BC-D-26005",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-D-26005",
+    "registryType": "D",
+    "status": "Issued",
+    "about": {
+      "recordType": "document",
+      "recordId": "doc-po-1"
+    }
+  },
+  {
+    "id": "reg-BC-D-26006",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-D-26006",
+    "registryType": "D",
+    "status": "Issued",
+    "about": {
+      "recordType": "document",
+      "recordId": "doc-quote-1"
+    }
+  },
+  {
+    "id": "reg-BC-D-26007",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-D-26007",
+    "registryType": "D",
+    "status": "Issued",
+    "about": {
+      "recordType": "document",
+      "recordId": "doc-quote-2"
+    }
+  },
+  {
+    "id": "reg-BC-D-26008",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-D-26008",
+    "registryType": "D",
+    "status": "Issued",
+    "about": {
+      "recordType": "document",
+      "recordId": "doc-mech-1"
+    }
+  },
+  {
+    "id": "reg-BC-D-26009",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-D-26009",
+    "registryType": "D",
+    "status": "Issued",
+    "about": {
+      "recordType": "document",
+      "recordId": "doc-manual-1"
+    }
+  },
+  {
+    "id": "reg-BC-D-26010",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-D-26010",
+    "registryType": "D",
+    "status": "Issued",
+    "about": {
+      "recordType": "document",
+      "recordId": "doc-spec-1"
+    }
+  },
+  {
+    "id": "reg-BC-D-26011",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-D-26011",
+    "registryType": "D",
+    "status": "Issued",
+    "about": {
+      "recordType": "document",
+      "recordId": "doc-supplier-1"
+    }
+  },
+  {
+    "id": "reg-BC-D-26012",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-D-26012",
+    "registryType": "D",
+    "status": "Issued",
+    "about": {
+      "recordType": "document",
+      "recordId": "doc-elec-1"
+    }
+  },
+  {
+    "id": "reg-BC-D-26013",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-D-26013",
+    "registryType": "D",
+    "status": "Issued",
+    "about": {
+      "recordType": "document",
+      "recordId": "doc-layout-2"
+    }
+  },
+  {
+    "id": "reg-BC-D-26014",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-D-26014",
+    "registryType": "D",
+    "status": "Issued",
+    "about": {
+      "recordType": "document",
+      "recordId": "doc-library-old"
+    }
+  },
+  {
+    "id": "reg-BC-D-26015",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-D-26015",
+    "registryType": "D",
+    "status": "Issued",
+    "about": {
+      "recordType": "document",
+      "recordId": "doc-library-1"
+    }
+  },
+  {
+    "id": "reg-BC-D-26016",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-D-26016",
+    "registryType": "D",
+    "status": "Issued",
+    "about": {
+      "recordType": "document",
+      "recordId": "doc-library-2"
+    }
+  },
+  {
+    "id": "reg-BC-D-26017",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-D-26017",
+    "registryType": "D",
+    "status": "Issued",
+    "about": {
+      "recordType": "document",
+      "recordId": "doc-invoice-1"
+    }
+  },
+  {
+    "id": "reg-BC-D-26018",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-D-26018",
+    "registryType": "D",
+    "status": "Issued",
+    "about": {
+      "recordType": "document",
+      "recordId": "doc-receipt-1"
+    }
+  },
+  {
+    "id": "reg-BC-K-26001",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-K-26001",
+    "registryType": "K",
+    "status": "Issued",
+    "about": {
+      "recordType": "knowledgeItem",
+      "recordId": "know-research"
+    }
+  },
+  {
+    "id": "reg-BC-K-26002",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-K-26002",
+    "registryType": "K",
+    "status": "Issued",
+    "about": {
+      "recordType": "knowledgeItem",
+      "recordId": "know-trip"
+    }
+  },
+  {
+    "id": "reg-BC-K-26003",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-K-26003",
+    "registryType": "K",
+    "status": "Issued",
+    "about": {
+      "recordType": "knowledgeItem",
+      "recordId": "know-article"
+    }
+  },
+  {
+    "id": "reg-BC-K-26004",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-K-26004",
+    "registryType": "K",
+    "status": "Issued",
+    "about": {
+      "recordType": "knowledgeItem",
+      "recordId": "know-config"
+    }
+  },
+  {
+    "id": "reg-BC-K-26005",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-K-26005",
+    "registryType": "K",
+    "status": "Issued",
+    "about": {
+      "recordType": "knowledgeItem",
+      "recordId": "know-glossary"
+    }
+  },
+  {
+    "id": "reg-BC-K-26006",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-K-26006",
+    "registryType": "K",
+    "status": "Issued",
+    "about": {
+      "recordType": "knowledgeItem",
+      "recordId": "know-standard"
+    }
+  },
+  {
+    "id": "reg-BC-K-26007",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-K-26007",
+    "registryType": "K",
+    "status": "Issued",
+    "about": {
+      "recordType": "knowledgeItem",
+      "recordId": "know-proj-config"
+    }
+  },
+  {
+    "id": "reg-BC-L-26001",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-L-26001",
+    "registryType": "L",
+    "status": "Issued",
+    "about": {
+      "recordType": "template",
+      "recordId": "tpl-project"
+    }
+  },
+  {
+    "id": "reg-BC-L-26002",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-L-26002",
+    "registryType": "L",
+    "status": "Issued",
+    "about": {
+      "recordType": "template",
+      "recordId": "tpl-cgmp"
+    }
+  },
+  {
+    "id": "reg-BC-L-26003",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-L-26003",
+    "registryType": "L",
+    "status": "Issued",
+    "about": {
+      "recordType": "template",
+      "recordId": "tpl-customer"
+    }
+  },
+  {
+    "id": "reg-void-1",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "registry",
+    "number": "BC-Q-26012",
+    "registryType": "Q",
+    "status": "Void",
+    "voidReason": "Duplicate quote number issued by mistake."
+  }
+]

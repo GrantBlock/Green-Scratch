@@ -1,0 +1,25 @@
+{
+  "name": "@bc/contract",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Records, states, API routes and fixtures shared by the Vault, the Hub and their tests. Source of truth: spec/data-model.md.",
+  "exports": {
+    ".": "./src/index.ts",
+    "./fixtures": "./fixtures/data.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "node --test \"test/*.test.ts\"",
+    "mock": "node mock/server.ts",
+    "docs": "node scripts/gen-docs.ts",
+    "fixtures:json": "node scripts/emit-fixtures.ts"
+  },
+  "dependencies": {
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.9.0"
+  }
+}

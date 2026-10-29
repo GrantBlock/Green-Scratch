@@ -1,6 +1,6 @@
 # Data Model: records, links and states
 
-The single source for what a record is. Every tool (Inbox, Pipeline, Projects, Accounts, Knowledge, Library, Registry, the public Hub, the assistant) reads and writes these records. No tool adds its own record type. Context: `docs/PLATFORM-CONCEPT.md`. Stored in Cloudflare D1; files in R2; working files linked from OneDrive.
+The single source for what a record is. Every tool (Inbox, Pipeline, Projects, Accounts, Knowledge, Library, Registry, the public Hub, the assistant) reads and writes these records. No tool adds its own record type. Context: `docs/PLATFORM-CONCEPT.md`. Stored in Cloudflare D1; files in R2; working files linked from OneDrive. The same records are written as code in `packages/contract` (types, validation, fixtures); see `spec/api-contract.md`.
 
 ---
 
@@ -55,7 +55,7 @@ An opportunity that was won. Number: the same `YYNNN` digits as its Q.
 
 #### Additional Prompt: Checklist item
 
-- Fields: project, folder (one of the customer or project folders in `docs/FOLDER-STRUCTURE.md`), name, required flag, due date.
+- Fields: project, **location** (a folder from `docs/FOLDER-STRUCTURE.md`, plus an optional subfolder such as `cGMP Package`), name, required flag, due date.
 - **Status:** Missing, Requested, Received, In review, Released.
 - **Upload request:** a one-item link that lets a customer upload a file to this item.
 
@@ -68,7 +68,7 @@ An opportunity that was won. Number: the same `YYNNN` digits as its Q.
 
 - **Milestone:** project, name, percent (for example 60, 30, 10), amount, due date. Status: Pending, Invoiced, Paid.
 - **PO:** customer PO number, amount, date, Document.
-- **Invoice:** number, lines, amount, issued, due, paid date, Document. Status: Draft, Sent, Overdue, Paid. Overdue is computed from the due date. Posts to the ledger (see Books).
+- **Invoice:** number, lines, amount, issued, due, paid date, Document. Stored status: Draft, Sent, Paid. **Overdue** is never stored: a Sent invoice past its due date is shown as Overdue, with the days late. Posts to the ledger (see Books).
 - The Vault is the books of record once the Books slices are proven (`docs/BOOKS.md`). Until cutover, QuickBooks remains the books and the Vault tracks and exports.
 
 #### Additional Prompt: Event, Visit and Trip
@@ -111,7 +111,9 @@ Defined in `docs/BOOKS.md`. Name note: the customer-side record is an **Account*
 
 #### Additional Prompt: Document (`BC-D`)
 
-- Fields: title, kind (Quote, PO, Invoice, Manual, Spec sheet, Gantt, ROI, Roadmap, Drawing, Certificate, Report, Other), linked record, file reference (R2 key, OneDrive item, or Onshape link), checksum.
+- Fields: title, kind (Quote, PO, Invoice, Manual, Spec sheet, Gantt, ROI, Roadmap, Drawing, Certificate, Report, Other), linked record, **location** (folder and optional subfolder), file reference (R2 key, OneDrive item, or Onshape link), checksum, size, type.
+- **Library information** (only for Public documents): tab, item, description and "when to use", which place the entry in the public Library (tab, then item, then entry).
+- A Released document always has a checksum and a release time. Temp, Inbox and Claude folders can never hold a shared document.
 - **Revision** number and **status:** Draft, In review, Released, Superseded.
 - A Released document is locked; changing it creates a new revision. Older revisions stay.
 - **Visibility:** Private, Customer-shared (through a project link), or Public (appears in Grab this).
@@ -138,12 +140,19 @@ Defined in `docs/BOOKS.md`. Name note: the customer-side record is an **Account*
 
 #### Additional Prompt: Share link
 
-- Project, scope (view released documents, or upload to one checklist item), expiry, created, revoked flag, last used.
+- Project, scope (view released documents, or upload to one checklist item), the documents it shows (empty means every Released, Customer-shared document of the project), expiry, created, revoked flag, last used.
+- A link cannot be created already expired, and cannot list a document that is not Released and Customer-shared.
 - A share link exposes only Customer-shared Documents of its project. It is served by the Hub (`hub.blockconceptsllc.com`), never by the Vault.
 
 #### Additional Prompt: Audit event
 
 - Actor (Grant, assistant, share link, system), action, record, before and after, timestamp. Append-only.
+
+#### Additional Prompt: Registry entry
+
+- Fields: number, type, status (Issued or Void), the record it was issued for, a void reason.
+- A number is never reused. A number carried by a record cannot be voided.
+- Leads and Documents share the `D` counter; a project takes the five digits of its opportunity.
 
 ---
 

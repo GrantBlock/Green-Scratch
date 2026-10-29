@@ -1,0 +1,79 @@
+[
+  {
+    "id": "lead-1",
+    "version": 1,
+    "createdAt": "2026-10-28T16:20:00Z",
+    "updatedAt": "2026-10-28T16:20:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "lead",
+    "number": "BC-D-26001",
+    "source": "contact_form",
+    "name": "Alex Rivera",
+    "company": "Northgate Beverage",
+    "email": "alex@example.com",
+    "phone": "555-0110",
+    "message": "We need a way to count and orient bottles before the labeler. Can you take a look?",
+    "sourceContext": {
+      "tool": "Contact"
+    },
+    "receivedAt": "2026-10-28T16:20:00Z",
+    "status": "New"
+  },
+  {
+    "id": "lead-2",
+    "version": 1,
+    "createdAt": "2026-10-24T13:05:00Z",
+    "updatedAt": "2026-10-24T13:05:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "lead",
+    "number": "BC-D-26002",
+    "source": "phone",
+    "name": "Jamie Cho",
+    "company": "Eastfield Plastics",
+    "phone": "555-0111",
+    "message": "Called about a press-side conveyor. Wants a visit next week.",
+    "receivedAt": "2026-10-24T13:05:00Z",
+    "status": "Contacted"
+  },
+  {
+    "id": "lead-3",
+    "version": 1,
+    "createdAt": "2026-10-15T09:40:00Z",
+    "updatedAt": "2026-10-15T09:40:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "lead",
+    "number": "BC-D-26003",
+    "source": "contact_form",
+    "name": "Morgan Ellis",
+    "company": "Lakeside Medical Devices",
+    "email": "morgan@example.com",
+    "message": "Looking for a vision inspection station for a small assembly.",
+    "sourceContext": {
+      "tool": "Library",
+      "entryTitle": "Vision inspection requirements"
+    },
+    "receivedAt": "2026-10-15T09:40:00Z",
+    "status": "Qualified",
+    "accountId": "acc-lakeside",
+    "opportunityId": "opp-5"
+  },
+  {
+    "id": "lead-4",
+    "version": 1,
+    "createdAt": "2026-10-02T11:00:00Z",
+    "updatedAt": "2026-10-02T11:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "lead",
+    "number": "BC-D-26004",
+    "source": "email",
+    "name": "R. Patel",
+    "email": "rp@example.com",
+    "message": "Offering lead lists for manufacturing contacts.",
+    "receivedAt": "2026-10-02T11:00:00Z",
+    "status": "Dismissed"
+  }
+]

@@ -15,3 +15,12 @@ Slice list and order are in `PLAN.md`, Phase 3 (the platform plan). The list bel
 - [ ] Customers, Update List, Archive, Settings and Apply
 - [ ] Build this (Process Document Builder), Preview tier
 - [ ] Cloudflare deploy connected
+
+## Proof of concept tracks (`docs/POC.md`)
+
+- [x] C0 Contracts: records, rules, 110 routes, fixtures, mock server, tests (`packages/contract`)
+- [ ] C1 Core (server, database, Registry, sign-in)
+- [ ] C2 Vault UI (against the mock)
+- [ ] C3 Hub (home, Contact, customer page)
+- [ ] C4 Assistant
+- [ ] Integration and the gate

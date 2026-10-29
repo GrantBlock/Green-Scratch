@@ -1,0 +1,17 @@
+[
+  {
+    "id": "po-1",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "po",
+    "projectId": "proj-1",
+    "accountId": "acc-meridian",
+    "poNumber": "PO-77310",
+    "amountCents": 4850000,
+    "date": "2026-07-22",
+    "documentId": "doc-po-1"
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "sl-1",
+    "version": 1,
+    "createdAt": "2026-10-20T14:00:00Z",
+    "updatedAt": "2026-10-20T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "shareLink",
+    "projectId": "proj-1",
+    "scope": {
+      "type": "view"
+    },
+    "documentIds": [
+      "doc-manual-1",
+      "doc-spec-1"
+    ],
+    "expiresAt": "2026-12-31T23:59:00Z",
+    "revoked": false,
+    "lastUsedAt": "2026-10-22T09:12:00Z"
+  }
+]

@@ -1,0 +1,311 @@
+[
+  {
+    "id": "ci-1-po",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "checklistItem",
+    "projectId": "proj-1",
+    "location": {
+      "folder": "Finance, Sales, and Servicing - Customer"
+    },
+    "name": "Customer purchase order",
+    "required": true,
+    "status": "Released",
+    "documentIds": [
+      "doc-po-1"
+    ]
+  },
+  {
+    "id": "ci-1-layout",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "checklistItem",
+    "projectId": "proj-1",
+    "location": {
+      "folder": "Customer Correspondence"
+    },
+    "name": "Customer layout and requirements",
+    "required": true,
+    "status": "Received",
+    "documentIds": [
+      "doc-quote-1"
+    ]
+  },
+  {
+    "id": "ci-1-mech",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "checklistItem",
+    "projectId": "proj-1",
+    "location": {
+      "folder": "Mechanical - Project"
+    },
+    "name": "Mechanical drawings",
+    "required": true,
+    "status": "In review",
+    "documentIds": [
+      "doc-mech-1"
+    ]
+  },
+  {
+    "id": "ci-1-elec",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "checklistItem",
+    "projectId": "proj-1",
+    "location": {
+      "folder": "Electrical - Project"
+    },
+    "name": "Electrical drawings",
+    "required": true,
+    "status": "Released",
+    "documentIds": [
+      "doc-elec-1"
+    ]
+  },
+  {
+    "id": "ci-1-supplier",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "checklistItem",
+    "projectId": "proj-1",
+    "location": {
+      "folder": "Supplier Correspondence"
+    },
+    "name": "Supplier data sheets and quotes",
+    "required": true,
+    "status": "Released",
+    "documentIds": [
+      "doc-supplier-1"
+    ]
+  },
+  {
+    "id": "ci-1-manual",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "checklistItem",
+    "projectId": "proj-1",
+    "location": {
+      "folder": "Documentation - Project"
+    },
+    "name": "Operating manual",
+    "required": true,
+    "status": "Released",
+    "documentIds": [
+      "doc-manual-1"
+    ]
+  },
+  {
+    "id": "ci-1-spec",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "checklistItem",
+    "projectId": "proj-1",
+    "location": {
+      "folder": "Documentation - Project"
+    },
+    "name": "Spec sheet",
+    "required": true,
+    "status": "Released",
+    "documentIds": [
+      "doc-spec-1"
+    ]
+  },
+  {
+    "id": "ci-1-sched",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "checklistItem",
+    "projectId": "proj-1",
+    "location": {
+      "folder": "Documentation - Project"
+    },
+    "name": "Project schedule export",
+    "required": false,
+    "status": "Missing",
+    "documentIds": []
+  },
+  {
+    "id": "ci-1-roi",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "checklistItem",
+    "projectId": "proj-1",
+    "location": {
+      "folder": "Documentation - Project"
+    },
+    "name": "ROI summary",
+    "required": false,
+    "status": "Missing",
+    "documentIds": []
+  },
+  {
+    "id": "ci-2-po",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "checklistItem",
+    "projectId": "proj-2",
+    "location": {
+      "folder": "Finance, Sales, and Servicing - Customer"
+    },
+    "name": "Customer purchase order",
+    "required": true,
+    "status": "Requested",
+    "documentIds": [],
+    "dueDate": "2026-10-20"
+  },
+  {
+    "id": "ci-2-layout",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "checklistItem",
+    "projectId": "proj-2",
+    "location": {
+      "folder": "Customer Correspondence"
+    },
+    "name": "Customer layout and requirements",
+    "required": true,
+    "status": "Received",
+    "documentIds": [
+      "doc-layout-2"
+    ]
+  },
+  {
+    "id": "ci-2-mech",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "checklistItem",
+    "projectId": "proj-2",
+    "location": {
+      "folder": "Mechanical - Project"
+    },
+    "name": "Mechanical drawings",
+    "required": true,
+    "status": "Missing",
+    "documentIds": [],
+    "dueDate": "2026-10-25"
+  },
+  {
+    "id": "ci-2-elec",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "checklistItem",
+    "projectId": "proj-2",
+    "location": {
+      "folder": "Electrical - Project"
+    },
+    "name": "Electrical drawings",
+    "required": true,
+    "status": "Missing",
+    "documentIds": []
+  },
+  {
+    "id": "ci-2-supplier",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "checklistItem",
+    "projectId": "proj-2",
+    "location": {
+      "folder": "Supplier Correspondence"
+    },
+    "name": "Supplier data sheets and quotes",
+    "required": true,
+    "status": "Missing",
+    "documentIds": []
+  },
+  {
+    "id": "ci-2-manual",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "checklistItem",
+    "projectId": "proj-2",
+    "location": {
+      "folder": "Documentation - Project"
+    },
+    "name": "Operating manual",
+    "required": true,
+    "status": "Missing",
+    "documentIds": []
+  },
+  {
+    "id": "ci-2-cgmp-1",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "checklistItem",
+    "projectId": "proj-2",
+    "location": {
+      "folder": "Documentation - Project",
+      "subfolder": "cGMP Package"
+    },
+    "name": "Material certificates",
+    "required": true,
+    "status": "Missing",
+    "documentIds": []
+  },
+  {
+    "id": "ci-2-cgmp-2",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "checklistItem",
+    "projectId": "proj-2",
+    "location": {
+      "folder": "Documentation - Project",
+      "subfolder": "cGMP Package"
+    },
+    "name": "Surface finish and cleanability data",
+    "required": true,
+    "status": "Missing",
+    "documentIds": []
+  }
+]

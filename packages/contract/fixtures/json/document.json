@@ -1,0 +1,421 @@
+[
+  {
+    "id": "doc-po-1",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "document",
+    "number": "BC-D-26005",
+    "title": "Meridian purchase order PO-77310",
+    "kind": "PO",
+    "linked": {
+      "recordType": "project",
+      "recordId": "proj-1"
+    },
+    "location": {
+      "folder": "Finance, Sales, and Servicing - Customer"
+    },
+    "file": {
+      "storage": "r2",
+      "key": "docs/BC-D-26005.pdf"
+    },
+    "mimeType": "application/pdf",
+    "sizeBytes": 125000,
+    "checksum": "e10c2473491cb0b9f42a6a54c2c57b6cb4e0c6c879d8d9f4975ed445c74880c7",
+    "revision": 1,
+    "status": "Released",
+    "visibility": "Private",
+    "releasedAt": "2026-09-01T12:00:00Z"
+  },
+  {
+    "id": "doc-quote-1",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "document",
+    "number": "BC-D-26006",
+    "title": "Quote BC-Q-26011",
+    "kind": "Quote",
+    "linked": {
+      "recordType": "opportunity",
+      "recordId": "opp-1"
+    },
+    "location": {
+      "folder": "Documents - Customer"
+    },
+    "file": {
+      "storage": "r2",
+      "key": "docs/BC-D-26006.pdf"
+    },
+    "mimeType": "application/pdf",
+    "sizeBytes": 126000,
+    "checksum": "e10c2473491cb0b9f42a6a54c2c57b6cb5e0c85b71db0bf3c1d323f2a860f0ab",
+    "revision": 1,
+    "status": "Released",
+    "visibility": "Private",
+    "releasedAt": "2026-09-01T12:00:00Z"
+  },
+  {
+    "id": "doc-quote-2",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "document",
+    "number": "BC-D-26007",
+    "title": "Quote BC-Q-26014",
+    "kind": "Quote",
+    "linked": {
+      "recordType": "opportunity",
+      "recordId": "opp-2"
+    },
+    "location": {
+      "folder": "Documents - Customer"
+    },
+    "file": {
+      "storage": "r2",
+      "key": "docs/BC-D-26007.pdf"
+    },
+    "mimeType": "application/pdf",
+    "sizeBytes": 127000,
+    "checksum": "e10c2473491cb0b9f42a6a54c2c57b6cb5e0c85b71db0bf3c1d323f2a860f0ab",
+    "revision": 1,
+    "status": "Released",
+    "visibility": "Private",
+    "releasedAt": "2026-09-01T12:00:00Z"
+  },
+  {
+    "id": "doc-mech-1",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "document",
+    "number": "BC-D-26008",
+    "title": "Torque station assembly drawing",
+    "kind": "Drawing",
+    "linked": {
+      "recordType": "project",
+      "recordId": "proj-1"
+    },
+    "location": {
+      "folder": "Mechanical - Project"
+    },
+    "file": {
+      "storage": "r2",
+      "key": "docs/BC-D-26008.pdf"
+    },
+    "mimeType": "application/pdf",
+    "sizeBytes": 128000,
+    "revision": 1,
+    "status": "In review",
+    "visibility": "Private"
+  },
+  {
+    "id": "doc-manual-1",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "document",
+    "number": "BC-D-26009",
+    "title": "Torque station operating manual",
+    "kind": "Manual",
+    "linked": {
+      "recordType": "project",
+      "recordId": "proj-1"
+    },
+    "location": {
+      "folder": "Documentation - Project"
+    },
+    "file": {
+      "storage": "r2",
+      "key": "docs/BC-D-26009.pdf"
+    },
+    "mimeType": "application/pdf",
+    "sizeBytes": 129000,
+    "checksum": "e10c2473491cb0b9f42a6a54c2c57b6cb9e0cea75de579d3773e81e5506603db",
+    "revision": 1,
+    "status": "Released",
+    "visibility": "Customer-shared",
+    "releasedAt": "2026-09-01T12:00:00Z"
+  },
+  {
+    "id": "doc-spec-1",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "document",
+    "number": "BC-D-26010",
+    "title": "Torque station spec sheet",
+    "kind": "Spec sheet",
+    "linked": {
+      "recordType": "project",
+      "recordId": "proj-1"
+    },
+    "location": {
+      "folder": "Documentation - Project"
+    },
+    "file": {
+      "storage": "r2",
+      "key": "docs/BC-D-26010.pdf"
+    },
+    "mimeType": "application/pdf",
+    "sizeBytes": 130000,
+    "checksum": "e10c2473491cb0b9f42a6a54c2c57b6cb7e0cb816ae1111cb74e7e55cf90bd2d",
+    "revision": 1,
+    "status": "Released",
+    "visibility": "Customer-shared",
+    "releasedAt": "2026-09-01T12:00:00Z"
+  },
+  {
+    "id": "doc-supplier-1",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "document",
+    "number": "BC-D-26011",
+    "title": "Servo motor quote",
+    "kind": "Quote",
+    "linked": {
+      "recordType": "project",
+      "recordId": "proj-1"
+    },
+    "location": {
+      "folder": "Supplier Correspondence"
+    },
+    "file": {
+      "storage": "r2",
+      "key": "docs/BC-D-26011.pdf"
+    },
+    "mimeType": "application/pdf",
+    "sizeBytes": 131000,
+    "checksum": "e10c2473491cb0b9f42a6a54c2c57b6cb7e0cb8171e11c219c5f9cf5ac8360a6",
+    "revision": 1,
+    "status": "Released",
+    "visibility": "Private",
+    "releasedAt": "2026-09-01T12:00:00Z"
+  },
+  {
+    "id": "doc-elec-1",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "document",
+    "number": "BC-D-26012",
+    "title": "Control panel schematic",
+    "kind": "Drawing",
+    "linked": {
+      "recordType": "project",
+      "recordId": "proj-1"
+    },
+    "location": {
+      "folder": "Electrical - Project"
+    },
+    "file": {
+      "storage": "r2",
+      "key": "docs/BC-D-26012.pdf"
+    },
+    "mimeType": "application/pdf",
+    "sizeBytes": 132000,
+    "checksum": "e10c2473491cb0b9f42a6a54c2c57b6ca1e0a8df82a989ea31e376130213807b",
+    "revision": 1,
+    "status": "Released",
+    "visibility": "Private",
+    "releasedAt": "2026-09-01T12:00:00Z"
+  },
+  {
+    "id": "doc-layout-2",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "document",
+    "number": "BC-D-26013",
+    "title": "Customer layout and requirements",
+    "kind": "Other",
+    "linked": {
+      "recordType": "project",
+      "recordId": "proj-2"
+    },
+    "location": {
+      "folder": "Customer Correspondence"
+    },
+    "file": {
+      "storage": "r2",
+      "key": "docs/BC-D-26013.pdf"
+    },
+    "mimeType": "application/pdf",
+    "sizeBytes": 133000,
+    "checksum": "e10c2473491cb0b9f42a6a54c2c57b6cb8e0cd147be36a760fffec2b8ce11667",
+    "revision": 1,
+    "status": "Released",
+    "visibility": "Private",
+    "releasedAt": "2026-09-01T12:00:00Z"
+  },
+  {
+    "id": "doc-library-old",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "document",
+    "number": "BC-D-26014",
+    "title": "Conveyor enclosure application requirements",
+    "kind": "Spec sheet",
+    "linked": {
+      "recordType": "account",
+      "recordId": "acc-bc"
+    },
+    "file": {
+      "storage": "r2",
+      "key": "docs/BC-D-26014.pdf"
+    },
+    "mimeType": "application/pdf",
+    "sizeBytes": 134000,
+    "checksum": "e10c2473491cb0b9f42a6a54c2c57b6cb8e0cd1483e3770e0514f592eaff20f1",
+    "revision": 1,
+    "status": "Superseded",
+    "visibility": "Private",
+    "releasedAt": "2026-05-01T12:00:00Z"
+  },
+  {
+    "id": "doc-library-1",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "document",
+    "number": "BC-D-26015",
+    "title": "Conveyor enclosure application requirements",
+    "kind": "Spec sheet",
+    "linked": {
+      "recordType": "account",
+      "recordId": "acc-bc"
+    },
+    "file": {
+      "storage": "r2",
+      "key": "docs/BC-D-26015.pdf"
+    },
+    "mimeType": "application/pdf",
+    "sizeBytes": 135000,
+    "checksum": "e10c2473491cb0b9f42a6a54c2c57b6cb8e0cd1483e3770e0514f592eaff20f1",
+    "revision": 2,
+    "status": "Released",
+    "visibility": "Public",
+    "releasedAt": "2026-09-01T12:00:00Z",
+    "supersedesId": "doc-library-old",
+    "publicInfo": {
+      "tab": "Controls",
+      "item": "Enclosures",
+      "description": "What we need to know to quote a control enclosure for a conveyor drive.",
+      "whenToUse": "Before asking for a quote on a panel or drive replacement."
+    }
+  },
+  {
+    "id": "doc-library-2",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "document",
+    "number": "BC-D-26016",
+    "title": "Vision inspection requirements",
+    "kind": "Spec sheet",
+    "linked": {
+      "recordType": "account",
+      "recordId": "acc-bc"
+    },
+    "file": {
+      "storage": "r2",
+      "key": "docs/BC-D-26016.pdf"
+    },
+    "mimeType": "application/pdf",
+    "sizeBytes": 136000,
+    "checksum": "e10c2473491cb0b9f42a6a54c2c57b6cb8e0cd1483e3770e0514f592eaff20f1",
+    "revision": 1,
+    "status": "Released",
+    "visibility": "Public",
+    "releasedAt": "2026-09-01T12:00:00Z",
+    "publicInfo": {
+      "tab": "Inspection",
+      "item": "Vision",
+      "description": "Part sizes, tolerances and reject methods to settle first.",
+      "whenToUse": "When you are considering automated visual inspection."
+    }
+  },
+  {
+    "id": "doc-invoice-1",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "document",
+    "number": "BC-D-26017",
+    "title": "Invoice INV-2026-014",
+    "kind": "Invoice",
+    "linked": {
+      "recordType": "invoice",
+      "recordId": "inv-1"
+    },
+    "location": {
+      "folder": "Finance, Sales, and Servicing - Customer"
+    },
+    "file": {
+      "storage": "r2",
+      "key": "docs/BC-D-26017.pdf"
+    },
+    "mimeType": "application/pdf",
+    "sizeBytes": 137000,
+    "checksum": "e10c2473491cb0b9f42a6a54c2c57b6c9de0a29368a066a09081ec549e86b986",
+    "revision": 1,
+    "status": "Released",
+    "visibility": "Private",
+    "releasedAt": "2026-09-01T12:00:00Z"
+  },
+  {
+    "id": "doc-receipt-1",
+    "version": 1,
+    "createdAt": "2026-09-15T14:00:00Z",
+    "updatedAt": "2026-09-15T14:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "document",
+    "number": "BC-D-26018",
+    "title": "Fastener supply receipt",
+    "kind": "Other",
+    "linked": {
+      "recordType": "expense",
+      "recordId": "exp-1"
+    },
+    "file": {
+      "storage": "r2",
+      "key": "docs/BC-D-26018.pdf"
+    },
+    "mimeType": "application/pdf",
+    "sizeBytes": 138000,
+    "checksum": "e10c2473491cb0b9f42a6a54c2c57b6cb6e0c9ee67dd3acc264351bf0ef9cf29",
+    "revision": 1,
+    "status": "Released",
+    "visibility": "Private",
+    "releasedAt": "2026-09-01T12:00:00Z"
+  }
+]

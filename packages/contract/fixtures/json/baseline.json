@@ -1,0 +1,58 @@
+[
+  {
+    "id": "bl-1",
+    "version": 1,
+    "createdAt": "2026-07-24T12:00:00Z",
+    "updatedAt": "2026-07-24T12:00:00Z",
+    "archived": false,
+    "tags": [],
+    "type": "baseline",
+    "projectId": "proj-1",
+    "name": "Contract",
+    "takenAt": "2026-07-24T12:00:00Z",
+    "items": [
+      {
+        "scheduleItemId": "si-1",
+        "start": "2026-08-03",
+        "end": "2026-08-14",
+        "percentComplete": 0
+      },
+      {
+        "scheduleItemId": "si-2",
+        "start": "2026-08-17",
+        "end": "2026-09-11",
+        "percentComplete": 0
+      },
+      {
+        "scheduleItemId": "si-3",
+        "start": "2026-09-14",
+        "end": "2026-09-18",
+        "percentComplete": 0
+      },
+      {
+        "scheduleItemId": "si-4",
+        "start": "2026-09-21",
+        "end": "2026-11-13",
+        "percentComplete": 0
+      },
+      {
+        "scheduleItemId": "si-5",
+        "start": "2026-10-26",
+        "end": "2026-11-20",
+        "percentComplete": 0
+      },
+      {
+        "scheduleItemId": "si-6",
+        "start": "2026-11-23",
+        "end": "2026-11-25",
+        "percentComplete": 0
+      },
+      {
+        "scheduleItemId": "si-7",
+        "start": "2026-11-30",
+        "end": "2026-12-04",
+        "percentComplete": 0
+      }
+    ]
+  }
+]
