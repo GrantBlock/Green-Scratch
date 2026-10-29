@@ -19,7 +19,9 @@ Each has a recommended default. Say "accept defaults" or change any.
 | D5 | **monday.com / Drive in the quoting process** | Keep out of the Hub and Vault (spec says self-contained). Quote generation stays in the existing Python flow. | Process map assumes monday and Drive MCPs. |
 | D6 | **Web Builder** (self-service 3D layout request, from the business plan) | Defer. List as a future Hybrid tool; do not spec it now. | Large; not needed for first launch. |
 
-- [ ] D1 · [ ] D2 · [ ] D3 · [ ] D4 · [ ] D5 · [ ] D6
+- [x] D1 · [x] D2 · [x] D3 · [x] D4 · [x] D5 · [x] D6 (all six recommended defaults accepted)
+
+System map (how everything flows, where you start and end): `docs/system-map.html`.
 
 ## Phase 1. Spec cleanup (💻, ~1 session)
 

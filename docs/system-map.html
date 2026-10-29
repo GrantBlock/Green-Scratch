@@ -1,0 +1,221 @@
+<title>Concepts Hub System Map</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: one page, three parts. Two flow diagrams (publish out, inquiry in) in swimlanes, then a table of where Grant acts. Steel blue marks what Grant does by hand. */
+:root {
+  --bg: #ffffff;
+  --fg: #0e1319;
+  --muted: #55606c;
+  --line: #b8c2cc;
+  --surface: #f3f6f9;
+  --lane: #eef2f6;
+  --accent: #4682b4;
+  --accent-ink: #285a84;
+  --accent-tint: #e1edf7;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1319; --fg: #e8edf2; --muted: #98a4b0; --line: #3a4652;
+    --surface: #161d25; --lane: #121920; --accent: #6fa6d2; --accent-ink: #9cc4e6; --accent-tint: #1b2b3a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1319; --fg: #e8edf2; --muted: #98a4b0; --line: #3a4652;
+  --surface: #161d25; --lane: #121920; --accent: #6fa6d2; --accent-ink: #9cc4e6; --accent-tint: #1b2b3a;
+  color-scheme: dark;
+}
+body {
+  background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 15px; line-height: 1.55;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 28px 56px;
+}
+main { max-width: 1040px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px; }
+h1, h2 { text-wrap: balance; margin: 0; font-weight: 600; letter-spacing: -0.01em; }
+h1 { font-size: clamp(26px, 5vw, 36px); line-height: 1.15; }
+h2 { font-size: 19px; }
+p { margin: 0; max-width: 66ch; }
+.eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-ink); }
+header { display: flex; flex-direction: column; gap: 12px; }
+header p { color: var(--muted); font-size: 16px; }
+.key { display: flex; flex-wrap: wrap; gap: 10px 22px; font-size: 13px; color: var(--muted); align-items: center; }
+.key span { display: inline-flex; align-items: center; gap: 8px; }
+.sw { width: 22px; height: 14px; border-radius: 3px; border: 1.5px solid var(--line); background: var(--surface); }
+.sw.you { border: 2px solid var(--accent); background: var(--accent-tint); }
+section { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+figure { margin: 0; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); }
+.scroll svg { display: block; min-width: 720px; width: 100%; height: auto; color: var(--muted); }
+figcaption { font-size: 13px; color: var(--muted); max-width: 72ch; }
+
+/* svg parts */
+.lane { fill: var(--lane); stroke: none; }
+.lane-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; fill: var(--muted); text-transform: uppercase; }
+.box { fill: var(--surface); stroke: var(--line); stroke-width: 1.5; }
+.box.you { fill: var(--accent-tint); stroke: var(--accent); stroke-width: 2; }
+.t1 { font-family: var(--font-body); font-size: 13px; font-weight: 600; fill: var(--fg); }
+.t2 { font-family: var(--font-body); font-size: 11px; fill: var(--muted); }
+.arrow { stroke: var(--muted); stroke-width: 1.6; fill: none; }
+.arrow.dash { stroke-dasharray: 5 4; }
+.alabel { font-family: var(--font-mono); font-size: 10.5px; fill: var(--muted); }
+.tag { font-family: var(--font-mono); font-size: 10.5px; font-weight: 500; letter-spacing: 0.08em; fill: var(--accent-ink); }
+
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+th { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+td:first-child { white-space: nowrap; font-weight: 600; }
+td.num { font-family: var(--font-mono); font-size: 12.5px; color: var(--accent-ink); white-space: nowrap; }
+.tablewrap { overflow-x: auto; }
+code { font-family: var(--font-mono); font-size: 0.9em; background: var(--surface); padding: 1px 5px; border-radius: 3px; }
+.ends { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+.ends > div { border: 1px solid var(--line); border-radius: 6px; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; background: var(--surface); }
+.ends > div.you { border-color: var(--accent); }
+.ends b { font-size: 14px; }
+.ends p { font-size: 14px; color: var(--muted); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+</style>
+
+<main>
+  <header>
+    <span class="eyebrow">Block Concepts · Concepts Hub + Concepts Vault</span>
+    <h1>How the whole system flows, and where you start and end</h1>
+    <p>Two loops run through one system. In the first you publish a document and visitors see it. In the second a visitor reaches out and you work the lead to a close. The Vault is your side, the Hub is the public side, and Apply joins them.</p>
+    <div class="key" aria-label="Diagram key">
+      <span><i class="sw you"></i> You act by hand</span>
+      <span><i class="sw"></i> Happens automatically or the visitor acts</span>
+    </div>
+  </header>
+
+  <section aria-labelledby="h-publish">
+    <span class="eyebrow">Loop 1 · Outbound</span>
+    <h2 id="h-publish">You publish a document, visitors find it</h2>
+    <figure>
+      <div class="scroll">
+        <svg viewBox="0 0 1000 430" role="img" aria-label="Publishing loop: you log in to the Vault, author an entry in Releases, Registry issues the serial, you press Apply, Git commits, Cloudflare rebuilds, and the public Hub shows the new entry in Grab this.">
+          <defs><marker id="a1" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
+          <rect class="lane" x="10" y="30" width="980" height="118" rx="6"/>
+          <rect class="lane" x="10" y="164" width="980" height="112" rx="6"/>
+          <rect class="lane" x="10" y="292" width="980" height="118" rx="6"/>
+          <text class="lane-label" x="962" y="48" text-anchor="end">Concepts Vault · private</text>
+          <text class="lane-label" x="24" y="184">Publish pipeline</text>
+          <text class="lane-label" x="24" y="312">Concepts Hub · public</text>
+
+          <text class="tag" x="44" y="60">START</text>
+          <rect class="box you" x="44" y="66" width="150" height="62" rx="5"/>
+          <text class="t1" x="58" y="92">Log in to Vault</text><text class="t2" x="58" y="110">password, single user</text>
+
+          <rect class="box you" x="236" y="66" width="150" height="62" rx="5"/>
+          <text class="t1" x="250" y="92">Releases form</text><text class="t2" x="250" y="110">pick file, fill metadata</text>
+
+          <rect class="box" x="428" y="66" width="150" height="62" rx="5"/>
+          <text class="t1" x="442" y="92">Registry</text><text class="t2" x="442" y="110">issues BC-D-YYNNN</text>
+
+          <rect class="box you" x="620" y="66" width="150" height="62" rx="5"/>
+          <text class="t1" x="634" y="92">Apply</text><text class="t2" x="634" y="110">staged until you press</text>
+
+          <line class="arrow" x1="194" y1="97" x2="234" y2="97" marker-end="url(#a1)"/>
+          <line class="arrow" x1="386" y1="97" x2="426" y2="97" marker-end="url(#a1)"/>
+          <line class="arrow" x1="578" y1="97" x2="618" y2="97" marker-end="url(#a1)"/>
+          <text class="alabel" x="324" y="152" text-anchor="middle"></text>
+
+          <rect class="box" x="620" y="198" width="150" height="62" rx="5"/>
+          <text class="t1" x="634" y="224">Git commit</text><text class="t2" x="634" y="242">serial in the message</text>
+          <rect class="box" x="812" y="198" width="150" height="62" rx="5"/>
+          <text class="t1" x="826" y="224">Cloudflare rebuild</text><text class="t2" x="826" y="242">on push to main</text>
+
+          <line class="arrow" x1="695" y1="128" x2="695" y2="196" marker-end="url(#a1)"/>
+          <text class="alabel" x="705" y="166">commits</text>
+          <line class="arrow" x1="770" y1="229" x2="810" y2="229" marker-end="url(#a1)"/>
+
+          <text class="tag" x="620" y="318">END</text>
+          <rect class="box" x="620" y="324" width="342" height="62" rx="5"/>
+          <text class="t1" x="634" y="350">Entry is live in Grab this</text><text class="t2" x="634" y="368">visitors browse, preview and download the PDF</text>
+          <line class="arrow" x1="887" y1="260" x2="887" y2="322" marker-end="url(#a1)"/>
+          <text class="alabel" x="897" y="296">deploys</text>
+        </svg>
+      </div>
+      <figcaption>You act at three points: log in, author the entry, press Apply. Everything after Apply is automatic. The serial is issued once when the entry is created, so later file revisions keep the same number. Until the OneDrive slice is built, files live in the app's own store.</figcaption>
+    </figure>
+  </section>
+
+  <section aria-labelledby="h-inquiry">
+    <span class="eyebrow">Loop 2 · Inbound</span>
+    <h2 id="h-inquiry">A visitor reaches out, you work the lead to a close</h2>
+    <figure>
+      <div class="scroll">
+        <svg viewBox="0 0 1000 430" role="img" aria-label="Inquiry loop: a visitor opens Fix this and uses Give this or Ask this, which creates a Log List row and a Customer record in the Vault; you work the lead with Update List notes, build the quote in the existing Python flow with a Registry serial, and close and archive the row.">
+          <defs><marker id="a2" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
+          <rect class="lane" x="10" y="30" width="980" height="118" rx="6"/>
+          <rect class="lane" x="10" y="164" width="980" height="112" rx="6"/>
+          <rect class="lane" x="10" y="292" width="980" height="118" rx="6"/>
+          <text class="lane-label" x="962" y="48" text-anchor="end">Concepts Hub · public</text>
+          <text class="lane-label" x="24" y="184">Concepts Vault · automatic</text>
+          <text class="lane-label" x="24" y="312">You · in the Vault</text>
+
+          <text class="tag" x="44" y="60">VISITOR STARTS</text>
+          <rect class="box" x="44" y="66" width="150" height="62" rx="5"/>
+          <text class="t1" x="58" y="92">Opens Fix this</text><text class="t2" x="58" y="110">picks a tool</text>
+          <rect class="box" x="236" y="66" width="150" height="62" rx="5"/>
+          <text class="t1" x="250" y="92">Give this or Ask this</text><text class="t2" x="250" y="110">context auto-filled</text>
+          <rect class="box" x="428" y="66" width="150" height="62" rx="5"/>
+          <text class="t1" x="442" y="92">Submits</text><text class="t2" x="442" y="110">email is validated</text>
+          <line class="arrow" x1="194" y1="97" x2="234" y2="97" marker-end="url(#a2)"/>
+          <line class="arrow" x1="386" y1="97" x2="426" y2="97" marker-end="url(#a2)"/>
+
+          <rect class="box" x="428" y="198" width="150" height="62" rx="5"/>
+          <text class="t1" x="442" y="224">Log List row</text><text class="t2" x="442" y="242">Status New, serial, file</text>
+          <rect class="box" x="620" y="198" width="150" height="62" rx="5"/>
+          <text class="t1" x="634" y="224">Customer record</text><text class="t2" x="634" y="242">matched or created</text>
+          <line class="arrow" x1="503" y1="128" x2="503" y2="196" marker-end="url(#a2)"/>
+          <text class="alabel" x="513" y="166">new row</text>
+          <line class="arrow" x1="578" y1="229" x2="618" y2="229" marker-end="url(#a2)"/>
+
+          <text class="tag" x="428" y="320">YOU START HERE</text>
+          <rect class="box you" x="428" y="326" width="150" height="62" rx="5"/>
+          <text class="t1" x="442" y="352">Work the lead</text><text class="t2" x="442" y="370">Update List, Status, Build</text>
+          <line class="arrow" x1="503" y1="260" x2="503" y2="324" marker-end="url(#a2)"/>
+          <text class="alabel" x="513" y="296">you open it</text>
+
+          <rect class="box you" x="620" y="326" width="150" height="62" rx="5"/>
+          <text class="t1" x="634" y="352">Quote, outside the app</text><text class="t2" x="634" y="370">Python, BC-Q from Registry</text>
+          <line class="arrow" x1="578" y1="357" x2="618" y2="357" marker-end="url(#a2)"/>
+
+          <text class="tag" x="812" y="320">YOU END HERE</text>
+          <rect class="box you" x="812" y="326" width="150" height="62" rx="5"/>
+          <text class="t1" x="826" y="352">Closed, then Archive</text><text class="t2" x="826" y="370">hidden, kept, reversible</text>
+          <line class="arrow" x1="770" y1="357" x2="810" y2="357" marker-end="url(#a2)"/>
+        </svg>
+      </div>
+      <figcaption>The visitor and the Vault do the first half on their own: the form creates the row and finds or creates the customer. Your work starts when you open the row. Status moves New, Contacted, Quoted, Closed, and Build State moves Quoting through Completed. The quote itself is still built by your existing Python flow, outside the app, and only borrows its number from Registry.</figcaption>
+    </figure>
+  </section>
+
+  <section aria-labelledby="h-ends">
+    <h2 id="h-ends">Your start and end, in one place</h2>
+    <div class="ends">
+      <div class="you"><b>Day to day, you start at the Vault login</b><p>Open Log List first. New rows are inbound leads. Open Releases when you have a document to publish.</p></div>
+      <div class="you"><b>Day to day, you end at one of two places</b><p>A lead reaches Closed and goes to Archive, or a document reaches Apply and appears in Grab this.</p></div>
+      <div><b>Revisions after publishing</b><p>Log them by hand in Change Management. A new file against an existing entry keeps the same serial, and Apply publishes it again.</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-build">
+    <h2 id="h-build">Where you come in while the app is being built</h2>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>When</th><th>What you do</th><th>What you get</th></tr></thead>
+        <tbody>
+          <tr><td class="num">Phase 0 · done</td><td>Accepted the six default decisions</td><td>Numbering, stack, data store, agent chat, scope</td></tr>
+          <tr><td class="num">Phase 1</td><td>Read the spec changes I make</td><td>Specs that match the decisions</td></tr>
+          <tr><td class="num">Phase 2</td><td>Run <code>design/BRIEF.md</code> in Claude Design, review mockups, export them</td><td>Approved screens in <code>design/</code></td></tr>
+          <tr><td class="num">Phase 3</td><td>Review each of ten slices, then tick it off</td><td>A working app, one slice per session</td></tr>
+          <tr><td class="num">Phase 4</td><td>Create the Cloudflare project, pick the domain, add secrets</td><td>Push to main deploys the Hub and Vault</td></tr>
+          <tr><td class="num">Phase 5</td><td>Security, accessibility and legal review; load real content</td><td>Ready to go live</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>
