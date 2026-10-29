@@ -306,7 +306,8 @@ export const Activity = rec('activity', {
 export const AuditEvent = rec('audit', {
   actor: Actor,
   action: z.string().min(1),
-  about: RecordRef,
+  /** The record the action was about. Absent for events with no subject, such as assistant usage. */
+  about: RecordRef.optional(),
   before: z.unknown().optional(),
   after: z.unknown().optional(),
   at: IsoDateTime,

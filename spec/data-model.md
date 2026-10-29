@@ -146,7 +146,7 @@ Defined in `docs/BOOKS.md`. Name note: the customer-side record is an **Account*
 
 #### Additional Prompt: Audit event
 
-- Actor (Grant, assistant, share link, system), action, record, before and after, timestamp. Append-only.
+- Actor (Grant, assistant, share link, system), action, the record it was about (absent for events with no subject, such as assistant usage), before and after, timestamp. Append-only.
 
 #### Additional Prompt: Registry entry
 

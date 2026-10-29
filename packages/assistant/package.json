@@ -1,0 +1,26 @@
+{
+  "name": "@bc/assistant",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "The Vault Assistant: Claude over the Vault's records, read-only, cited, with a monthly spend cap. The Hub never depends on this package.",
+  "exports": {
+    ".": "./src/index.ts",
+    "./testing": "./src/testing.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "node --test \"test/*.test.ts\"",
+    "live": "node scripts/live-check.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.3.0",
+    "@bc/contract": "*",
+    "@bc/core": "*",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.9.0"
+  }
+}
