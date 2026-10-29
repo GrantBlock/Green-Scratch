@@ -68,8 +68,8 @@ An opportunity that was won. Number: the same `YYNNN` digits as its Q.
 
 - **Milestone:** project, name, percent (for example 60, 30, 10), amount, due date. Status: Pending, Invoiced, Paid.
 - **PO:** customer PO number, amount, date, Document.
-- **Invoice:** number, amount, issued, due, paid date, Document, external reference (for QuickBooks). Status: Draft, Sent, Overdue, Paid. Overdue is computed from the due date.
-- The platform tracks and reminds. QuickBooks (or the accountant's tool) remains the books of record. A monthly export is produced.
+- **Invoice:** number, lines, amount, issued, due, paid date, Document. Status: Draft, Sent, Overdue, Paid. Overdue is computed from the due date. Posts to the ledger (see Books).
+- The Vault is the books of record once the Books slices are proven (`docs/BOOKS.md`). Until cutover, QuickBooks remains the books and the Vault tracks and exports.
 
 #### Additional Prompt: Event, Visit and Trip
 
@@ -94,6 +94,19 @@ An opportunity that was won. Number: the same `YYNNN` digits as its Q.
 
 - Fields: date, amount, vendor, category, project or Overhead, receipt (Document), source (agent email or manual), reimbursable flag.
 - Expenses roll up to project cost and to a monthly export for the accountant.
+
+#### Additional Prompt: Books (ledger)
+
+Defined in `docs/BOOKS.md`. Name note: the customer-side record is an **Account**; the accounting record is a **Ledger account**.
+
+- **Ledger account:** code, name, type (Asset, Liability, Equity, Revenue, Expense), category, tax-line mapping, active flag.
+- **Journal entry:** date, memo, source record (Invoice, Bill, Payment, Expense, Bank transaction, manual), status (Posted, Reversed), period. Has **lines**: ledger account, debit or credit amount, optional Project and Account (customer or supplier). Debits must equal credits.
+- **Bill:** supplier (an Account), number, lines, amount, dates, status (Open, Paid), Document, optional Project. Posts to the ledger.
+- **Payment:** direction (received or paid), amount, date, method, applied to Invoices or Bills.
+- **Bank account and Bank transaction:** imported from statement files; matched to Payments, Expenses or manual entries; reconciled per month.
+- **Period:** month, status (Open, Closed). Closed periods reject posting until reopened with a logged reason.
+- **Reports** are computed from posted entries only: categorized P&L (income statement), balance sheet, cash flow, A/R and A/P aging, general ledger, trial balance, and P&L by project.
+- Entries are never edited or deleted; a reversing entry corrects a mistake.
 
 #### Additional Prompt: Document (`BC-D`)
 

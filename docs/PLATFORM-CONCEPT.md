@@ -157,7 +157,7 @@ Steps 1 to 5 are the part that would let you stop paying for separate tools.
 ## 5. Cautions
 
 - **Large build.** Build in order of payback and keep the old tools until each piece is proven.
-- **Money scope.** Replacing QuickBooks and TurboTax is different from replacing a CRM, because the books and the tax return must be right. See section 8.
+- **Money scope.** Replacing QuickBooks is different from replacing a CRM, because the books must be right. See section 8 and `docs/BOOKS.md`.
 - **Assistant cost.** Capped monthly (section 7).
 - **Gantt charts** start as stored and linked files. A simple timeline view comes later.
 
@@ -183,19 +183,20 @@ A separate address (for example `agent@...`) that the platform reads, so your ow
 | Assistant budget | Cap $20 per month now, raised to $60 once it replaces the apps. |
 | Import | Manual entry of about 30 opportunities and 6 projects as the pilot. |
 | Email | A new agent address, separate from yours. |
-| Apps replaced | monday.com (CRM, projects). OneDrive for quoting docs stays for Word and Excel. Onshape stays for design; the platform links and shares. Outlook proposals and follow-ups move to the platform and the agent address. QuickBooks and TurboTax: see section 8. |
+| Apps replaced | monday.com (CRM, projects). OneDrive for quoting docs stays for Word and Excel. Onshape stays for design; the platform links and shares. Outlook proposals and follow-ups move to the platform and the agent address. QuickBooks: replaced by the Vault's Books after a parallel run (section 8). TurboTax: stays; the Vault exports tax-ready totals. |
 
 ## 8. Money: QuickBooks and TurboTax
 
-I recommend three levels, and starting at the first:
+**Decision (updated):** Grant wants the Vault to replace QuickBooks for the accounting he actually uses, follow GAAP, and produce a categorized P&L. Details, controls and build order are in `docs/BOOKS.md`.
 
-1. **Track project financials in the platform (recommended now).** POs, milestone invoices (including the 60/30/10 split), due dates, paid status, overdue alerts, and a monthly export for QuickBooks or your accountant. This covers "admin for project financials".
-2. **Generate customer invoices as PDFs** from the milestones, numbered and stored per project. Possible after the pilot.
-3. **Replace bookkeeping and tax filing (not recommended).** Accurate books and tax returns depend on accounting rules and annual tax-law changes. Keep QuickBooks (or your accountant's tool) as the books of record, and keep TurboTax or an accountant for filing. The platform can produce tax-ready summaries by project and category.
+- The Vault becomes the books of record only after a parallel run beside QuickBooks and a CPA review. Until then QuickBooks stays.
+- The ledger is double-entry and append-only, with locked periods and a source for every entry.
+- TurboTax is not replaced. The Vault supplies tax-ready category totals and exports.
+- Project financials (milestones, invoices, receivables, expenses) come first and feed the ledger.
 
 ## 9. Still open
 
 1. The 7th and 8th apps (the list had six).
 2. The required-document list for each folder in `docs/FOLDER-STRUCTURE.md` (the folders themselves are decided).
 3. The agent email address and mailbox type.
-4. Confirmation of the money scope in section 8.
+4. The accounting questions in `docs/BOOKS.md` section 6.

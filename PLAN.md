@@ -26,7 +26,8 @@ Still open:
 - [x] Folder structure supplied (`docs/FOLDER-STRUCTURE.md`), with a Claude section for configurations, glossaries and standard works.
 - [ ] 🧑 Required documents per folder; confirm the folder assumptions in `docs/FOLDER-STRUCTURE.md` (project subfolders repeat per project, cGMP Package location, `Claude - Company`).
 - [ ] 🧑 Agent email address and mailbox type.
-- [ ] 🧑 Money scope (recommended: track project financials; QuickBooks stays the books).
+- [x] Money scope: the Vault replaces QuickBooks for the accounting Grant uses, with GAAP-style reports (`docs/BOOKS.md`).
+- [ ] 🧑 Answer the accounting questions in `docs/BOOKS.md` section 6 (who needs GAAP, accrual or cash, entity type, payroll and sales tax, reports, accounts, CPA, history).
 - [ ] 🧑 Apps 7 and 8 (you listed six).
 - [ ] 🧑 Process page content (formerly Develop this).
 
@@ -49,6 +50,18 @@ Each slice ends with Grant using it on real data. monday.com stays until slice 7
 | 5 | Schedule: Gantt with categories, dependencies, baselines, reasons for date changes, item updates | A project's schedule replaces its monday.com board |
 | 6 | Money: milestones, invoices, receivables, overdue alerts, expenses, monthly export | You can see who hasn't paid and what a project cost |
 | 7 | Cutover from monday.com | You stop using monday.com |
+
+## Phase 2b. Books: replace QuickBooks (💻 + 🧑 + CPA)
+
+Starts after slice 7. Details and controls: `docs/BOOKS.md`.
+
+| Slice | Delivers | Done when |
+|---|---|---|
+| B1 | Chart of accounts, ledger, journal entries, period locking, trial balance | Unbalanced entries are rejected; closed months are locked |
+| B2 | Invoices, bills, expenses, payments post to the ledger; A/R and A/P aging | An invoice and its payment appear correctly in the ledger |
+| B3 | Bank and card import, matching, monthly reconciliation | A month reconciles to the statement |
+| B4 | Categorized P&L (income statement), balance sheet, cash flow, P&L by project, accountant and tax exports | Reports match known test cases |
+| B5 | Parallel run beside QuickBooks for a full quarter, CPA review, opening balances, cutover | Reports agree line by line; you cancel QuickBooks |
 
 ## Phase 3. Connect (💻)
 
