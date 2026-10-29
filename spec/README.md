@@ -11,6 +11,8 @@ This package contains the full spec set for Grant's Concepts Hub project: a webs
   - **Give this** — the Contact Us / form submission tool (fields, validation, log row structure)
   - **Develop this** — the Process section (Supplying, Guiding, Customizing)
 
+- **process-document-builder-spec.md** — (draft) The Build this tool (Process Document Builder / Web Builder): station inputs to an engineering-sheet process document, saved configurations, tiers, and its Vault side.
+
 - **concepts-vault-spec.md** — The private, single-user admin side. Covers the six Concepts Vault tabs: Log List, Releases (Release Management + Change Management), Directory, Customers, Settings, and Registry — plus the shared Content Authoring (Hybrid CMS), Unified Admin Log, Update List, and Archive mechanics that tie them together. Also covers storage/backend (OneDrive + Power Automate) and the Git-based Apply/publish step.
 
 ## How the pieces fit together

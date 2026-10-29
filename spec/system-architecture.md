@@ -33,6 +33,11 @@ A "Hybrid tool" (Grab this, Give this, and future hybrid tools) is not exclusive
 * *Website side:* The public Contact Us form, with auto-detection of referring tool/entry, in `concepts-hub-spec.md`.
 * *Concepts Vault side:* Every submission lands as a row in the Log List, with its own Status and reference into the Update List, viewable and archivable like any other row (`concepts-vault-spec.md`).
 
+#### Additional Prompt — Build this
+
+* *Website side:* The public Process Document Builder (stations in, engineering-sheet process document out), in `process-document-builder-spec.md`.
+* *Concepts Vault side:* Every generated document lands as a Log List row with its configuration number, is serialized through Registry, and links to a Customer record (`process-document-builder-spec.md`).
+
 #### Additional Prompt — Future Tools
 
 Any new tool added to the system follows one of three shapes:

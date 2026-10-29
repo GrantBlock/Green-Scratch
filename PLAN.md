@@ -17,7 +17,7 @@ Each has a recommended default. Say "accept defaults" or change any.
 | D3 | **Vault data store** | Start with files in the repo/Cloudflare storage behind the Vault API; add OneDrive sync (Microsoft Graph or Power Automate) as a later slice. | The spec says OneDrive + Power Automate. That is the riskiest integration, so build it after the app works. |
 | D4 | **Agent chat ("Ask this")** | Make it a Hub tool; Pato only at launch; leads land in Log List. | Reuses Log List for lead capture. See handoff §4. |
 | D5 | **monday.com / Drive in the quoting process** | Keep out of the Hub and Vault (spec says self-contained). Quote generation stays in the existing Python flow. | Process map assumes monday and Drive MCPs. |
-| D6 | **Web Builder** (self-service 3D layout request, from the business plan) | Defer. List as a future Hybrid tool; do not spec it now. | Large; not needed for first launch. |
+| D6 | **Web Builder** (Process Document Builder) | **Changed:** now in scope. Spec drafted in `spec/process-document-builder-spec.md`. First release is Preview (free) only; paid tiers follow once a payment provider is chosen. | Prototype exists; production needs data model, generated text, saved configs, Vault side. |
 
 - [x] D1 · [x] D2 · [x] D3 · [x] D4 · [x] D5 · [x] D6 (all six recommended defaults accepted)
 
@@ -28,6 +28,7 @@ System map (how everything flows, where you start and end): `docs/system-map.htm
 Do this before any design or code so everything downstream matches.
 
 - [ ] Fold D1 into `spec/concepts-vault-spec.md` Registry section (types, counters, VOID, client codes on Customers).
+- [ ] Review `spec/process-document-builder-spec.md` (new, draft) and answer its **Open** items: tool name, station catalog, payment provider, `BC-W` serial, dark vs light theme.
 - [ ] Add D4's "Ask this" as a tool in `spec/concepts-hub-spec.md` (Website side) and the Vault spec (Log List row shape, Registry type code).
 - [ ] Add the stack decision (D2, D3) to `spec/concepts-hub-spec.md` "Hosting & Stack".
 - [ ] Update `spec/README.md` to match.
@@ -57,6 +58,7 @@ Order from `CLAUDE.md`. After each slice: run it, review it, tick `spec/BUILD-ST
 | 8 | Settings plus Apply (Git publish) | Apply commits and the Hub redeploys |
 | 9 | Ask this (agent chat) | Hosted model, rate limits, spend cap, leads in Log List |
 | 10 | OneDrive / Power Automate sync (D3) | Vault data and file picker read OneDrive |
+| 11 | Build this (Process Document Builder), Preview tier | Stations to document PDF, saved configs, Log List row, Customer match |
 
 ## Phase 4. Deploy (🧑 + 💻)
 
@@ -76,7 +78,7 @@ Order from `CLAUDE.md`. After each slice: run it, review it, tick `spec/BUILD-ST
 ## Phase 6. After launch
 
 - [ ] Change Management entries start being logged for revisions.
-- [ ] Revisit deferred items: Web Builder (D6), deeper Registry integration with quote generation.
+- [ ] Revisit deferred items: paid Build this tiers, deeper Registry integration with quote generation.
 
 ---
 
