@@ -1,5 +1,7 @@
 # Plan: Concepts Platform
 
+> **Under reset.** `docs/RESET.md` rates every inherited decision by evidence and proposes a workflow-first approach built outward from the live website. This plan is reduced to match once Grant agrees.
+
 One private workspace (Concepts Vault) for running Block Concepts, plus a thin public side (Concepts Hub). Concept and reasons: `docs/PLATFORM-CONCEPT.md`. Records: `spec/data-model.md`. Branding: `design/system/`.
 
 **Legend:** 🧑 you (Grant) · 🎨 Claude Design · 💻 Claude Code
