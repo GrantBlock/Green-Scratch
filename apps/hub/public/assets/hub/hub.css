@@ -1,0 +1,19 @@
+/* Hub page layout only. Every value is a design-system token; nothing here defines color, type or radius. */
+html, body { margin: 0; background: var(--bc-surface); color: var(--bc-ink); font-family: var(--font-sans); }
+.hub-main { max-width: 1320px; margin: 0 auto; padding: var(--bc-space-8) var(--bc-space-4); display: grid; gap: var(--bc-space-6); align-content: start; min-height: 60vh; }
+@media (min-width: 820px) { .hub-main { padding-inline: var(--bc-space-12); } }
+.hub-narrow { max-width: 640px; display: grid; gap: var(--bc-space-6); }
+.hub-narrow form { display: grid; gap: var(--bc-space-6); }
+.hub-intro { display: grid; gap: var(--bc-space-4); max-width: 60ch; }
+.hub-customer { max-width: 760px; }
+.hub-folder { display: grid; gap: var(--bc-space-3); margin-block-end: var(--bc-space-6); }
+.hub-docs { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--bc-space-3); }
+.hub-docs li { display: grid; grid-template-columns: 1fr auto; gap: var(--bc-space-1) var(--bc-space-4); align-items: center; padding-block: var(--bc-space-3); border-block-end: 1px solid var(--bc-hairline); }
+.hub-doc-meta, .hub-expiry, .hub-context { color: var(--bc-muted); margin: 0; }
+.hub-doc-meta { grid-column: 1; }
+.hub-docs li > a, .hub-docs li > button { grid-column: 2; grid-row: 1 / span 2; }
+.hub-slot { display: grid; gap: var(--bc-space-4); margin-block-end: var(--bc-space-6); }
+h1, h2, h3 { margin: 0; }
+@media (max-width: 520px) { .hub-docs li { grid-template-columns: 1fr; } .hub-docs li > a, .hub-docs li > button { grid-column: 1; grid-row: auto; } }
+
+.hub-after { margin: var(--bc-space-4) 0 0; }

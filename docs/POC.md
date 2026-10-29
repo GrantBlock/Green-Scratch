@@ -58,7 +58,7 @@ Rules that keep parallel design consistent are in `design/sessions/00-shared.md`
 | **C0 Contracts** | `packages/contract` (types from `spec/data-model.md`, API routes, fixtures) | Nothing | **Done (first version).** 35 tests pass, including the first nine steps of the story over HTTP |
 | **C1 Core** | `packages/core` (business logic, store, Hub routes, mock), `apps/vault` (Cloudflare Worker, D1, R2, sign-in) | C0 | **Done, not yet deployed.** Runs under Cloudflare's local runtime; 78 tests pass across the three packages. Deploy steps: `docs/DEPLOY.md` |
 | **C2 Vault UI** | `apps/vault/ui` against a **mock API** built from the fixtures | C0 and design mockups | As mockups land |
-| **C3 Hub** | `apps/hub` (home, Contact, customer page) | C0 | After C0 |
+| **C3 Hub** | `apps/hub` (home, Contact, Library, customer page) | C0 | **Done, not yet deployed.** Verified in Chromium at phone and iPad sizes and across a real service binding. Restyle when the H1 mockups arrive |
 | **C4 Assistant** | `apps/vault/assistant` (search, citations) | C1 data | After C1 |
 | **Integration** | Replaces mocks with the real API; end-to-end test of the story | All | Last |
 

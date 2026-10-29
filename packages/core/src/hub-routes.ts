@@ -4,7 +4,7 @@
  */
 import { ContactSubmission } from '@bc/contract';
 import type { VaultPublicApi } from '@bc/contract';
-import { badRequest, HttpError, notFound } from './errors.ts';
+import { badRequest, decodeError, HttpError, notFound } from './errors.ts';
 import { MAX_UPLOAD_BYTES, sha256Hex } from './util.ts';
 
 const json = (status: number, body: unknown) => new Response(JSON.stringify(body), { status, headers: { 'content-type': 'application/json', 'cache-control': 'no-store' } });
@@ -63,7 +63,8 @@ export function createHubHandler(api: VaultPublicApi): (req: Request) => Promise
       }
       throw notFound('That page');
     } catch (e) {
-      if (e instanceof HttpError) return json(e.status, { error: { code: e.code, message: e.message, fields: e.fields } });
+      const known = decodeError(e);
+      if (known) return json(known.status, { error: { code: known.code, message: known.message, fields: known.fields } });
       console.error('Unhandled Hub error', e);
       return json(500, { error: { code: 'validation_failed', message: 'Something went wrong. Try again.' } });
     }

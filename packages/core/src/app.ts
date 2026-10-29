@@ -104,6 +104,13 @@ export function createApp(deps: AppDeps) {
     if (rules.length) throw badRequest(rules.join(' '));
     await assertRefs(type, rec);
   };
+  /** Schema and field rules only. For records whose linked records are created in the same transaction and are not stored yet. */
+  const validateShape = (type: string, rec: Rec) => {
+    const parsed = (schemas[type as keyof typeof schemas] as z.ZodType).safeParse(rec);
+    if (!parsed.success) throw badRequest('The record is not valid.', Object.fromEntries(parsed.error.issues.map((i) => [i.path.join('.') || '_', i.message])));
+    const rules = recordRuleIssues(rec as never);
+    if (rules.length) throw badRequest(rules.join(' '));
+  };
   const view = async (type: string, rec: Rec, c: Ctx): Promise<Rec> => {
     if (type === 'project') return { ...rec, completeness: projectCompleteness((await store.list('checklistItem', { filters: { projectId: rec.id } })) as never) };
     if (type === 'invoice') {
@@ -599,7 +606,7 @@ export function createApp(deps: AppDeps) {
         tx.insert('document', { id: did, ...base(c), type: 'document', number: await tx.issue('D', { recordType: 'document', recordId: did }), title: s.attachment.fileName, kind: 'Other', linked: { recordType: 'lead', recordId: id }, file: { storage: 'r2', key }, mimeType: s.attachment.mimeType, sizeBytes: bytes.length, checksum, revision: 1, status: 'In review', visibility: 'Private' });
         lead.attachmentDocumentId = did;
       }
-      await validate('lead', lead);
+      validateShape('lead', lead); // its attachment is created in this same transaction
       tx.insert('lead', lead);
       note(tx, c, { recordType: 'lead', recordId: id }, 'system', 'Lead created from the Contact form.', { actor: 'system' });
       await tx.commit();

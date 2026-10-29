@@ -1,0 +1,29 @@
+{
+  "name": "@bc/hub",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Concepts Hub: the customer-accessible Cloudflare Worker. No database and no file storage; it reaches the Vault only through a service binding.",
+  "scripts": {
+    "build:assets": "node scripts/build-assets.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run build:assets && node --test \"test/*.test.ts\"",
+    "build:check": "npm run build:assets && wrangler deploy --dry-run --outdir dist",
+    "dev": "npm run build:assets && wrangler dev --local"
+  },
+  "dependencies": {
+    "@bc/contract": "*",
+    "@bc/core": "*",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.0.0",
+    "@types/node": "^22.0.0",
+    "@types/react": "^18.3.0",
+    "esbuild": "^0.25.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "typescript": "^5.9.0",
+    "wrangler": "^4.0.0"
+  }
+}

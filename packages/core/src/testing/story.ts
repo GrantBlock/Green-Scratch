@@ -32,6 +32,8 @@ export function registerStory(label: string, start: () => Promise<Harness>): voi
     const ok = await call('POST', '/hub/api/contact', { name: 'Casey Lund', company: 'Example Dairy', email: 'casey@example.com', message: 'Need a case sealer inspection station.', sourceContext: { tool: 'Library', entryTitle: 'Vision inspection requirements' } });
     assert.equal(ok.status, 200);
     assert.ok(ContactReceipt.safeParse(ok.json).success);
+  const withFile = await call('POST', '/hub/api/contact', { name: 'Dana Pike', email: 'dana@example.com', message: 'Drawing attached.', attachment: { fileName: 'drawing.pdf', mimeType: 'application/pdf', contentBase64: btoa('%PDF-1.4 sample') } });
+  assert.equal(withFile.status, 200, 'a Contact message with an attached file is accepted');
   });
 
   test(name('2 it appears in the Inbox and on Today'), async () => {

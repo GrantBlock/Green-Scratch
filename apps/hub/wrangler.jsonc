@@ -1,0 +1,13 @@
+{
+  // Concepts Hub: the customer-accessible Worker. It has no database and no file storage; the only way to the Vault is the VAULT service binding.
+  "name": "bc-hub",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": false,
+  "preview_urls": false,
+  "assets": { "directory": "./public", "binding": "ASSETS", "run_worker_first": true },
+  "services": [{ "binding": "VAULT", "service": "bc-vault", "entrypoint": "VaultPublic" }],
+  // Turn on when hub.blockconceptsllc.com exists in Cloudflare DNS:
+  // "routes": [{ "pattern": "hub.blockconceptsllc.com", "custom_domain": true }],
+  "observability": { "enabled": true }
+}

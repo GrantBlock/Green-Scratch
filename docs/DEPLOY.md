@@ -48,8 +48,31 @@ npx wrangler dev --local --var DEV_AUTH:true
 
 `DEV_AUTH` only lets requests through when the address is `localhost`; on any other host the Worker still refuses everything.
 
+## Deploying the Hub (`hub.blockconceptsllc.com`)
+
+Do this after the Vault is deployed: the Hub's service binding needs the `bc-vault` Worker to exist.
+
+1. From `apps/hub`: `npm run build:assets`, then `npx wrangler deploy`. (The first deploy creates the `bc-hub` Worker bound to `bc-vault`'s `VaultPublic` entrypoint.)
+2. Uncomment the `routes` line in `apps/hub/wrangler.jsonc` (custom domain `hub.blockconceptsllc.com`) and deploy again.
+3. **No sign-in on the Hub.** Do not put Cloudflare Access in front of it; customers use it. Customer pages are protected by long random links, expiry and revocation.
+4. **Rate limiting (do this before sharing the address).** In the Cloudflare dashboard for `blockconceptsllc.com`, Security, WAF, Rate limiting rules: create a rule for requests to `hub.blockconceptsllc.com` where the path is `/hub/api/contact` or starts with `/hub/p/`, limited per IP (for example 10 requests per minute), action Block. Check which rule types your plan includes.
+5. **Spam check (optional, recommended once the address is public).** Create a Turnstile widget for `hub.blockconceptsllc.com`, then set `TURNSTILE_SITE_KEY` as a variable and `TURNSTILE_SECRET` as a secret (`npx wrangler secret put TURNSTILE_SECRET`). The Contact form then requires the check. (The page script for the check widget is not written yet; do not turn this on until it is.)
+6. **Indexing.** The Hub is blocked from search engines (noindex and `robots.txt`) until you set `INDEXABLE` to `true`. Leave it off until the Hub is released and the main website links to it. Customer pages are never indexed.
+7. **Check:** open `https://hub.blockconceptsllc.com/`, send a test message from Contact, and confirm the lead appears in the Vault. Then create a customer link in the Vault and open it in a private window.
+
+### Running both locally under Cloudflare's runtime
+
+```
+cd apps/vault && npx wrangler d1 migrations apply bc-vault --local --persist-to /tmp/bcstate
+cd apps/vault && npx wrangler d1 execute bc-vault --local --persist-to /tmp/bcstate --file=seed/dev.sql
+cd apps/hub && npm run build:assets
+cd ../.. && npx wrangler dev -c apps/hub/wrangler.jsonc -c apps/vault/wrangler.jsonc --persist-to /tmp/bcstate --port 8790
+```
+
+The first `-c` file is the Worker you browse (the Hub); the Vault runs beside it and is reachable only through the binding.
+
 ## Not set up yet
 
-- **The Hub** (`hub.blockconceptsllc.com`) is a separate Worker (track C3). It will call the Vault only through the `VaultPublic` service binding, never over HTTP.
-- **Deploy on push to `main`** (Cloudflare Workers Builds or a GitHub action) comes after the first manual deploy works.
+- **Deploy on push to `main`** (Cloudflare Workers Builds or a GitHub action) comes after the first manual deploys work.
 - **The Anthropic key** for the real Assistant (track C4).
+- **Malware scanning** of customer uploads.
