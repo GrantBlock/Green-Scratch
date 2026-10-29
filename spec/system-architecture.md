@@ -58,14 +58,15 @@ Any new tool added to the system follows one of three shapes:
 
 #### Additional Prompt — Design Tokens
 
-Branding has exactly one source: the **Block Concepts design system**, authored in Claude Design and exported into `design/system/` (see `design/DESIGN-SYSTEM.md`). No other spec, prototype or piece of code defines colors, typefaces, spacing or theme.
+Branding has exactly one source: the **Block Concepts design system**, authored in Claude Design and exported into `design/system/` (entry points: `design/system/README.md`, `website.md`, `word-documents.md`, `tokens.css`, `tokens.json`). No other spec, prototype or piece of code defines colors, typefaces, spacing or theme.
 
-* **Source of truth:** `design/system/` (tokens file plus component reference). Both the Concepts Hub and the Concepts Vault import the same tokens file.
-* **Uniform scope:** the public Hub, the Vault, every tool (Grab this, Give this, Develop this, Build this, Ask this), the generated drawing sheets and any email or PDF output draw from it. A tool never ships its own palette, font or theme.
-* **Theme:** whichever themes the design system defines (light, dark, or both) apply to Hub and Vault alike.
-* **Roles, not values:** specs refer to token roles (text, surface, accent, accent-on-surface, focus, danger, drawing-line, drawing-label), never to hex values or font names.
-* **Provisional values until the design system is supplied:** black text on white, light Steel Blue accent (`#4682B4` base), clean industrial/technical feel. These are placeholders to build against and are replaced wholesale by the exported tokens.
-* Any new tool or Vault tab inherits the tokens rather than defining its own.
+* **Source of truth:** `design/system/`. Both the Concepts Hub and the Concepts Vault import its `tokens.css` and `components/bundle.css`; nothing else defines color, type, spacing or radius.
+* **Uniform scope:** the public Hub, the Vault, every tool (Grab this, Give this, Develop this, Build this, Ask this), generated documents and any email or PDF output.
+* **Themes (as defined by the design system):** `dark` is the website theme, set with `data-theme="dark"` on `<html>`. `light` is for documents and proposals. The Hub uses `dark`. Generated documents and drawing sheets use `light`. The Vault's theme is **Open** (see `design/DESIGN-SYSTEM.md`); recommended `dark`, matching the Hub.
+* **Brand rules that bind every tool:** Steel Blue is the only brand blue; blue text under 24px uses the `bc-steel-blue-text` token; square flat shapes (radius at most 4px), no shadows, no gradients, no decorative red or green; Overpass and Overpass Mono on screen; focus is a 2px `bc-steel-blue-text` outline; interactive targets at least 44px.
+* **Copy rules that bind every tool:** speak as "we" or Block Concepts, never first-person singular; address the reader as "you"; no emoji, no exclamation marks, no superlatives; never name suppliers, brands, customers or locations; do not show Registry (BC) serial numbers publicly except the document number `BC-Q-YYNNN` on a customer's own proposal or quote.
+* **Roles, not values:** specs refer to token names (`bc-ink`, `bc-surface`, `bc-steel-blue`...) or to roles, never to hex values or font names.
+* Any new tool or Vault tab inherits the design system rather than defining its own. If something is missing, add it to the design system first (gaps are listed in `design/DESIGN-SYSTEM.md`).
 
 #### Additional Prompt — Prompting for Both Sides
 

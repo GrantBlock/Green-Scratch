@@ -11,7 +11,7 @@ The step-by-step plan is `PLAN.md`. Work from it, and tick items off as they fin
 
 ## Rules
 
-- Branding has one source: the design system exported to `design/system/` (see `design/DESIGN-SYSTEM.md`). Hub, Vault, every tool and the printed drawing sheets import the same tokens file. Never hard-code a color, font or spacing value, and never copy a prototype's styling. Specs name token roles, not hex values.
+- Branding has one source: the design system in `design/system/` (read its `README.md` first; see also `design/DESIGN-SYSTEM.md` for gaps). Hub, Vault, every tool and the printed drawing sheets import the same tokens file. Never hard-code a color, font or spacing value, and never copy a prototype's styling. Specs name tokens, not hex values. The design system's copy rules (see `spec/system-architecture.md`, "Design Tokens") apply to every user-facing string.
 - Hub and Vault share one data model per tool. The Vault never keeps a shadow copy of what the Hub displays.
 - Serials are issued only by Registry (`BC-[TYPE]-YYNNN`). Never hand-assign them in code.
 - The Vault is single-user (Grant). No multi-user login.

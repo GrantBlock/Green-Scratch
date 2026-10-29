@@ -52,7 +52,7 @@ Design a document-sharing portal with a four-zone drill-down layout:
 
 **Visual style:**
 - All color, type and spacing come from the Block Concepts design system (see "Design Tokens" in `system-architecture.md`); this tool defines none of its own.
-- The selected-row highlight uses the design system's accent token role.
+- The selected-row highlight uses `bc-steel-blue` (text on it uses `bc-on-steel-blue`; blue text elsewhere uses `bc-steel-blue-text`).
 - File preview: a static image of the file's first page (not an interactive/paginated viewer).
 
 #### Additional Prompt — Contents of Entries

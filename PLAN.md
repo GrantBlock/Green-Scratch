@@ -36,12 +36,12 @@ Do this before any design or code so everything downstream matches.
 
 ## Phase 2. Design (🎨 + 🧑)
 
-- [ ] 🧑 Supply the design system in Claude Design. It must cover everything in `design/DESIGN-SYSTEM.md` (tokens, components, layouts, print/drawing sheets, logo). This is the single branding source for Hub, Vault and every tool.
-- [ ] 🧑 Export it into `design/system/`.
+- [x] 🧑 Design system supplied and exported to `design/system/` (dark website theme, light document theme, Overpass).
+- [ ] 🧑 Settle the 4 open items and fill the 10 gaps in `design/DESIGN-SYSTEM.md` (extend the design system in Claude Design, re-export): form controls, tab bar and list, status colors, step rail and station card, detail pane, modal and toast, chat window, drawing sheets, PDF font.
 - [ ] 🧑 Paste `design/BRIEF.md` (update it after Phase 1 to include "Ask this").
 - [ ] 🧑 Review mockups: Hub (Fix this, Grab this, Give this, Develop this, Ask this) and Vault (login, Log List, Releases, Registry, Customers, Settings, Archive), desktop and mobile.
 - [ ] 🧑 Export into `design/` and tell Claude Code to read it.
-- [ ] 💻 Extract one shared tokens file from the design system (color, type, spacing).
+- [ ] 💻 Wire `design/system/tokens.css` and `components/bundle.css` as the one shared tokens file (no extraction needed).
 
 ## Phase 3. Build (💻), one slice per session
 

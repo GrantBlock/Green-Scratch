@@ -1,6 +1,6 @@
 # Claude Design brief: Concepts Hub and Concepts Vault
 
-Use the Block Concepts design system, and nothing else, for all color, type and spacing. Do not invent colors or fonts. If something is missing from the design system (see `design/DESIGN-SYSTEM.md` for the full list it must cover), flag it instead of improvising.
+The design system is already loaded (`design/system/`). Use it, and nothing else, for all color, type and spacing. Do not invent colors or fonts. If something is missing from the design system (see `design/DESIGN-SYSTEM.md` for the full list it must cover), flag it instead of improvising.
 Source specs: `spec/system-architecture.md`, `spec/concepts-hub-spec.md`, `spec/concepts-vault-spec.md`.
 
 Design these screens, desktop and mobile:
@@ -22,3 +22,6 @@ Design these screens, desktop and mobile:
 12. Ask this: agent chat window (Pato), with the "AI assistant, not a binding quote" notice.
 
 Constraint: WCAG 2.1 AA contrast; keyboard operable; the same tokens on Hub, Vault and every tool, with no new colors beyond the design system.
+
+The Hub uses the `dark` theme. Build the missing components listed in `design/DESIGN-SYSTEM.md` (gaps 1 to 10) as additions to the design system, then use them in the screens above.
+Public copy follows the design system's copy rules: sentence case except where a style is uppercase, no emoji, no superlatives, no customer, supplier or location names.

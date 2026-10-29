@@ -70,11 +70,12 @@ From the business plan; each tier has a different output and a different Vault o
 
 #### Additional Prompt: Branding and Look
 
-- The tool uses the Block Concepts design system like every other tool (see "Design Tokens" in `system-architecture.md`). The prototype's own palette, light theme and fonts are discarded, not ported.
-- The welcome screen, step rail, station cards, config bar and buttons are built from the design system's components and token roles.
-- **Drawing sheets** (the printed output) are branded from the same system through its drawing roles: line, label, double-line border, title block. The design system must therefore include a **print / drawing** section (sheet sizes, line weights, label type, title-block layout). Sheets print on white regardless of the site's theme.
+- The tool uses the Block Concepts design system in `design/system/` like every other tool. The prototype's palette (`#1A6DBF`, `#0E3F6B`), light theme, Barlow and Inter fonts are discarded, not ported.
+- The screens (welcome, step rail, station cards, config bar, buttons) use the `dark` theme, Overpass, and the design system's components and tokens. Missing components (step rail, station card, sticky preview, form controls) are added to the design system first (`design/DESIGN-SYSTEM.md`, gaps 1, 5, 7).
+- The welcome screen is a Block Concepts landing in the system's style (near-black surface, Steel Blue accents, the corner line pattern from `design/system/assets/Patterns/`); it replaces the prototype's full Steel Blue landing.
+- **Drawing sheets** (the printed output) use the `light` theme and the design system's drawing roles (gap 9): line, label, double-line border and title block. They print on white regardless of the site theme. The drawing number sits at the top left next to the logo, as on the system's Word documents.
+- Public wording follows the system's copy rules (no emoji, no superlatives, no named customers, suppliers or locations).
 - The "Made with Claude Design" badge is removed.
-- Resolved by this rule: the earlier question of a dark site versus black-on-white is decided by the design system, not by this spec.
 
 ---
 
