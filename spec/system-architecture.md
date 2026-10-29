@@ -35,8 +35,13 @@ A "Hybrid tool" (Grab this, Give this, and future hybrid tools) is not exclusive
 
 #### Additional Prompt — Build this
 
-* *Website side:* The public Process Document Builder (stations in, engineering-sheet process document out), in `process-document-builder-spec.md`.
+* *Website side:* The public Process Document Builder (stations in, PDF drawing sheets and a Word process document out), in `process-document-builder-spec.md`.
 * *Concepts Vault side:* Every generated document lands as a Log List row with its configuration number, is serialized through Registry, and links to a Customer record (`process-document-builder-spec.md`).
+
+#### Additional Prompt — Ask this
+
+* *Website side:* The public agent chat window (Pato, quoting), in `concepts-hub-spec.md`.
+* *Concepts Vault side:* Each chat that reaches the lead stage lands as a Log List row with the visitor's contact details and a transcript, with a Registry serial (`concepts-hub-spec.md`).
 
 #### Additional Prompt — Future Tools
 
@@ -61,8 +66,9 @@ Any new tool added to the system follows one of three shapes:
 Branding has exactly one source: the **Block Concepts design system**, authored in Claude Design and exported into `design/system/` (entry points: `design/system/README.md`, `website.md`, `word-documents.md`, `tokens.css`, `tokens.json`). No other spec, prototype or piece of code defines colors, typefaces, spacing or theme.
 
 * **Source of truth:** `design/system/`. Both the Concepts Hub and the Concepts Vault import its `tokens.css` and `components/bundle.css`; nothing else defines color, type, spacing or radius.
+* **The public website is the single source of truth** for positioning, pillar names (Engineering, Sourcing, Services), tone and company facts. The Hub and Vault never restate or contradict them; where they need that content they link to the website.
 * **Uniform scope:** the public Hub, the Vault, every tool (Grab this, Give this, Develop this, Build this, Ask this), generated documents and any email or PDF output.
-* **Themes (as defined by the design system):** `dark` is the website theme, set with `data-theme="dark"` on `<html>`. `light` is for documents and proposals. The Hub uses `dark`. Generated documents and drawing sheets use `light`. The Vault's theme is **Open** (see `design/DESIGN-SYSTEM.md`); recommended `dark`, matching the Hub.
+* **Themes (as defined by the design system):** `dark` is the website theme, set with `data-theme="dark"` on `<html>`. `light` is for documents and proposals. The Hub uses `dark`. Generated documents and drawing sheets use `light`. The Vault also uses `dark`, so the whole app looks like one product.
 * **Brand rules that bind every tool:** Steel Blue is the only brand blue; blue text under 24px uses the `bc-steel-blue-text` token; square flat shapes (radius at most 4px), no shadows, no gradients, no decorative red or green; Overpass and Overpass Mono on screen; focus is a 2px `bc-steel-blue-text` outline; interactive targets at least 44px.
 * **Copy rules that bind every tool:** speak as "we" or Block Concepts, never first-person singular; address the reader as "you"; no emoji, no exclamation marks, no superlatives; never name suppliers, brands, customers or locations; do not show Registry (BC) serial numbers publicly except the document number `BC-Q-YYNNN` on a customer's own proposal or quote.
 * **Roles, not values:** specs refer to token names (`bc-ink`, `bc-surface`, `bc-steel-blue`...) or to roles, never to hex values or font names.

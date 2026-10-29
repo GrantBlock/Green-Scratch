@@ -6,7 +6,7 @@ This package contains the full spec set for Grant's Concepts Hub project: a webs
 
 - **system-architecture.md** — Start here. The top-level architecture doc: what the two pieces are (Concepts Hub and Concepts Vault), how "hybrid tools" (Grab this, Give this) are designed to have a presence on both sides, the three shapes a future tool can take (Hybrid / Vault-only / Static page), the shared Design Tokens (colors, visual style), and the "Prompting for Both Sides" pattern to follow when specifying any new tool.
 
-- **concepts-hub-spec.md** — The public-facing Website side. Covers the site shell and navigation (Concepts Hub/Home, Who this/About, Fix this/Tools), and the specs for:
+- **concepts-hub-spec.md** — The public-facing Website side (now also Ask this). Covers the site shell and navigation (Concepts Hub/Home, Who this/About, Fix this/Tools), and the specs for:
   - **Grab this** — the four-zone document portal (browsing, entry data model, accessibility, Vault integration)
   - **Give this** — the Contact Us / form submission tool (fields, validation, log row structure)
   - **Develop this** — the Process section (Supplying, Guiding, Customizing)

@@ -13,19 +13,27 @@ Design tokens for the site (color, type, visual feel) are defined once in `syste
 #### Additional Prompt — Navigation & Naming
 
 - **Single domain.** All tools are sub-pages under a `/tools` path — not a subdomain, not standalone sites.
-- **Main nav:** **Concepts Hub** (Home), **Who this** (About), **Fix this** (Tools landing page).
+- **Relationship to the main website.** The Block Concepts website is live and is the single source of truth for positioning, pillar names and company facts. The Hub is the tools side of it, reached from a new **Tools** section that Grant adds to the website's navigation at release. Until the Hub releases, the website does not mention it (its contact routing and CMS are built in but disabled).
+- **Hub header.** The Hub has its own header at `/tools`, built from the design system's `NavBar` and `Wordmark`, with the wordmark linking back to the main website. Links: **Concepts Hub** (Home), **Who this** (About the tools), **Fix this** (Tools landing page). **Open:** Who this must not duplicate the website's About page; confirm what it holds or whether to drop it.
 - **Concepts Hub (Home) and Who this (About) are static pages** — no Concepts Vault presence needed. Content there doesn't go through the entry-authoring/log system described in `concepts-vault-spec.md`; per `system-architecture.md`, not every page requires an admin-side counterpart.
 - **Fix this** (Tools landing page): Functions as the "About Web Tools" page — explains how to use the tools in this section (usage instructions for a visitor). Layout: a 1/5-width column of buttons on the left, one per named tool/section, with the remaining 4/5 as the content area showing whichever is selected. This mirrors Grab this's own column-based drill-down pattern rather than a single scrolling page with jump links.
-- **Named buttons in the Fix this column (all three are siblings — Give this is not nested inside Grab this):**
+- **Named buttons in the Fix this column (all siblings — Give this is not nested inside Grab this):**
   - **Grab this** — Document Portal, spec below.
   - **Give this** — Form Submission / Contact Us, spec below.
-  - **Develop this** — the Process section (Supplying, Guiding, Customizing), spec below.
+  - **Develop this** — the Process section, spec below (to be re-specified).
+  - **Build this** — the Process Document Builder (Web Builder), in `process-document-builder-spec.md`.
+  - **Ask this** — the agent chat, spec below.
 - **Future tools/sections** added the same way, each getting its own "___ this"-style name and its own button in the Fix this column — though per `system-architecture.md`, a future addition could also be a static page with no admin presence, not necessarily a full tool.
 - **Vault access:** The Fix this page includes a separate button (distinct from the tool buttons) that leads to the password-protected Concepts Vault login, per `concepts-vault-spec.md`. This button is visually distinct from the public tool entry points but lives on the same page.
 
 #### Additional Prompt — Hosting & Stack
 
-Not currently a priority — revisit once the rest of the spec set is settled.
+Decided (see `PLAN.md`, Phase 0):
+
+- **Hub:** static pages, built the same way as the website, hosted on Cloudflare with deploy on push to `main`, served under `/tools` on the existing domain.
+- **Vault:** a small password-protected web app on Cloudflare Workers on the same host. The Vault is not indexed by search engines.
+- **Vault data:** starts as files held by the Vault's own store behind its API. OneDrive sync (Microsoft Graph or Power Automate) is added after the app works, per `concepts-vault-spec.md` Access.
+- **Secrets** (Vault password hash, model API key, payment keys later) live in server environment variables only, never in the repo or the page.
 
 ---
 
@@ -129,6 +137,8 @@ Define the columns shown for a submission row in the admin log:
 
 # Develop this (Process Section)
 
+> **Status: to be re-specified.** The Supplying / Guiding / Customizing text below was written before the website went live. The website's pillars (Engineering, Sourcing, Services) are the source of truth, and Develop this will be detailed out as its own sections that do not overlap or contradict them. Do not build this section until Grant supplies the new detail.
+
 ### Main Prompt
 
 A website section describing Grant's process, publicly named **Develop this**, one of the three buttons on the Fix this page. Three subsections:
@@ -141,3 +151,33 @@ A website section describing Grant's process, publicly named **Develop this**, o
   4. Functional Prototype
   - The rating measures **complexity compared to lead time** — the order is a progression, from Automation Distribution (lowest complexity relative to lead time) through Functional Prototype (highest).
 - **Customizing:** Covers full design/build.
+
+---
+
+# Ask this (Agent Chat)
+
+### Main Prompt
+
+A chat window where a visitor talks to a Block Concepts agent, publicly named **Ask this**. Hybrid tool. The agents (Pato for quoting, Hukata for building, Kosala for supporting) are defined in `reference/business/Block_Concepts_Consulting_Business_Plan.docx`; the existing local app and its risks are in `reference/agents/agent-chat-handoff.md`.
+
+#### Additional Prompt: Website Side
+
+- **Launch scope:** Pato only. Hukata and Kosala are internal or post-sale and stay off the public site.
+- **Window:** a chat view in the Fix this content area using the design system, with a one-line notice: "AI assistant, not a binding quote", plus a privacy link.
+- **API:** `POST /api/chat` with `{agent, history}` returns `{reply}` or `{error}`; stateless, the visitor's browser keeps the history. Streaming replies and Markdown rendering are included.
+- **Model:** a hosted model called from the server only; the key is never in the page.
+- **Abuse protection:** per-IP rate limit, daily spend cap, maximum message length, maximum history length, and a bot check. **Open:** the monthly spend cap and who pays.
+- **Public-safe prompt:** the public system prompt is a reduced version of the vault agent docs. It excludes internal numbering, the Master Register and billing-milestone detail, and it never states firm prices, lead times or tax treatment.
+- **Contact handoff:** when the visitor gives their name and email (and optionally company and phone), the chat offers to send their details to Block Concepts; confirming creates the Log List row.
+
+#### Additional Prompt: Concepts Vault Side
+
+- **Log List row:** Name, Company, Email, Phone, tool = Ask this, a short summary of the request, the transcript (viewable in the file column as a generated PDF), submission timestamp, Status (New / Contacted / Quoted / Closed), Build State, Registry serial (`BC-D-YYNNN`) and Update List reference, as for Give this.
+- **Customers:** matched or created from the visitor's email or company.
+- **Chat retention:** a transcript is stored server-side only for chats that reach the handoff, and the visitor is told. Other chats stay only in the visitor's browser.
+- **Settings:** the public prompt text, spend cap and enabled agents are Vault settings, changed through Apply.
+- **Change Management:** a change to the public prompt is logged as a revision.
+
+#### Additional Prompt: Not Handled Here
+
+Producing a quote (existing Python flow, outside the app) and any binding commitment on price or schedule.

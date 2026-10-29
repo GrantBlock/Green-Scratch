@@ -22,11 +22,17 @@ The Block Concepts design system was authored in Claude Design and is exported i
 | 7 | Modal / confirm, toast, empty states | Vault, Grab this | Not in the system. |
 | 8 | Chat window | Ask this | Not in the system. |
 | 9 | Engineering **drawing sheets** (ANSI A landscape and portrait): line weights, double-line border, label type, title block (proprietary notice, tolerance notes, company block, drawing number, version, scale, "Sheet X of N") | Build this output | The system covers US Letter Word documents only. Print on the `light` theme. |
-| 10 | Font for generated PDFs | Build this output | Aptos is supplied by Word and is not a web font. A browser-made PDF needs a font the system ships (Overpass), or the document is built as .docx. |
+| 10 | Font for generated PDFs | Build this output | Decided: the PDF sheets use Overpass (shipped by the system); the Word document uses Aptos. Confirm the system documents this. |
 
-## Open items to settle
+## Decisions made
 
-1. **Vault theme:** `dark` (recommended, matches the Hub) or `light`.
-2. **Hub navigation:** the website's navigation is Engineering, Sourcing, Services, Solutions, About, Contact. The Hub spec's is Concepts Hub, Who this, Fix this. The website brief also says not to reference Concepts Hub until it releases. Decide whether the Hub gets its own header (same NavBar style) at `/tools`, and how the main site links to it at release.
-3. **Section names:** the website pillars are Engineering, Sourcing, Services. The Hub's Develop this uses Supplying, Guiding, Customizing. Decide whether Develop this is kept, renamed, or folded into the pillars.
-4. **Process document format:** Build this's drawing sheets (PDF) versus the system's Word process document. Decide which is the customer deliverable, or both.
+1. **Vault theme:** `dark`, same as the Hub.
+2. **Hub navigation:** the Hub has its own header at `/tools` using the system's NavBar style. Grant adds a **Tools** section to the live website at release; the website says nothing about the Hub until then.
+3. **Section names:** the website is the single source of truth (Engineering, Sourcing, Services). Develop this stays as a Hub section but will be re-specified with its own detail and must not overlap the pillars.
+4. **Process document format:** Build this produces both the PDF drawing sheets and the Word process document.
+
+## Still open
+
+- Gap 3 (status colors) and the other gaps above.
+- Who this: what it holds, since the website already has About.
+- Whether the Word document is part of the free Preview tier.

@@ -44,8 +44,8 @@ The split is publish-state-based: Release Management is the first-publish step; 
 A CRM-type structured internal tool, Vault-only (no public Website-side page — per the "Vault-only tool" shape in `system-architecture.md`).
 
 - **Purpose:** A structured record of Block Concepts' customers, distinct from the raw activity in Log List — Log List shows individual submissions/entries as they happen, Customers is the standing record of who each customer is over time.
-- **Customer record fields:** Name, Company, Email, Phone, and a running list of everything tied to that customer — linked Log List rows (Give this submissions, any entries relevant to them), linked Registry serials, and Update List notes.
-- **Relationship to Give this:** When a Give this submission comes in, it either matches an existing Customer record (by email/company) or creates a new one — keeping the CRM populated without separate manual data entry.
+- **Customer record fields:** Name, Company, a three-letter Client Code (assigned before the first quote; `GEN` for prospects), Email, Phone, and a running list of everything tied to that customer — linked Log List rows (Give this submissions, any entries relevant to them), linked Registry serials, and Update List notes.
+- **Relationship to Give this, Build this and Ask this:** When a Give this, Build this or Ask this submission comes in, it either matches an existing Customer record (by email/company) or creates a new one — keeping the CRM populated without separate manual data entry.
 - **Relationship to Registry:** Since Registry is the company-wide part-number source of truth, a Customer record can show which stock codes/quotes/jobs are tied to them, pulling from Registry rather than duplicating that data.
 - **Not a replacement for:** monday.com or a dedicated CRM platform for pipeline/sales-stage management — this is a lighter, structured contact record living alongside the rest of the Vault's self-contained data, consistent with the earlier decision to skip external CRM integration.
 
@@ -88,7 +88,7 @@ Define the cross-tool activity log, shown in the **Log List** tab:
 
 #### Additional Prompt — Settings
 
-- A dedicated tab that is simply a list of settings that modify the website's pages — a straightforward settings list, not a complex staged/preview system.
+- A dedicated tab that is simply a list of settings that modify the website's pages and tools — a straightforward settings list, not a complex staged/preview system.
 - Changes are staged, not live-applied instantly: an Apply button commits the changes. Until Apply is pressed, edits are just pending/previewed.
 - **Publish mechanism:** Git-based publishing — Apply commits changes to a Git repo, which triggers a rebuild/deploy on the hosting platform. This pairs naturally with the Registry serialization system (below): each commit can be cross-referenced with the Registry serial(s) it touched, giving a full audit trail.
 - **Relationship to OneDrive/Power Automate storage (see Access above):** These are two different jobs, not competing choices. OneDrive + Power Automate is where the Vault's data lives and gets worked day to day; Git-based Apply is the separate step that pushes a snapshot of that data live to the public website.
@@ -98,9 +98,17 @@ Define the cross-tool activity log, shown in the **Log List** tab:
 Registry is the company-wide stock code registry for Block Concepts — every stock code across the business, not just website document entries. Concepts Vault is the single source of truth for all Block Concepts part numbers going forward, functioning like a lightweight ERP for numbering. Website document entries are one category within this broader registry, extending the existing numbering convention (`BC-Q-YYNNN` for quotes, `BC-J-YYNNN` for jobs).
 
 - **Format:** `BC-[TYPE]-YYNNN` — company prefix, a type code, two-digit year, sequential counter.
-- **Type code:** `D` covers all documents and forms that are not project-specific — i.e., `BC-D-YYNNN` is for general documents/forms (like Grab this entries and Give this submissions), while project-specific documents continue using their existing codes (`BC-Q-YYNNN` for quotes, `BC-J-YYNNN` for jobs, etc.), since those are tied to a specific project rather than being general-purpose.
+- **Type codes:**
+  - `D`: general documents and forms that are not project-specific (Grab this entries, Give this and Ask this submissions). `BC-D-YYNNN`.
+  - `W`: web-builder configurations (Build this), issued when a document is generated, so free previews never use quote numbers. `BC-W-YYNNN`.
+  - `Q`: quotes. `BC-Q-YYNNN`.
+  - `B`: builds. Created when a quote is awarded; carries the quote's `YYNNN` digits unchanged (`BC-Q-26042` awarded becomes `BC-B-26042`), so it has no counter of its own.
+  - `J`: jobs. `BC-J-YYNNN`. A job record has a **Build** field and a **Category** field (03 Electrical, 06 Mechanical, 09 Hardware, 12 Supplies, 15 Made-in, 18 Assembly, 21 Item, 24 Engineering, 27 DevOps). The category is a field, not part of the serial.
+  - `L`: library work orders, reusable and not tied to a build. `BC-L-YYNNN`, with the same Category field.
+  - Project-specific documents keep the code of the project record they belong to.
 - **Counter behavior:** Sequential, resets to 001 at the start of each calendar year, per type code — matching the existing BC-Q/BC-J pattern.
 - **Assignment point:** The serial is issued once, when a document entry is first created through the authoring form in Release Management. Not re-issued on every revision — the serial identifies the entry, not the specific file version.
 - **Registry tab contents:** Shows the current counter state per type code (e.g., next `BC-D-YYNNN` to be issued) and a browsable list of every serial issued so far — spanning all Block Concepts stock codes, not just documents — with a link back to the entry/item it belongs to.
+- **Voiding:** a number is never reused or deleted. A mistaken or abandoned serial is set to **VOID** and stays in the list. Quotes that do not convert keep their number.
 - **Manual override:** Grant can view/re-issue or correct a serial if something goes wrong (e.g., a duplicate, a typo), rather than the counter being fully black-box.
 - **Git tie-in:** Since publishing is Git-based (see Settings above), each document entry's serial can be cross-referenced with the commit(s) that created/revised it, giving a full audit trail from serial number to file change.

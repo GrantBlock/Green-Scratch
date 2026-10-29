@@ -27,17 +27,17 @@ System map (how everything flows, where you start and end): `docs/system-map.htm
 
 Do this before any design or code so everything downstream matches.
 
-- [ ] Fold D1 into `spec/concepts-vault-spec.md` Registry section (types, counters, VOID, client codes on Customers).
-- [ ] Review `spec/process-document-builder-spec.md` (new, draft) and answer its **Open** items: tool name, station catalog, payment provider, `BC-W` serial, the theme (now decided by the design system).
-- [ ] Add D4's "Ask this" as a tool in `spec/concepts-hub-spec.md` (Website side) and the Vault spec (Log List row shape, Registry type code).
-- [ ] Add the stack decision (D2, D3) to `spec/concepts-hub-spec.md` "Hosting & Stack".
-- [ ] Update `spec/README.md` to match.
-- [ ] Add a `Data model` section per tool (entry fields, log row columns) so code has exact shapes.
+- [x] Fold D1 into `spec/concepts-vault-spec.md` Registry section (types, counters, VOID, client codes on Customers).
+- [ ] Review `spec/process-document-builder-spec.md` (draft) and answer its **Open** items: tool name, station catalog, payment provider, Word document on the free tier, `BC-W` on the sheets, reload email check.
+- [x] Add D4's "Ask this" as a tool in `spec/concepts-hub-spec.md` (Website side) and the Vault spec (Log List row shape, Registry type code).
+- [x] Add the stack decision (D2, D3) to `spec/concepts-hub-spec.md` "Hosting & Stack".
+- [x] Update `spec/README.md` to match.
+- [x] Add a `Data model` section per tool (Grab this and Give this already define theirs; Build this and Ask this added) (entry fields, log row columns) so code has exact shapes.
 
 ## Phase 2. Design (🎨 + 🧑)
 
 - [x] 🧑 Design system supplied and exported to `design/system/` (dark website theme, light document theme, Overpass).
-- [ ] 🧑 Settle the 4 open items and fill the 10 gaps in `design/DESIGN-SYSTEM.md` (extend the design system in Claude Design, re-export): form controls, tab bar and list, status colors, step rail and station card, detail pane, modal and toast, chat window, drawing sheets, PDF font.
+- [ ] 🧑 Fill the 10 gaps in `design/DESIGN-SYSTEM.md` (extend the design system in Claude Design, re-export): form controls, tab bar and list, status colors, step rail and station card, detail pane, modal and toast, chat window, drawing sheets, PDF font.
 - [ ] 🧑 Paste `design/BRIEF.md` (update it after Phase 1 to include "Ask this").
 - [ ] 🧑 Review mockups: Hub (Fix this, Grab this, Give this, Develop this, Ask this) and Vault (login, Log List, Releases, Registry, Customers, Settings, Archive), desktop and mobile.
 - [ ] 🧑 Export into `design/` and tell Claude Code to read it.
@@ -65,6 +65,7 @@ Order from `CLAUDE.md`. After each slice: run it, review it, tick `spec/BUILD-ST
 
 - [ ] 🧑 Create the Cloudflare project and connect it to this repo (push to `main` deploys, as with the website).
 - [ ] 🧑 Choose the domain or path (the Hub under the existing site's `/tools`, per spec).
+- [ ] 🧑 Add a **Tools** section to the live website's navigation (in the website repo) when the Hub releases. Until then the website does not mention the Hub.
 - [ ] 💻 Add environment variables for secrets (Vault password hash, model API key). Never commit them.
 - [ ] 💻 Add `robots.txt`, canonical links; keep the Vault out of search (noindex, no sitemap entry).
 
