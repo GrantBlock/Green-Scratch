@@ -31,7 +31,7 @@ An inbound inquiry from Give this, Ask this, Build this, email, phone or manual 
 
 #### Additional Prompt: Account and Contact
 
-- Account: name, three-letter Client Code (`GEN` for prospects), industry tags, website, notes.
+- Account: name, **kind** (Customer, Supplier, Prospect, Organization), three-letter Client Code (`GEN` for prospects), industry tags, website, notes.
 - Contact: name, role, email, phone, primary flag. A contact belongs to one account.
 - Accounts show every linked lead, opportunity, project, document and knowledge item.
 
@@ -70,6 +70,30 @@ An opportunity that was won. Number: the same `YYNNN` digits as its Q.
 - **PO:** customer PO number, amount, date, Document.
 - **Invoice:** number, amount, issued, due, paid date, Document, external reference (for QuickBooks). Status: Draft, Sent, Overdue, Paid. Overdue is computed from the due date.
 - The platform tracks and reminds. QuickBooks (or the accountant's tool) remains the books of record. A monthly export is produced.
+
+#### Additional Prompt: Event, Visit and Trip
+
+- **Event:** kind (Customer visit, Supplier visit, Site measurement, Installation, Networking event, Trade show, Call, Other), date and time, location, accounts and contacts, linked opportunity or project, purpose, outcome notes, photos.
+- **Trip:** a group of Events (for example a Pack Expo week). Holds travel notes and links to Knowledge items.
+- People met at a networking event can be turned into Leads.
+- Events appear on the Calendar and in Today. They can be offered to Outlook as a calendar feed.
+
+#### Additional Prompt: Schedule item and Baseline
+
+- **Schedule item:** project, name, **category** (dropdown: Design, Sourcing, Build, Install, and others defined in Settings), start, end, dependencies, percent complete, owner. Has its own Updates feed.
+- **Baseline:** a named snapshot of all schedule items of a project (name, date). The Gantt compares a baseline with the current plan.
+- Changing a date requires a reason, recorded in the item's Updates.
+- Grouping is a view setting; category is the data.
+
+#### Additional Prompt: Sourcing item
+
+- Fields: project, description, supplier (an Account), quote requested date, quote received (Document), price, lead time, status (To quote, Quoted, Ordered, Received), PO number.
+- This is Grant's list of what is being bought and from whom on each project.
+
+#### Additional Prompt: Expense
+
+- Fields: date, amount, vendor, category, project or Overhead, receipt (Document), source (agent email or manual), reimbursable flag.
+- Expenses roll up to project cost and to a monthly export for the accountant.
 
 #### Additional Prompt: Document (`BC-D`)
 
@@ -114,6 +138,7 @@ Lead --qualify--> Opportunity (Open) --win--> Project (Design -> Build -> Instal
                                      \--lose--> Opportunity (Lost)
 ```
 
+- Events, schedule items, sourcing items and expenses are numbered as part of their project or account and need no Registry serial of their own.
 - Registry numbers: Lead `BC-D`, Opportunity `BC-Q`, Project `BC-B` (same digits), Job `BC-J`, Document `BC-D`, Knowledge item `BC-K`, Template `BC-L`, Web configuration `BC-W`.
 - The earlier Build State list (Quoting, Designing, Purchasing, Manufacturing, Assembling, Completed) and the earlier Status list on Give this rows (New, Contacted, Quoted, Closed) are replaced by the states above.
 - Registry numbers are internal. A customer sees the document number on their own quote, and the drawing number on sheets.

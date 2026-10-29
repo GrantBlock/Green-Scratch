@@ -1,98 +1,85 @@
-# Plan: Concepts Platform
+# Plan: Block Concepts Workspace and Tools
 
-> **Under reset.** `docs/RESET.md` rates every inherited decision by evidence and proposes a workflow-first approach built outward from the live website. This plan is reduced to match once Grant agrees.
+Built workflow-first from `docs/WORKFLOW.md`, outward from the live website (`docs/RESET.md`). Records: `spec/data-model.md`. Concept and reasons: `docs/PLATFORM-CONCEPT.md`. Branding: `design/system/`.
 
-One private workspace (Concepts Vault) for running Block Concepts, plus a thin public side (Concepts Hub). Concept and reasons: `docs/PLATFORM-CONCEPT.md`. Records: `spec/data-model.md`. Branding: `design/system/`.
-
-**Legend:** 🧑 you (Grant) · 🎨 Claude Design · 💻 Claude Code
+**Legend:** 🧑 Grant · 🎨 Claude Design · 💻 Claude Code
 
 ---
 
-## Phase 0. Decisions
+## Phase 0. Decided
 
-Done:
-
-- [x] Direction: one platform around Opportunities, Projects, Documents, Knowledge and a Claude assistant.
-- [x] Numbering: `BC-[TYPE]-YYNNN` (D, W, Q, B, J, L, K) with VOID.
-- [x] Stack: Cloudflare D1 + R2 + Vectorize; OneDrive for working files; Onshape for design.
-- [x] Customer delivery: expiring links from the app, no customer accounts at first.
+- [x] Direction: one platform. Public website (live), Tools (public pages), customer project pages, private Workspace.
+- [x] Plain names (see `docs/WORKFLOW.md` section 4). All "___ this" names are dropped.
+- [x] Stack: Cloudflare D1 + R2 + Vectorize; OneDrive for working Word and Excel files; Onshape for design.
+- [x] Numbering: `BC-[TYPE]-YYNNN` with VOID.
 - [x] States: Opportunity Open / Won / Lost; Project Design / Build / Install / Closed.
+- [x] Phone and iPad first. Gantt with baselines. Category dropdowns, not groups. Invoices reviewed, not auto-sent.
 - [x] cGMP: optional documentation package, no in-app signatures.
-- [x] Assistant spend cap: $20 per month now, up to $60 later.
+- [x] Assistant cap: $20 per month, up to $60 once it replaces the apps.
 - [x] Pilot: enter about 30 opportunities and 6 projects by hand.
-- [x] Branding: the design system, dark theme for Hub and Vault.
-- [x] Hub header at `/tools`; Tools section added to the live website at release.
-- [x] Build this outputs both PDF sheets and a Word document.
+- [x] All public tools are in scope, internal use first.
+- [x] Customers get files through expiring links, no accounts.
 
 Still open:
 
-- [ ] 🧑 The 7th and 8th apps (you listed six).
-- [ ] 🧑 Real project folder and required-document list (replaces the starter structure).
+- [ ] 🧑 Workspace address (options in `docs/WORKFLOW.md` section 6).
+- [ ] 🧑 Your project folder and required-document list.
 - [ ] 🧑 Agent email address and mailbox type.
-- [ ] 🧑 Money scope: track project financials only (recommended), or more. See `docs/PLATFORM-CONCEPT.md` section 8.
+- [ ] 🧑 Money scope (recommended: track project financials; QuickBooks stays the books).
+- [ ] 🧑 Apps 7 and 8 (you listed six).
+- [ ] 🧑 Process page content (formerly Develop this).
 
-## Phase 1. Specs (💻)
+## Phase 1. Design (🎨 + 🧑), can run alongside Phase 2
 
-- [x] `spec/data-model.md` (new).
-- [x] `docs/PLATFORM-CONCEPT.md` updated with decisions.
-- [ ] Rewrite `spec/system-architecture.md` around the platform (pieces, shells, access model, audit log).
-- [ ] Rewrite `spec/concepts-vault-spec.md`: new tabs (Today, Inbox, Pipeline, Projects, Accounts, Knowledge, Library, Registry, Settings), project activation, document control, share links, financial tracking, agent email.
-- [ ] New `spec/assistant-spec.md`: tools, permissions, confirmation rule, budget meter, public/Vault separation.
-- [ ] Update `spec/concepts-hub-spec.md`: Give this, Ask this and Build this write Leads; Grab this reads public Documents.
-- [ ] Update `spec/process-document-builder-spec.md` to the Lead and Document records.
-- [ ] 🧑 Review each rewritten spec.
+- [ ] 🧑 Add missing components with `design/GAPS-PROMPT.md`; re-export to `design/system/`.
+- [ ] 💻 Update `design/BRIEF.md` with the Workspace screens: Today, Calendar, Pipeline, Project (checklist, Gantt with baselines, Sourcing), Money (Receivables, Expenses), Accounts, Knowledge, Assistant panel, customer project page. All designed for phone and iPad.
+- [ ] 🧑 Review mockups; export into `design/`.
 
-## Phase 2. Design (🎨 + 🧑)
+## Phase 2. Build the Workspace (💻), one slice per session
 
-- [ ] 🧑 Add the missing components with `design/GAPS-PROMPT.md`; re-export to `design/system/`.
-- [ ] 🧑 Add new screens to the brief: Today, Pipeline board, Opportunity, Project page with checklist and completeness bar, Account, Knowledge list and item, Library, Assistant panel, customer share page. (💻 updates `design/BRIEF.md`.)
-- [ ] 🧑 Review and export mockups into `design/`.
-
-## Phase 3. Build (💻), one slice per session
+Each slice ends with Grant using it on real data. monday.com stays until slice 7.
 
 | Slice | Delivers | Done when |
 |---|---|---|
-| 1 | Tokens, shell, Vault login, D1 schema, Registry | Serials issue and never repeat; dark theme everywhere |
-| 2 | Accounts, Leads (Inbox), Opportunities (Pipeline) | You can enter your 30 real opportunities |
-| 3 | Projects: activation from a Template, checklist, Jobs, Milestones | You can enter your 6 real projects and see completeness |
-| 4 | Documents: R2 upload, revisions, Released lock, OneDrive links, Onshape links | A project holds its PO, invoice, manual, gantt, ROI |
-| 5 | Customer share links and upload requests | A customer downloads and uploads without an account |
-| 6 | Search and the Vault assistant (with citations, confirm-to-write, spend meter) | You can ask across opportunities, projects and documents |
-| 7 | Financial tracking: PO, milestones, invoices, overdue, monthly export | Past-due items appear in Today |
-| 8 | Agent email: inbound routing, classification, filing proposals | A forwarded newsletter becomes a Knowledge item |
-| 9 | Knowledge: items, trip plans, links | Research is linked to accounts and opportunities |
-| 10 | Public Hub: Fix this, Grab this, Give this, Ask this, Build this | Public leads arrive in Inbox |
-| 11 | cGMP documentation package Template | A flagged project shows section 07 |
-| 12 | Settings, Apply, Cloudflare deploy, cutover from monday.com | You stop using monday.com |
+| 1 | Login, responsive shell (phone, iPad), D1, Registry, audit log, design system | You can sign in on an iPad; serials issue and never repeat |
+| 2 | Accounts (customer, supplier, prospect) and Pipeline (Leads, Opportunities) | Your 30 opportunities are entered and filterable |
+| 3 | Calendar and Today: visits, site visits, events, trips | You can plan next week's visits on your phone |
+| 4 | Projects: activation from a template, checklist, Documents (R2), Onshape and OneDrive links | Your 6 projects are entered with their documents |
+| 5 | Schedule: Gantt with categories, dependencies, baselines, reasons for date changes, item updates | A project's schedule replaces its monday.com board |
+| 6 | Money: milestones, invoices, receivables, overdue alerts, expenses, monthly export | You can see who hasn't paid and what a project cost |
+| 7 | Cutover from monday.com | You stop using monday.com |
 
-Slices 1 to 6 are the core. Each slice ends with you using it on real data before the next starts.
+## Phase 3. Connect (💻)
 
-## Phase 4. Deploy (🧑 + 💻)
+| Slice | Delivers |
+|---|---|
+| 8 | Customer project pages: expiring links, PDF downloads, upload requests |
+| 9 | Agent email: inbound routing, classification, filing proposals; reminders and drafts |
+| 10 | Sourcing list per project and supplier quote tracking |
+| 11 | Knowledge: research, articles, trip notes, links to accounts and events |
+| 12 | Workspace Assistant: search with citations, drafts, confirm-to-write, spend meter |
 
-- [ ] 🧑 Cloudflare project connected to this repo; push to `main` deploys.
-- [ ] 🧑 Create D1, R2 and Vectorize resources; add the Anthropic API key and the Vault password as secrets.
-- [ ] 🧑 Set the agent email up (see Phase 0).
-- [ ] 💻 Vault stays out of search engines and behind login; customer links expire.
-- [ ] 🧑 Add a **Tools** section to the live website when the Hub releases.
+## Phase 4. Tools: internal first, then public (💻)
+
+| Slice | Delivers |
+|---|---|
+| 13 | Contact: the website form creates a Lead in Inbox (the one change to the live site) |
+| 14 | Builder: stations to PDF sheets and a Word process document, used internally from an opportunity |
+| 15 | Library: publish customer-ready PDFs, then the public view |
+| 16 | Tools section on the website, linking Contact, Builder and Library |
+| 17 | Public Assistant: published content only |
+| 18 | cGMP documentation package template |
 
 ## Phase 5. Before relying on it
 
-- [ ] Security pass on login, uploads, share links, email ingestion and the assistant (prompt injection from emails and documents).
-- [ ] Backups and an export of all records and files.
-- [ ] Accessibility pass on the public Hub.
-- [ ] Public Ask this agent tested with adversarial prompts; no Vault data reachable.
-
-## Phase 6. After launch
-
-- [ ] Raise the assistant cap to $60 when it replaces the apps.
-- [ ] Decide on invoice PDF generation (level 2) once the pilot shows it is needed.
-- [ ] Revisit Develop this when its new detail is supplied.
-
----
+- [ ] Security pass: login, uploads, share links, email ingestion, assistant (prompt injection from emails and documents).
+- [ ] Backups and a full export of records and files.
+- [ ] Test on iPad and iPhone for every slice.
+- [ ] Public Assistant tested with adversarial prompts; no Workspace data reachable.
 
 ## How to run each session
 
 1. Open this repo in Claude Code. `CLAUDE.md` loads automatically.
-2. Say which slice or phase to do.
-3. Use the result on real data, then tick the box here and in `spec/BUILD-STATUS.md`.
+2. Say which slice to do.
+3. Use the result on real data; write down what is missing; then tick the box.
 4. Anything not in Phase 0 comes to you first.
