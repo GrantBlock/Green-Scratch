@@ -1,0 +1,13 @@
+# Build status
+
+- [ ] Design system loaded in Claude Design
+- [ ] Mockups exported to `design/`
+- [ ] Stack chosen (hosting, framework, Vault backend)
+- [ ] Shared tokens and site shell
+- [ ] Static pages
+- [ ] Grab this
+- [ ] Vault shell and Registry
+- [ ] Releases and Log List
+- [ ] Give this
+- [ ] Customers, Update List, Archive, Settings and Apply
+- [ ] Cloudflare deploy connected

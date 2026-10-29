@@ -1,0 +1,26 @@
+# Working agreement for Claude Code
+
+## Workflow (same as the Block Concepts website)
+
+1. **Spec** (`spec/`) is the source of truth. Change the spec first, then the build. Each spec section is a Main Prompt plus nested Additional Prompts; keep that format.
+2. **Design** happens in Claude Design (claude.ai/design) using the Block Concepts design system. Mockups are exported into `design/` and referenced from the spec section they illustrate. `design/BRIEF.md` is the prompt to start from.
+3. **Build** happens in Claude Code from the spec plus `design/`. Build one slice at a time (see order below) and tick it off in `spec/BUILD-STATUS.md`.
+4. **Deploy**: Cloudflare, on push to `main`. Not connected yet.
+
+## Rules
+
+- Design tokens are defined once in `spec/system-architecture.md` ("Design Tokens"). Never redefine them in the Hub or Vault code; import from one shared tokens file.
+- Hub and Vault share one data model per tool. The Vault never keeps a shadow copy of what the Hub displays.
+- Serials are issued only by Registry (`BC-[TYPE]-YYNNN`). Never hand-assign them in code.
+- The Vault is single-user (Grant). No multi-user login.
+- Hosting, framework and backend are undecided. Do not pick them silently; propose and confirm with Grant first.
+
+## Suggested build order
+
+1. Shared tokens and site shell (nav, Fix this layout).
+2. Static pages: Home, Who this, Develop this.
+3. Grab this (public four-zone portal) reading a sample data file.
+4. Vault shell: login, tab bar, Registry.
+5. Vault Releases (authoring form) and Log List.
+6. Give this form wired to Log List.
+7. Customers, Update List, Archive, Settings plus Apply (Git publish).
